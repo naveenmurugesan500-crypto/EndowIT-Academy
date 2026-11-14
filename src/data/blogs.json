@@ -1,0 +1,41 @@
+[
+  {
+    "id": "fullstack-developer-roadmap-2026",
+    "slug": "full-stack-developer-roadmap-2026",
+    "title": "Complete Full Stack Developer Roadmap for 2026: From Beginner to Hired",
+    "excerpt": "A comprehensive guide to becoming a job-ready Full Stack Engineer in 2026 covering Next.js, TypeScript, Microservices, and AI integrations.",
+    "author": "Tech Editorial Team",
+    "publishedAt": "2026-10-15",
+    "readTime": "6 min read",
+    "category": "Career Guide",
+    "tags": ["Full Stack", "React", "Next.js", "Career", "Web Development"],
+    "coverImage": "/images/blogs/roadmap.jpg",
+    "content": "The landscape of software engineering has evolved drastically with AI copilots, modern edge computing, and full-stack frameworks. In 2026, companies are prioritizing developers who understand end-to-end architectures from scalable React frontends to resilient cloud deployments.\n\n### Step 1: Frontend Mastery\nMove beyond plain CSS. Modern teams rely on Tailwind CSS, TypeScript, and React with server components (Next.js). Ensure you understand client-side state, server-side caching, and responsive UI accessibility.\n\n### Step 2: Backend & Database Foundations\nNode.js and Python remain the top powerhouses. Combine them with relational databases like PostgreSQL and vector databases for AI search.\n\n### Step 3: Cloud & Deployment\nContainerization with Docker is no longer optional. Learn how to containerize microservices and deploy them onto AWS or serverless platforms.\n\n### How EndowIT Academy Helps You Land the Role\nAt EndowIT Academy, our students build 8+ live portfolio projects and undergo rigorous 1-on-1 mock interviews to stand out in technical screenings."
+  },
+  {
+    "id": "data-analytics-vs-data-science",
+    "slug": "data-analytics-vs-data-science-career-guide",
+    "title": "Data Analytics vs Data Science: Which Career Path Should You Choose?",
+    "excerpt": "Demystifying the differences, salary potential, toolsets, and job expectations between Data Analysts and Data Scientists.",
+    "author": "Data Science Lead",
+    "publishedAt": "2026-10-28",
+    "readTime": "5 min read",
+    "category": "Data & AI",
+    "tags": ["Data Science", "Data Analytics", "Career Advice", "Python", "Power BI"],
+    "coverImage": "/images/blogs/data.jpg",
+    "content": "Many freshers and career switchers find themselves confused between Data Analytics and Data Science. While both work with data, their scope and tooling differ significantly.\n\n### What does a Data Analyst do?\nA Data Analyst focuses on answering 'What happened?' and 'Why did it happen?'. They use SQL, Power BI, Tableau, and Excel to interpret historical data, uncover business insights, and create executive KPI dashboards.\n\n### What does a Data Scientist do?\nA Data Scientist focuses on answering 'What will happen?' and 'How can we optimize it?'. They build predictive machine learning models, neural networks, and algorithms using Python, PyTorch, and Scikit-Learn.\n\n### Salary & Learning Curve\nData Analytics has a gentler learning curve with quick job placement (3 months). Data Science is taught through an intensive 3-month practical boot camp and commands premium AI-era packages."
+  },
+  {
+    "id": "top-digital-marketing-trends-ai-era",
+    "slug": "top-digital-marketing-trends-ai-era",
+    "title": "Top Digital Marketing Trends in 2026: The Rise of AI Growth Strategy",
+    "excerpt": "Discover how AI-driven SEO, programmatic ads, and algorithmic social media algorithms are shaping modern marketing.",
+    "author": "Growth & Marketing Strategist",
+    "publishedAt": "2026-11-05",
+    "readTime": "4 min read",
+    "category": "Digital Marketing",
+    "tags": ["SEO", "Digital Marketing", "AI Marketing", "Google Ads"],
+    "coverImage": "/images/blogs/marketing.jpg",
+    "content": "Traditional digital marketing alone no longer delivers explosive ROI. In 2026, marketers must blend creative storytelling with generative AI tools and programmatic performance analytics.\n\n### 1. Semantic SEO & AI Search Optimization\nWith search engines incorporating generative overviews, optimizing for conversational queries and authoritative topical depth is paramount.\n\n### 2. High-Converting Meta & Google Ads Funnels\nAutomated bidding and audience prediction algorithms require marketers to feed high-quality creative variants and precise conversion signals.\n\n### Join EndowIT Academy's Marketing Masterclass\nLearn real budget campaign scaling, hands-on GA4 tracking, and AI automation to become an indispensable growth asset."
+  }
+]

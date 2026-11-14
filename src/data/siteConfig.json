@@ -1,0 +1,81 @@
+{
+  "siteName": "EndowIT Academy",
+  "tagline": "Real Practical Tech Training & Guaranteed Internship",
+  "seoTitle": "EndowIT Academy | Practical IT & Digital Marketing Training | Chennai",
+  "seoDescription": "Launch your career with EndowIT Academy. Real hands-on courses in Digital Marketing, Full Stack, Data Analytics & Cloud with guaranteed internships and live client projects. Max 10-15 students per batch.",
+  "keywords": "EndowIT Academy, Digital Marketing course, Full Stack Development, Data Analytics Training, Python, Chennai IT Training, Practical Internship, Live Projects",
+  "contact": {
+    "phone": "+91 63794 27852",
+    "altPhone": "+91 63794 27852",
+    "email": "admissions@endowitacademy.com",
+    "supportEmail": "info@endowitacademy.com",
+    "address": "XXXXXX, XXXXXX, Chennai, Tamil Nadu - XXXXXX",
+    "whatsapp": "+916379427852",
+    "workingHours": "Mon - Sun: 8:00 AM - 8:30 PM"
+  },
+  "gmb": {
+    "placeId": "ChIJ_demo_place_id_endowit",
+    "apiKey": "",
+    "businessName": "EndowIT Academy",
+    "reviewUrl": "https://g.page/r/demo/review",
+    "overallRating": 4.9,
+    "totalReviews": 28,
+    "autoSync": true,
+    "minRatingToDisplay": 4,
+    "customReviews": [
+      {
+        "id": "gmb_1",
+        "author_name": "Karthik Raja",
+        "author_url": "https://www.google.com/maps/contrib/demo1",
+        "profile_photo_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80",
+        "rating": 5,
+        "relative_time_description": "Online Batch Alumni",
+        "text": "Took their online Full Stack training. What stood out was the live project work. The trainer actually reviewed our GitHub code and helped us deploy real applications. Very practical coaching!",
+        "time": 1731500000,
+        "verified": true
+      },
+      {
+        "id": "gmb_2",
+        "author_name": "Divya Bharathi",
+        "author_url": "https://www.google.com/maps/contrib/demo2",
+        "profile_photo_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
+        "rating": 5,
+        "relative_time_description": "Digital Marketing Alumni",
+        "text": "The digital marketing course let us run real ad spend campaigns on Meta and Google. Having real client case studies on my resume helped me immensely during interviews.",
+        "time": 1731000000,
+        "verified": true
+      },
+      {
+        "id": "gmb_3",
+        "author_name": "Saravanan Murugan",
+        "author_url": "https://www.google.com/maps/contrib/demo3",
+        "profile_photo_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&auto=format&fit=crop&q=80",
+        "rating": 5,
+        "relative_time_description": "Data Analytics Student",
+        "text": "Small batch size of 12 students really helped. Any doubt was answered immediately. The internship certificate and Power BI dashboard case studies were worth every penny.",
+        "time": 1730500000,
+        "verified": true
+      }
+    ]
+  },
+  "socials": {
+    "linkedin": "https://linkedin.com/company/endowit-academy",
+    "instagram": "https://instagram.com/endowit_academy",
+    "youtube": "https://youtube.com/@endowitacademy",
+    "facebook": "https://facebook.com/endowitacademy",
+    "twitter": "https://twitter.com/endowitacademy"
+  },
+  "stats": [
+    { "label": "Trained Online Successfully", "value": "100+" },
+    { "label": "Students Per Batch (Personal Attention)", "value": "10 - 15" },
+    { "label": "Practical Live Client Projects", "value": "100%" },
+    { "label": "Guaranteed Practical Internship", "value": "Included" }
+  ],
+  "hiringPartners": [
+    "Tech Solutions",
+    "Digital Agencies",
+    "Product Startups",
+    "E-Commerce Firms"
+  ],
+  "testimonials": []
+}
