@@ -147,6 +147,54 @@ h6 {
   animation: float-gentle-3 5.2s ease-in-out infinite;
 }
 
+/* Hero Reference Floating Badges & Offer Pulse */
+@keyframes offer-card-pulse {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 12px 28px -6px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 38px -6px rgba(16, 185, 129, 0.55);
+  }
+}
+
+@keyframes hero-badge-float-1 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes hero-badge-float-2 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes hero-badge-float-3 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+
+.animate-offer-pulse {
+  animation: offer-card-pulse 3.8s ease-in-out infinite;
+}
+
+.animate-badge-float-1 {
+  animation: hero-badge-float-1 4.5s ease-in-out infinite;
+}
+
+.animate-badge-float-2 {
+  animation: hero-badge-float-2 5.5s ease-in-out infinite 0.8s;
+}
+
+.animate-badge-float-3 {
+  animation: hero-badge-float-3 4s ease-in-out infinite 1.5s;
+}
+
+.bg-hero-dots {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.14) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
 /* Custom Floating & Drifting Tech Logos Animations */
 @keyframes tech-drift-1 {
   0% { transform: translate(0px, 0px) rotate(0deg); }
