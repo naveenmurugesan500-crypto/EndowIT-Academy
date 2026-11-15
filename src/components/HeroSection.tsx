@@ -279,10 +279,10 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
 
                 {/* Sleek EndowIT Academy Branded Laptop Lid Badge (replaces third-party logo) */}
                 <div
-                  className="absolute bottom-[23.5%] left-[53.8%] -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-slate-900 border-2 border-emerald-400 shadow-md flex items-center justify-center pointer-events-none select-none"
+                  className="absolute bottom-[16.8%] left-[50.6%] -translate-x-1/2 z-20 w-11 h-11 rounded-full bg-[#0b2545] border-2 border-emerald-400 shadow-lg flex items-center justify-center pointer-events-none select-none"
                   title="EndowIT Academy"
                 >
-                  <span className="text-[7.5px] font-black tracking-tight text-white uppercase">EIT</span>
+                  <span className="text-[9px] font-black tracking-tight text-white uppercase">EIT</span>
                 </div>
               </div>
 
