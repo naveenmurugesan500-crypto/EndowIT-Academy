@@ -103,13 +103,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-[2.5rem] border border-cyan-500/25 bg-gradient-to-b from-slate-900/95 via-navy-950/95 to-slate-950/95 shadow-2xl shadow-cyan-950/20 overflow-hidden backdrop-blur-xl">
             {/* Top Block Header Bar */}
-            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-cyan-500/10 text-[11px] font-mono tracking-widest font-bold uppercase">
+            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-cyan-500/10 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-cyan-400">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                [ MODULE 01 // INTERACTIVE COURSE SPOTLIGHT ]
+                Featured Programs · 3 Months Live Training
               </span>
-              <span className="text-slate-400 hidden sm:inline">
-                OFFLINE CHENNAI & LIVE ONLINE · 3 MONTHS
+              <span className="text-slate-400 hidden sm:inline text-xs font-medium">
+                Chennai Tech Lab & Live Online
               </span>
             </div>
 
@@ -124,13 +124,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-[2.5rem] border border-emerald-500/25 bg-gradient-to-b from-slate-900/95 via-navy-950/95 to-slate-950/95 shadow-2xl shadow-emerald-950/20 overflow-hidden backdrop-blur-xl">
             {/* Top Block Header Bar */}
-            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-emerald-500/10 text-[11px] font-mono tracking-widest font-bold uppercase">
+            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-emerald-500/10 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-emerald-400">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                [ MODULE 02 // THE PRACTICAL METHOD ]
+                Our Training Approach · Hands-on Learning
               </span>
-              <span className="text-slate-400 hidden sm:inline">
-                AUTHENTIC TRAINING · NO DUMMY SLIDES
+              <span className="text-slate-400 hidden sm:inline text-xs font-medium">
+                Live Projects & Real Ad Budgets
               </span>
             </div>
 
@@ -142,13 +142,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-[2.5rem] border border-brand-500/25 bg-gradient-to-b from-slate-900/95 via-navy-950/95 to-slate-950/95 shadow-2xl shadow-brand-950/20 overflow-hidden backdrop-blur-xl">
             {/* Top Block Header Bar */}
-            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-brand-500/10 text-[11px] font-mono tracking-widest font-bold uppercase">
+            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-brand-500/10 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-brand-400">
                 <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
-                [ MODULE 03 // 3-MONTH JOB-ORIENTED PROGRAMS ]
+                Complete Course Catalog · All 6 Tracks
               </span>
-              <span className="text-slate-400 hidden sm:inline">
-                ALL COURSES DURATION: STRICTLY 3 MONTHS
+              <span className="text-slate-400 hidden sm:inline text-xs font-medium">
+                Standard Fee: ₹ 14,999 For All Courses
               </span>
             </div>
 
@@ -163,13 +163,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-[2.5rem] border border-purple-500/25 bg-gradient-to-b from-slate-900/95 via-navy-950/95 to-slate-950/95 p-8 sm:p-12 shadow-2xl shadow-purple-950/20 overflow-hidden backdrop-blur-xl">
             {/* Top Block Header Bar */}
-            <div className="flex items-center justify-between pb-8 border-b border-purple-500/10 text-[11px] font-mono tracking-widest font-bold uppercase">
+            <div className="flex items-center justify-between pb-8 border-b border-purple-500/10 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-purple-400">
                 <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-                [ MODULE 04 // 4-STEP CAREER ROADMAP ]
+                How It Works · 4 Steps to Your Tech Career
               </span>
-              <span className="text-slate-400 hidden sm:inline">
-                BEGINNER TO EMPLOYABLE IN 3 MONTHS
+              <span className="text-slate-400 hidden sm:inline text-xs font-medium">
+                From Basics to Interview Ready in 3 Months
               </span>
             </div>
 

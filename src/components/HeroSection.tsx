@@ -65,25 +65,22 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
             {/* Main Headline */}
             <div className="space-y-2">
               <span className="text-xs sm:text-sm font-bold text-brand-700 tracking-wider uppercase block">
-                Get Trained. Get Placed. · Strictly 3-Month Fast-Track
+                Practical IT & Digital Marketing Training · Chennai
               </span>
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-                Learn Real Tech By{" "}
+                Learn Tech By{" "}
                 <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                  Doing Real Work.
+                  Building Real Projects.
                 </span>
                 <span className="block text-emerald-600 text-3xl sm:text-4xl xl:text-5xl font-extrabold mt-1">
-                  Celebrate New Batch Launch.
+                  New Batches Starting Monday.
                 </span>
               </h1>
             </div>
 
             {/* Description */}
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Master in-demand tech skills with industry-oriented{" "}
-              <strong className="text-slate-900 font-semibold">3-Month practical training</strong> in{" "}
-              <strong>Digital Marketing, Full Stack, Data Analytics, Python AI, AWS & Testing</strong>. You manage real client ad budgets, write production code, and earn a{" "}
-              <strong className="text-emerald-600 font-semibold">guaranteed practical internship certificate</strong> with 100% placement support.
+              Skip boring theory and 500-page slide decks. Spend <strong>3 months</strong> running live ad campaigns with real budgets, building web apps that actually get deployed, and learning the exact tools companies hire for. Includes micro-batches of 10–15 students, a <strong className="text-emerald-700 font-semibold">guaranteed practical internship</strong>, and one-on-one interview preparation.
             </p>
 
             {/* Integrated Dual Pricing Spotlight Row */}

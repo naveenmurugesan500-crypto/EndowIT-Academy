@@ -16,7 +16,7 @@
         "internshipIncluded":  true,
         "liveProjectsCount":  "Live Agency Client Projects",
         "highlighted":  true,
-        "salaryRange":  "â‚¹3.5 LPA - â‚¹7.5 LPA",
+        "salaryRange":  "₹3.5 LPA - ₹7.5 LPA",
         "heroImage":  "/images/courses/digitalmarketing.jpg",
         "overview":  "Designed for real agency exposure. Instead of just learning slides, you will manage live ad budgets on Meta Ads and Google Ads, conduct technical SEO audits on active client websites, and leverage Generative AI tools like ChatGPT for high-converting marketing campaigns.",
         "keyHighlights":  [
@@ -107,7 +107,7 @@
         "internshipIncluded":  true,
         "liveProjectsCount":  "5+ Production Capstone Projects",
         "highlighted":  true,
-        "salaryRange":  "â‚¹4.5 LPA - â‚¹10 LPA",
+        "salaryRange":  "₹4.5 LPA - ₹10 LPA",
         "heroImage":  "/images/courses/fullstack.jpg",
         "overview":  "Learn end-to-end full stack software development through coding real applications. From modern JavaScript and React with Tailwind CSS to secure REST APIs with Node.js and MongoDB, you graduate with real GitHub repositories and an internship certificate.",
         "keyHighlights":  [
@@ -190,7 +190,7 @@
         "internshipIncluded":  true,
         "liveProjectsCount":  "4 Enterprise Case Studies",
         "highlighted":  true,
-        "salaryRange":  "â‚¹4.0 LPA - â‚¹8.5 LPA",
+        "salaryRange":  "₹4.0 LPA - ₹8.5 LPA",
         "heroImage":  "/images/courses/dataanalytics.jpg",
         "overview":  "Data Analytics is the fastest transition path into the IT sector for freshers from any degree. Learn to clean dirty data, write enterprise SQL queries, design Power BI dashboards with DAX, and formulate business insights.",
         "keyHighlights":  [
@@ -266,7 +266,7 @@
         "internshipIncluded":  true,
         "liveProjectsCount":  "4 Machine Learning Capstones",
         "highlighted":  false,
-        "salaryRange":  "â‚¹5.5 LPA - â‚¹14 LPA",
+        "salaryRange":  "₹5.5 LPA - ₹14 LPA",
         "heroImage":  "/images/courses/datascience.jpg",
         "overview":  "A rigorous, hands-on dive into predictive modeling, supervised and unsupervised machine learning, neural networks, and modern Generative AI / LLM prompt engineering.",
         "keyHighlights":  [
@@ -334,7 +334,7 @@
         "internshipIncluded":  true,
         "liveProjectsCount":  "3 Cloud Architecture Deployments",
         "highlighted":  false,
-        "salaryRange":  "â‚¹5.0 LPA - â‚¹12 LPA",
+        "salaryRange":  "₹5.0 LPA - ₹12 LPA",
         "heroImage":  "/images/courses/devops.jpg",
         "overview":  "Learn how modern IT operations scale. From Linux shell scripting and AWS infrastructure to containerization with Docker and Kubernetes cluster management.",
         "keyHighlights":  [
@@ -402,7 +402,7 @@
         "internshipIncluded":  true,
         "liveProjectsCount":  "Live Web App Testing",
         "highlighted":  false,
-        "salaryRange":  "â‚¹3.5 LPA - â‚¹7.0 LPA",
+        "salaryRange":  "₹3.5 LPA - ₹7.0 LPA",
         "heroImage":  "/images/courses/testing.jpg",
         "overview":  "A practical training program covering manual test scenarios, Jira defect tracking, Core Java, Selenium WebDriver automation, and Postman API testing.",
         "keyHighlights":  [

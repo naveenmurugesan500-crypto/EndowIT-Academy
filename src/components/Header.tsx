@@ -48,55 +48,43 @@ export default function Header({ onOpenDemoModal }: HeaderProps) {
     {
       name: "Digital Marketing & AI Growth",
       slug: "digital-marketing",
-      desc: "Live Client Ad Spend & Real Internship",
-      price: "₹14,999",
+      desc: "Run live Meta and Google ad campaigns with real budget. Master SEO, content, and analytics.",
       icon: TrendingUp,
-      badge: "Most Popular",
       color: "text-orange-500",
     },
     {
       name: "Full Stack Web Development",
       slug: "full-stack-development",
-      desc: "MERN Stack, Next.js & 5+ Live Capstones",
-      price: "₹14,999",
+      desc: "Build full-stack web apps with React, Node.js, and MongoDB. Deploy production code to the cloud.",
       icon: Code2,
-      badge: "Highest Demand",
       color: "text-blue-500",
     },
     {
       name: "Data Analytics & BI",
       slug: "data-analytics",
-      desc: "Power BI, Tableau, SQL & Case Studies",
-      price: "₹14,999",
+      desc: "Clean, analyze, and visualize business data using SQL, Excel, Power BI, and Tableau dashboards.",
       icon: BarChart3,
-      badge: "Fast Track",
       color: "text-emerald-500",
     },
     {
       name: "Data Science & AI",
       slug: "data-science-and-ai",
-      desc: "Python, ML, Deep Learning & GenAI",
-      price: "₹14,999",
+      desc: "Work with Python, machine learning models, and real Generative AI tools on practical datasets.",
       icon: BrainCircuit,
-      badge: "Advanced",
       color: "text-purple-500",
     },
     {
       name: "AWS & DevOps Engineering",
       slug: "cloud-and-devops",
-      desc: "Docker, Kubernetes, Terraform & CI/CD",
-      price: "₹14,999",
+      desc: "Deploy, scale, and manage cloud infrastructure using AWS services, Docker containers, and CI/CD.",
       icon: Cloud,
-      badge: "Cloud Track",
       color: "text-cyan-500",
     },
     {
       name: "Software Testing & Automation",
       slug: "software-testing",
-      desc: "Selenium WebDriver, Java & API Postman",
-      price: "₹14,999",
+      desc: "Learn manual testing, write automation test scripts in Selenium, and test backend APIs with Postman.",
       icon: CheckCircle2,
-      badge: "Quick Job",
       color: "text-rose-500",
     },
   ];
@@ -186,27 +174,17 @@ export default function Header({ onOpenDemoModal }: HeaderProps) {
                           className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group/item border border-transparent hover:border-slate-200/60"
                         >
                           <div
-                            className={`p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover/item:bg-white dark:group-hover/item:bg-slate-700 shadow-sm ${c.color}`}
+                            className={`p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover/item:bg-white dark:group-hover/item:bg-slate-700 shadow-sm shrink-0 mt-0.5 ${c.color}`}
                           >
                             <IconComponent className="w-5 h-5" />
                           </div>
-                          <div>
-                            <div className="flex items-center justify-between gap-2">
-                              <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-100 group-hover/item:text-brand-600 transition-colors">
-                                {c.name}
-                              </h4>
-                            </div>
-                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-1">
+                          <div className="min-w-0">
+                            <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100 group-hover/item:text-brand-600 transition-colors">
+                              {c.name}
+                            </h4>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">
                               {c.desc}
                             </p>
-                            <div className="flex items-center gap-2 mt-1">
-                              <span className="text-[10px] font-bold px-2 py-0.5 bg-brand-50 dark:bg-brand-950/80 text-brand-700 dark:text-brand-300 rounded-full border border-brand-200/50">
-                                {c.badge}
-                              </span>
-                              <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400">
-                                Practical Internship Included
-                              </span>
-                            </div>
                           </div>
                         </Link>
                       );
@@ -314,11 +292,11 @@ export default function Header({ onOpenDemoModal }: HeaderProps) {
                   <Link
                     key={c.slug}
                     href={`/courses/${c.slug}`}
-                    className="flex items-center justify-between p-2 rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+                    className="flex flex-col p-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
                   >
-                    <span>{c.name}</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-brand-50 text-brand-700 font-bold">
-                      {c.badge}
+                    <span className="text-sm font-semibold">{c.name}</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-2">
+                      {c.desc}
                     </span>
                   </Link>
                 ))}
