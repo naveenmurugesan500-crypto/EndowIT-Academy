@@ -16,7 +16,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-950 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <footer className="bg-navy-950 text-slate-300 pt-16 pb-0 border-t border-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
           {/* Col 1: About & Logo */}
@@ -206,6 +206,24 @@ export default function Footer() {
               Sitemap
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* Second Half: Grand Lower Section with Subtle 'EndowIT' Architectural Watermark (<25% opacity) */}
+      <div className="mt-8 border-t border-slate-800/60 bg-gradient-to-b from-navy-950 via-slate-950 to-black relative overflow-hidden select-none pointer-events-none py-6 sm:py-10 md:py-12">
+        {/* Soft ambient brand glow */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[600px] h-[140px] bg-brand-500/[0.03] blur-3xl rounded-full" />
+        </div>
+
+        {/* Massive 'EndowIT' Typography */}
+        <div className="w-full flex items-center justify-center overflow-hidden px-4">
+          <span
+            className="text-[14vw] sm:text-[13vw] md:text-[12vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/[0.18] via-white/[0.08] to-white/[0.02] text-center select-none"
+            aria-hidden="true"
+          >
+            EndowIT
+          </span>
         </div>
       </div>
     </footer>
