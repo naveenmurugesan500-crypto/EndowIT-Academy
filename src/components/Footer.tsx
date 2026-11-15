@@ -106,51 +106,42 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link
-                  href="/opening-offer"
-                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5 text-amber-400 font-extrabold"
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Grand Opening Offer (₹5,000)</span>
+                <Link href="/opening-offer" className="hover:text-white transition-colors">
+                  Opening Offer
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/courses#pricing"
-                  className="hover:text-emerald-300 transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold"
-                >
-                  <Tag className="w-3.5 h-3.5" />
-                  <span>Fees & Pricing (Flat ₹14,999)</span>
+                <Link href="/courses#pricing" className="hover:text-white transition-colors">
+                  Fees & Structure
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="hover:text-brand-400 transition-colors">
+                <Link href="/certifications" className="hover:text-white transition-colors">
+                  Certifications
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms-and-conditions" className="hover:text-brand-400 transition-colors">
+                <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="/certifications" className="hover:text-brand-400 transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold">
-                  <Award className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Dual Certifications</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-brand-400 transition-colors">
+                <Link href="/about" className="hover:text-white transition-colors">
                   About Our Academy
                 </Link>
               </li>
               <li>
-                <Link href="/courses" className="hover:text-brand-400 transition-colors">
+                <Link href="/courses" className="hover:text-white transition-colors">
                   All 3-Month Courses
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-brand-400 transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Contact & Campus
                 </Link>
               </li>
@@ -198,20 +189,20 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© {currentYear} EndowIT Academy. All Rights Reserved.</p>
-          <div className="flex items-center gap-6">
-            <Link href="/opening-offer" className="hover:text-amber-400 font-bold text-amber-500">
-              Grand Opening Offer (₹5,000)
+          <div className="flex flex-wrap items-center gap-6">
+            <Link href="/opening-offer" className="hover:text-slate-300 transition-colors">
+              Opening Offer
             </Link>
-            <Link href="/certifications" className="hover:text-slate-400">
+            <Link href="/certifications" className="hover:text-slate-300 transition-colors">
               Certifications
             </Link>
-            <Link href="/privacy-policy" className="hover:text-slate-400">
+            <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions" className="hover:text-slate-400">
+            <Link href="/terms-and-conditions" className="hover:text-slate-300 transition-colors">
               Terms & Conditions
             </Link>
-            <Link href="/sitemap.xml" className="hover:text-slate-400">
+            <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
               Sitemap
             </Link>
           </div>
