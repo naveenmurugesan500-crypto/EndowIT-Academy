@@ -1,353 +1,455 @@
 [
-  {
-    "id": "digital-marketing",
-    "slug": "digital-marketing",
-    "title": "Digital Marketing & AI Growth Strategy",
-    "shortDescription": "Run live client ad campaigns, master SEO, Meta Ads, and AI tools with a guaranteed practical internship.",
-    "category": "Marketing",
-    "duration": "3 Months",
-    "mode": "Classroom & Online",
-    "rating": 4.9,
-    "reviewsCount": 48,
-    "badge": "Most Popular",
-    "price": "₹14,999",
-    "originalPrice": "₹22,000",
-    "emiPrice": "Split Payment (2 Installments)",
-    "internshipIncluded": true,
-    "liveProjectsCount": "Live Agency Client Projects",
-    "highlighted": true,
-    "salaryRange": "₹3.5 LPA - ₹7.5 LPA",
-    "heroImage": "/images/courses/digitalmarketing.jpg",
-    "overview": "Designed for real agency exposure. Instead of just learning slides, you will manage live ad budgets on Meta Ads and Google Ads, conduct technical SEO audits on active client websites, and leverage Generative AI tools like ChatGPT for high-converting marketing campaigns.",
-    "keyHighlights": [
-      "Guaranteed Practical Internship Certificate",
-      "Live Ad Budget Provided for Real Campaigns",
-      "Real Client Projects & Portfolio Building",
-      "1-on-1 Mentorship (Max 10-15 students per batch)",
-      "Resume & Interview Placement Support"
-    ],
-    "tools": ["Google Analytics 4 (GA4)", "Google Search Console", "SEMrush", "Google Ads", "Meta Ads Manager", "Canva", "ChatGPT AI", "WordPress"],
-    "modules": [
-      {
-        "title": "Module 1: Real-World SEO & Keyword Research",
-        "topics": [
-          "Search Engine Architecture & Ranking Factors",
-          "Keyword Research & Search Intent using SEMrush",
-          "On-Page SEO, Schema Markup & Technical Audits",
-          "Off-Page Link Building & High-Quality Outreach"
-        ]
-      },
-      {
-        "title": "Module 2: Paid Ads (Google Ads & Meta Ads)",
-        "topics": [
-          "Google Search & Performance Max Campaigns",
-          "Meta Ads Manager: Audience Targeting & Pixel Tracking",
-          "A/B Testing Ad Creatives & Budget Scaling",
-          "Landing Page Conversion Rate Optimization (CRO)"
-        ]
-      },
-      {
-        "title": "Module 3: Social Media & Viral Content Strategy",
-        "topics": [
-          "Instagram & LinkedIn Growth Systems",
-          "Short-Form Video Scripting & Content Calendars",
-          "AI Copywriting with ChatGPT & Claude"
-        ]
-      },
-      {
-        "title": "Module 4: Practical Client Internship & Reporting",
-        "topics": [
-          "GA4 Custom Events & Conversion Funnel Setup",
-          "Live Client Campaign Management",
-          "Freelance Pitching, Client Reporting & Agency Workflow"
-        ]
-      }
-    ],
-    "careerRoles": ["Digital Marketing Executive", "Performance Marketer", "SEO Specialist", "Social Media Strategist", "Agency Freelancer"],
-    "faq": [
-      {
-        "question": "Will I get real hands-on projects?",
-        "answer": "Yes. We allocate live campaign budgets so you run real Meta and Google ads for actual businesses."
-      },
-      {
-        "question": "Is internship included?",
-        "answer": "Yes, every student receives an official practical internship certificate on completion."
-      }
-    ]
-  },
-  {
-    "id": "full-stack-web-development",
-    "slug": "full-stack-development",
-    "title": "Full Stack Web Development (MERN & Next.js)",
-    "shortDescription": "Build and deploy production-grade SaaS web applications using React, Next.js, Node.js, and MongoDB.",
-    "category": "Development",
-    "duration": "3 Months",
-    "mode": "Classroom & Online",
-    "rating": 4.92,
-    "reviewsCount": 65,
-    "badge": "Highest Demand",
-    "price": "₹19,999",
-    "originalPrice": "₹28,000",
-    "emiPrice": "Split Payment (2 Installments)",
-    "internshipIncluded": true,
-    "liveProjectsCount": "5+ Production Capstone Projects",
-    "highlighted": true,
-    "salaryRange": "₹4.5 LPA - ₹10 LPA",
-    "heroImage": "/images/courses/fullstack.jpg",
-    "overview": "Learn end-to-end full stack software development through coding real applications. From modern JavaScript and React with Tailwind CSS to secure REST APIs with Node.js and MongoDB, you graduate with real GitHub repositories and an internship certificate.",
-    "keyHighlights": [
-      "Guaranteed Practical Internship on Real Software Projects",
-      "5+ Deployed Production Capstones on Vercel & AWS",
-      "Strict Small Batches (10-15 students only)",
-      "Technical Mock Interviews & LeetCode/DSA guidance",
-      "Dedicated Placement Assistance"
-    ],
-    "tools": ["HTML5/CSS3", "JavaScript ES6+", "TypeScript", "React", "Next.js", "Node.js", "Express", "MongoDB", "PostgreSQL", "Git & GitHub", "Tailwind CSS"],
-    "modules": [
-      {
-        "title": "Module 1: Modern Frontend Engineering",
-        "topics": [
-          "HTML5 Semantic Layouts & Tailwind CSS Responsive Design",
-          "JavaScript Deep Dive: Async/Await, Closures, DOM Manipulation",
-          "TypeScript Fundamentals & Type Safety",
-          "React.js: Hooks, State Management & Modern Components",
-          "Next.js App Router & Server-Side Rendering (SSR)"
-        ]
-      },
-      {
-        "title": "Module 2: Backend REST APIs & Databases",
-        "topics": [
-          "Node.js Runtime & Express.js RESTful API Architecture",
-          "JWT Authentication, Cookies & Password Hashing",
-          "MongoDB & Mongoose Schema Design",
-          "PostgreSQL Relational Database Basics"
-        ]
-      },
-      {
-        "title": "Module 3: Full Stack Integration & Deployment",
-        "topics": [
-          "Connecting Frontend with Backend APIs",
-          "Git Version Control & GitHub Team Collaborations",
-          "Deploying Live Web Apps to Vercel, Render & AWS",
-          "Building a Live E-Commerce / SaaS Platform"
-        ]
-      }
-    ],
-    "careerRoles": ["Full Stack Developer", "MERN Stack Developer", "Frontend Engineer", "Backend Developer"],
-    "faq": [
-      {
-        "question": "Can beginners join without previous coding background?",
-        "answer": "Yes, our training begins from absolute computer science fundamentals and syntax basics."
-      }
-    ]
-  },
-  {
-    "id": "data-analytics",
-    "slug": "data-analytics",
-    "title": "Data Analytics & Business Intelligence (Power BI + SQL)",
-    "shortDescription": "Transform complex business data into interactive executive dashboards using SQL, Power BI, Advanced Excel, and Python.",
-    "category": "Data & AI",
-    "duration": "3 Months",
-    "mode": "Classroom & Online",
-    "rating": 4.88,
-    "reviewsCount": 42,
-    "badge": "Fastest Job Track",
-    "price": "₹17,999",
-    "originalPrice": "₹25,000",
-    "emiPrice": "Split Payment (2 Installments)",
-    "internshipIncluded": true,
-    "liveProjectsCount": "4 Enterprise Case Studies",
-    "highlighted": true,
-    "salaryRange": "₹4.0 LPA - ₹8.5 LPA",
-    "heroImage": "/images/courses/dataanalytics.jpg",
-    "overview": "Data Analytics is the fastest transition path into the IT sector for freshers from any degree. Learn to clean dirty data, write enterprise SQL queries, design Power BI dashboards with DAX, and formulate business insights.",
-    "keyHighlights": [
-      "Guaranteed Practical Internship Certificate",
-      "Power BI & Tableau Certified Practical Curriculum",
-      "4 Enterprise Dashboards for your Portfolio",
-      "Placement Support & Technical Screening Sessions"
-    ],
-    "tools": ["Advanced Excel", "SQL", "Power BI", "Tableau", "Python Basics", "Pandas", "DAX", "Power Query"],
-    "modules": [
-      {
-        "title": "Module 1: Advanced Excel for Business",
-        "topics": [
-          "XLOOKUP, Dynamic Formulas & Nested Logic",
-          "Pivot Tables, Slicers & Power Pivot Data Modeling",
-          "What-If Analysis & Executive KPI Tracking"
-        ]
-      },
-      {
-        "title": "Module 2: Enterprise SQL Mastery",
-        "topics": [
-          "Data Querying, Filtering, Aggregations & Grouping",
-          "Complex Joins (Inner, Left, Right, Full)",
-          "Window Functions (ROW_NUMBER, RANK, LEAD, LAG)",
-          "Subqueries & Common Table Expressions (CTEs)"
-        ]
-      },
-      {
-        "title": "Module 3: Power BI Dashboard Engineering",
-        "topics": [
-          "Power Query ETL & Data Cleansing",
-          "DAX Measures, Calculated Columns & Time Intelligence",
-          "Designing Interactive Business Dashboards"
-        ]
-      }
-    ],
-    "careerRoles": ["Data Analyst", "BI Analyst", "SQL Reporting Specialist", "MIS Executive"],
-    "faq": [
-      {
-        "question": "Is math or coding required?",
-        "answer": "Basic logic and curiosity are all you need. We guide you step by step."
-      }
-    ]
-  },
-  {
-    "id": "data-science-ai",
-    "slug": "data-science-and-ai",
-    "title": "Data Science & Artificial Intelligence Professional",
-    "shortDescription": "Master Python, Machine Learning, Deep Learning, and Generative AI with real datasets.",
-    "category": "Data & AI",
-    "duration": "3 Months",
-    "mode": "Classroom & Online",
-    "rating": 4.95,
-    "reviewsCount": 36,
-    "badge": "Advanced Program",
-    "price": "₹24,999",
-    "originalPrice": "₹35,000",
-    "emiPrice": "Split Payment (2 Installments)",
-    "internshipIncluded": true,
-    "liveProjectsCount": "4 Machine Learning Capstones",
-    "highlighted": false,
-    "salaryRange": "₹5.5 LPA - ₹14 LPA",
-    "heroImage": "/images/courses/datascience.jpg",
-    "overview": "A rigorous, hands-on dive into predictive modeling, supervised and unsupervised machine learning, neural networks, and modern Generative AI / LLM prompt engineering.",
-    "keyHighlights": [
-      "Guaranteed Practical Internship & Project Mentorship",
-      "Hands-on with PyTorch, TensorFlow & Scikit-Learn",
-      "Generative AI & LLM Prompting Modules",
-      "Placement Support & Technical Interview Drills"
-    ],
-    "tools": ["Python", "NumPy", "Pandas", "Scikit-Learn", "TensorFlow", "PyTorch", "LangChain", "SQL"],
-    "modules": [
-      {
-        "title": "Module 1: Python for Data Science",
-        "topics": ["Python OOPs, NumPy, Pandas, Matplotlib, Seaborn"]
-      },
-      {
-        "title": "Module 2: Machine Learning Algorithms",
-        "topics": ["Regression, Classification, Decision Trees, Random Forests, XGBoost"]
-      },
-      {
-        "title": "Module 3: Deep Learning & Generative AI",
-        "topics": ["Neural Networks, Computer Vision basics, NLP & LLMs"]
-      }
-    ],
-    "careerRoles": ["Data Scientist", "Machine Learning Associate", "AI Developer"],
-    "faq": [
-      {
-        "question": "Is practical internship provided?",
-        "answer": "Yes, every enrolled student works on real datasets during their practical internship."
-      }
-    ]
-  },
-  {
-    "id": "cloud-computing-devops",
-    "slug": "cloud-and-devops",
-    "title": "AWS Cloud & DevOps Engineering",
-    "shortDescription": "Master Linux, AWS Cloud Architecture, Docker, Kubernetes, CI/CD pipelines, and Terraform.",
-    "category": "Cloud & Infra",
-    "duration": "3 Months",
-    "mode": "Classroom & Online",
-    "rating": 4.9,
-    "reviewsCount": 31,
-    "badge": "High Demand",
-    "price": "₹18,999",
-    "originalPrice": "₹26,000",
-    "emiPrice": "Split Payment (2 Installments)",
-    "internshipIncluded": true,
-    "liveProjectsCount": "3 Cloud Architecture Deployments",
-    "highlighted": false,
-    "salaryRange": "₹5.0 LPA - ₹12 LPA",
-    "heroImage": "/images/courses/devops.jpg",
-    "overview": "Learn how modern IT operations scale. From Linux shell scripting and AWS infrastructure to containerization with Docker and Kubernetes cluster management.",
-    "keyHighlights": [
-      "Practical Hands-on Cloud Sandbox Labs",
-      "Guaranteed Internship Project Experience",
-      "AWS Certified Solutions Architect syllabus alignment",
-      "Interview Coaching & Resume Guidance"
-    ],
-    "tools": ["AWS", "Linux", "Docker", "Kubernetes", "Terraform", "Git", "Jenkins", "GitHub Actions"],
-    "modules": [
-      {
-        "title": "Module 1: Linux & AWS Core Services",
-        "topics": ["Shell Scripting, EC2, VPC, S3, IAM, Route53"]
-      },
-      {
-        "title": "Module 2: Docker & Kubernetes",
-        "topics": ["Containerization, Dockerfiles, Pods, Deployments, Services"]
-      },
-      {
-        "title": "Module 3: CI/CD & Terraform",
-        "topics": ["Jenkins pipelines, Infrastructure as Code with Terraform"]
-      }
-    ],
-    "careerRoles": ["DevOps Engineer", "Cloud Associate", "Site Reliability Engineer (SRE)"],
-    "faq": [
-      {
-        "question": "Will I get cloud lab access?",
-        "answer": "Yes, we provide hands-on AWS lab guides for all deployment exercises."
-      }
-    ]
-  },
-  {
-    "id": "software-testing-qa",
-    "slug": "software-testing",
-    "title": "Software Testing & Automation (Selenium + API)",
-    "shortDescription": "Master Manual Testing, Selenium WebDriver Automation, TestNG, Cucumber BDD, and Postman API Testing.",
-    "category": "Testing & QA",
-    "duration": "3 Months",
-    "mode": "Classroom & Online",
-    "rating": 4.86,
-    "reviewsCount": 35,
-    "badge": "Quick Job Track",
-    "price": "₹13,999",
-    "originalPrice": "₹20,000",
-    "emiPrice": "Split Payment (2 Installments)",
-    "internshipIncluded": true,
-    "liveProjectsCount": "Live Web App Testing",
-    "highlighted": false,
-    "salaryRange": "₹3.5 LPA - ₹7.0 LPA",
-    "heroImage": "/images/courses/testing.jpg",
-    "overview": "A practical training program covering manual test scenarios, Jira defect tracking, Core Java, Selenium WebDriver automation, and Postman API testing.",
-    "keyHighlights": [
-      "Guaranteed Practical Internship on Real Web Applications",
-      "Selenium + Cucumber Hybrid Framework Development",
-      "ISTQB Exam Preparation Guidance",
-      "Dedicated Placement Support"
-    ],
-    "tools": ["Selenium WebDriver", "Core Java", "TestNG", "Postman", "Jira", "Cucumber BDD", "Git"],
-    "modules": [
-      {
-        "title": "Module 1: Manual Testing & Agile",
-        "topics": ["SDLC/STLC, Test Cases, Bug Life Cycle, Jira Defect Management"]
-      },
-      {
-        "title": "Module 2: Core Java & Selenium WebDriver",
-        "topics": ["Java OOPs, Web Elements, Locators, Waits, TestNG Framework"]
-      },
-      {
-        "title": "Module 3: API Testing & Framework",
-        "topics": ["Postman API Testing, Cucumber BDD, Project Validation"]
-      }
-    ],
-    "careerRoles": ["QA Automation Engineer", "Manual Tester", "API Test Engineer"],
-    "faq": [
-      {
-        "question": "Do I need coding experience?",
-        "answer": "No. We teach Core Java from absolute basics before moving to Selenium."
-      }
-    ]
-  }
+    {
+        "id":  "digital-marketing",
+        "slug":  "digital-marketing",
+        "title":  "Digital Marketing \u0026 AI Growth Strategy",
+        "shortDescription":  "Run live client ad campaigns, master SEO, Meta Ads, and AI tools with a guaranteed practical internship.",
+        "category":  "Marketing",
+        "duration":  "3 Months",
+        "mode":  "Classroom \u0026 Online",
+        "rating":  4.9,
+        "reviewsCount":  48,
+        "badge":  "Most Popular",
+        "price":  "₹14,999",
+        "originalPrice":  "₹25,000",
+        "emiPrice":  "Split Payment: ₹4,999 / Month",
+        "internshipIncluded":  true,
+        "liveProjectsCount":  "Live Agency Client Projects",
+        "highlighted":  true,
+        "salaryRange":  "â‚¹3.5 LPA - â‚¹7.5 LPA",
+        "heroImage":  "/images/courses/digitalmarketing.jpg",
+        "overview":  "Designed for real agency exposure. Instead of just learning slides, you will manage live ad budgets on Meta Ads and Google Ads, conduct technical SEO audits on active client websites, and leverage Generative AI tools like ChatGPT for high-converting marketing campaigns.",
+        "keyHighlights":  [
+                              "Guaranteed Practical Internship Certificate",
+                              "Live Ad Budget Provided for Real Campaigns",
+                              "Real Client Projects \u0026 Portfolio Building",
+                              "1-on-1 Mentorship (Max 10-15 students per batch)",
+                              "Resume \u0026 Interview Placement Support"
+                          ],
+        "tools":  [
+                      "Google Analytics 4 (GA4)",
+                      "Google Search Console",
+                      "SEMrush",
+                      "Google Ads",
+                      "Meta Ads Manager",
+                      "Canva",
+                      "ChatGPT AI",
+                      "WordPress"
+                  ],
+        "modules":  [
+                        {
+                            "title":  "Module 1: Real-World SEO \u0026 Keyword Research",
+                            "topics":  [
+                                           "Search Engine Architecture \u0026 Ranking Factors",
+                                           "Keyword Research \u0026 Search Intent using SEMrush",
+                                           "On-Page SEO, Schema Markup \u0026 Technical Audits",
+                                           "Off-Page Link Building \u0026 High-Quality Outreach"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 2: Paid Ads (Google Ads \u0026 Meta Ads)",
+                            "topics":  [
+                                           "Google Search \u0026 Performance Max Campaigns",
+                                           "Meta Ads Manager: Audience Targeting \u0026 Pixel Tracking",
+                                           "A/B Testing Ad Creatives \u0026 Budget Scaling",
+                                           "Landing Page Conversion Rate Optimization (CRO)"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 3: Social Media \u0026 Viral Content Strategy",
+                            "topics":  [
+                                           "Instagram \u0026 LinkedIn Growth Systems",
+                                           "Short-Form Video Scripting \u0026 Content Calendars",
+                                           "AI Copywriting with ChatGPT \u0026 Claude"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 4: Practical Client Internship \u0026 Reporting",
+                            "topics":  [
+                                           "GA4 Custom Events \u0026 Conversion Funnel Setup",
+                                           "Live Client Campaign Management",
+                                           "Freelance Pitching, Client Reporting \u0026 Agency Workflow"
+                                       ]
+                        }
+                    ],
+        "careerRoles":  [
+                            "Digital Marketing Executive",
+                            "Performance Marketer",
+                            "SEO Specialist",
+                            "Social Media Strategist",
+                            "Agency Freelancer"
+                        ],
+        "faq":  [
+                    {
+                        "question":  "Will I get real hands-on projects?",
+                        "answer":  "Yes. We allocate live campaign budgets so you run real Meta and Google ads for actual businesses."
+                    },
+                    {
+                        "question":  "Is internship included?",
+                        "answer":  "Yes, every student receives an official practical internship certificate on completion."
+                    }
+                ]
+    },
+    {
+        "id":  "full-stack-web-development",
+        "slug":  "full-stack-development",
+        "title":  "Full Stack Web Development (MERN \u0026 Next.js)",
+        "shortDescription":  "Build and deploy production-grade SaaS web applications using React, Next.js, Node.js, and MongoDB.",
+        "category":  "Development",
+        "duration":  "3 Months",
+        "mode":  "Classroom \u0026 Online",
+        "rating":  4.92,
+        "reviewsCount":  65,
+        "badge":  "Highest Demand",
+        "price":  "₹14,999",
+        "originalPrice":  "₹25,000",
+        "emiPrice":  "Split Payment: ₹4,999 / Month",
+        "internshipIncluded":  true,
+        "liveProjectsCount":  "5+ Production Capstone Projects",
+        "highlighted":  true,
+        "salaryRange":  "â‚¹4.5 LPA - â‚¹10 LPA",
+        "heroImage":  "/images/courses/fullstack.jpg",
+        "overview":  "Learn end-to-end full stack software development through coding real applications. From modern JavaScript and React with Tailwind CSS to secure REST APIs with Node.js and MongoDB, you graduate with real GitHub repositories and an internship certificate.",
+        "keyHighlights":  [
+                              "Guaranteed Practical Internship on Real Software Projects",
+                              "5+ Deployed Production Capstones on Vercel \u0026 AWS",
+                              "Strict Small Batches (10-15 students only)",
+                              "Technical Mock Interviews \u0026 LeetCode/DSA guidance",
+                              "Dedicated Placement Assistance"
+                          ],
+        "tools":  [
+                      "HTML5/CSS3",
+                      "JavaScript ES6+",
+                      "TypeScript",
+                      "React",
+                      "Next.js",
+                      "Node.js",
+                      "Express",
+                      "MongoDB",
+                      "PostgreSQL",
+                      "Git \u0026 GitHub",
+                      "Tailwind CSS"
+                  ],
+        "modules":  [
+                        {
+                            "title":  "Module 1: Modern Frontend Engineering",
+                            "topics":  [
+                                           "HTML5 Semantic Layouts \u0026 Tailwind CSS Responsive Design",
+                                           "JavaScript Deep Dive: Async/Await, Closures, DOM Manipulation",
+                                           "TypeScript Fundamentals \u0026 Type Safety",
+                                           "React.js: Hooks, State Management \u0026 Modern Components",
+                                           "Next.js App Router \u0026 Server-Side Rendering (SSR)"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 2: Backend REST APIs \u0026 Databases",
+                            "topics":  [
+                                           "Node.js Runtime \u0026 Express.js RESTful API Architecture",
+                                           "JWT Authentication, Cookies \u0026 Password Hashing",
+                                           "MongoDB \u0026 Mongoose Schema Design",
+                                           "PostgreSQL Relational Database Basics"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 3: Full Stack Integration \u0026 Deployment",
+                            "topics":  [
+                                           "Connecting Frontend with Backend APIs",
+                                           "Git Version Control \u0026 GitHub Team Collaborations",
+                                           "Deploying Live Web Apps to Vercel, Render \u0026 AWS",
+                                           "Building a Live E-Commerce / SaaS Platform"
+                                       ]
+                        }
+                    ],
+        "careerRoles":  [
+                            "Full Stack Developer",
+                            "MERN Stack Developer",
+                            "Frontend Engineer",
+                            "Backend Developer"
+                        ],
+        "faq":  [
+                    {
+                        "question":  "Can beginners join without previous coding background?",
+                        "answer":  "Yes, our training begins from absolute computer science fundamentals and syntax basics."
+                    }
+                ]
+    },
+    {
+        "id":  "data-analytics",
+        "slug":  "data-analytics",
+        "title":  "Data Analytics \u0026 Business Intelligence (Power BI + SQL)",
+        "shortDescription":  "Transform complex business data into interactive executive dashboards using SQL, Power BI, Advanced Excel, and Python.",
+        "category":  "Data \u0026 AI",
+        "duration":  "3 Months",
+        "mode":  "Classroom \u0026 Online",
+        "rating":  4.88,
+        "reviewsCount":  42,
+        "badge":  "Fastest Job Track",
+        "price":  "₹14,999",
+        "originalPrice":  "₹25,000",
+        "emiPrice":  "Split Payment: ₹4,999 / Month",
+        "internshipIncluded":  true,
+        "liveProjectsCount":  "4 Enterprise Case Studies",
+        "highlighted":  true,
+        "salaryRange":  "â‚¹4.0 LPA - â‚¹8.5 LPA",
+        "heroImage":  "/images/courses/dataanalytics.jpg",
+        "overview":  "Data Analytics is the fastest transition path into the IT sector for freshers from any degree. Learn to clean dirty data, write enterprise SQL queries, design Power BI dashboards with DAX, and formulate business insights.",
+        "keyHighlights":  [
+                              "Guaranteed Practical Internship Certificate",
+                              "Power BI \u0026 Tableau Certified Practical Curriculum",
+                              "4 Enterprise Dashboards for your Portfolio",
+                              "Placement Support \u0026 Technical Screening Sessions"
+                          ],
+        "tools":  [
+                      "Advanced Excel",
+                      "SQL",
+                      "Power BI",
+                      "Tableau",
+                      "Python Basics",
+                      "Pandas",
+                      "DAX",
+                      "Power Query"
+                  ],
+        "modules":  [
+                        {
+                            "title":  "Module 1: Advanced Excel for Business",
+                            "topics":  [
+                                           "XLOOKUP, Dynamic Formulas \u0026 Nested Logic",
+                                           "Pivot Tables, Slicers \u0026 Power Pivot Data Modeling",
+                                           "What-If Analysis \u0026 Executive KPI Tracking"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 2: Enterprise SQL Mastery",
+                            "topics":  [
+                                           "Data Querying, Filtering, Aggregations \u0026 Grouping",
+                                           "Complex Joins (Inner, Left, Right, Full)",
+                                           "Window Functions (ROW_NUMBER, RANK, LEAD, LAG)",
+                                           "Subqueries \u0026 Common Table Expressions (CTEs)"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 3: Power BI Dashboard Engineering",
+                            "topics":  [
+                                           "Power Query ETL \u0026 Data Cleansing",
+                                           "DAX Measures, Calculated Columns \u0026 Time Intelligence",
+                                           "Designing Interactive Business Dashboards"
+                                       ]
+                        }
+                    ],
+        "careerRoles":  [
+                            "Data Analyst",
+                            "BI Analyst",
+                            "SQL Reporting Specialist",
+                            "MIS Executive"
+                        ],
+        "faq":  [
+                    {
+                        "question":  "Is math or coding required?",
+                        "answer":  "Basic logic and curiosity are all you need. We guide you step by step."
+                    }
+                ]
+    },
+    {
+        "id":  "data-science-ai",
+        "slug":  "data-science-and-ai",
+        "title":  "Data Science \u0026 Artificial Intelligence Professional",
+        "shortDescription":  "Master Python, Machine Learning, Deep Learning, and Generative AI with real datasets.",
+        "category":  "Data \u0026 AI",
+        "duration":  "3 Months",
+        "mode":  "Classroom \u0026 Online",
+        "rating":  4.95,
+        "reviewsCount":  36,
+        "badge":  "Advanced Program",
+        "price":  "₹14,999",
+        "originalPrice":  "₹25,000",
+        "emiPrice":  "Split Payment: ₹4,999 / Month",
+        "internshipIncluded":  true,
+        "liveProjectsCount":  "4 Machine Learning Capstones",
+        "highlighted":  false,
+        "salaryRange":  "â‚¹5.5 LPA - â‚¹14 LPA",
+        "heroImage":  "/images/courses/datascience.jpg",
+        "overview":  "A rigorous, hands-on dive into predictive modeling, supervised and unsupervised machine learning, neural networks, and modern Generative AI / LLM prompt engineering.",
+        "keyHighlights":  [
+                              "Guaranteed Practical Internship \u0026 Project Mentorship",
+                              "Hands-on with PyTorch, TensorFlow \u0026 Scikit-Learn",
+                              "Generative AI \u0026 LLM Prompting Modules",
+                              "Placement Support \u0026 Technical Interview Drills"
+                          ],
+        "tools":  [
+                      "Python",
+                      "NumPy",
+                      "Pandas",
+                      "Scikit-Learn",
+                      "TensorFlow",
+                      "PyTorch",
+                      "LangChain",
+                      "SQL"
+                  ],
+        "modules":  [
+                        {
+                            "title":  "Module 1: Python for Data Science",
+                            "topics":  [
+                                           "Python OOPs, NumPy, Pandas, Matplotlib, Seaborn"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 2: Machine Learning Algorithms",
+                            "topics":  [
+                                           "Regression, Classification, Decision Trees, Random Forests, XGBoost"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 3: Deep Learning \u0026 Generative AI",
+                            "topics":  [
+                                           "Neural Networks, Computer Vision basics, NLP \u0026 LLMs"
+                                       ]
+                        }
+                    ],
+        "careerRoles":  [
+                            "Data Scientist",
+                            "Machine Learning Associate",
+                            "AI Developer"
+                        ],
+        "faq":  [
+                    {
+                        "question":  "Is practical internship provided?",
+                        "answer":  "Yes, every enrolled student works on real datasets during their practical internship."
+                    }
+                ]
+    },
+    {
+        "id":  "cloud-computing-devops",
+        "slug":  "cloud-and-devops",
+        "title":  "AWS Cloud \u0026 DevOps Engineering",
+        "shortDescription":  "Master Linux, AWS Cloud Architecture, Docker, Kubernetes, CI/CD pipelines, and Terraform.",
+        "category":  "Cloud \u0026 Infra",
+        "duration":  "3 Months",
+        "mode":  "Classroom \u0026 Online",
+        "rating":  4.9,
+        "reviewsCount":  31,
+        "badge":  "High Demand",
+        "price":  "₹14,999",
+        "originalPrice":  "₹25,000",
+        "emiPrice":  "Split Payment: ₹4,999 / Month",
+        "internshipIncluded":  true,
+        "liveProjectsCount":  "3 Cloud Architecture Deployments",
+        "highlighted":  false,
+        "salaryRange":  "â‚¹5.0 LPA - â‚¹12 LPA",
+        "heroImage":  "/images/courses/devops.jpg",
+        "overview":  "Learn how modern IT operations scale. From Linux shell scripting and AWS infrastructure to containerization with Docker and Kubernetes cluster management.",
+        "keyHighlights":  [
+                              "Practical Hands-on Cloud Sandbox Labs",
+                              "Guaranteed Internship Project Experience",
+                              "AWS Certified Solutions Architect syllabus alignment",
+                              "Interview Coaching \u0026 Resume Guidance"
+                          ],
+        "tools":  [
+                      "AWS",
+                      "Linux",
+                      "Docker",
+                      "Kubernetes",
+                      "Terraform",
+                      "Git",
+                      "Jenkins",
+                      "GitHub Actions"
+                  ],
+        "modules":  [
+                        {
+                            "title":  "Module 1: Linux \u0026 AWS Core Services",
+                            "topics":  [
+                                           "Shell Scripting, EC2, VPC, S3, IAM, Route53"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 2: Docker \u0026 Kubernetes",
+                            "topics":  [
+                                           "Containerization, Dockerfiles, Pods, Deployments, Services"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 3: CI/CD \u0026 Terraform",
+                            "topics":  [
+                                           "Jenkins pipelines, Infrastructure as Code with Terraform"
+                                       ]
+                        }
+                    ],
+        "careerRoles":  [
+                            "DevOps Engineer",
+                            "Cloud Associate",
+                            "Site Reliability Engineer (SRE)"
+                        ],
+        "faq":  [
+                    {
+                        "question":  "Will I get cloud lab access?",
+                        "answer":  "Yes, we provide hands-on AWS lab guides for all deployment exercises."
+                    }
+                ]
+    },
+    {
+        "id":  "software-testing-qa",
+        "slug":  "software-testing",
+        "title":  "Software Testing \u0026 Automation (Selenium + API)",
+        "shortDescription":  "Master Manual Testing, Selenium WebDriver Automation, TestNG, Cucumber BDD, and Postman API Testing.",
+        "category":  "Testing \u0026 QA",
+        "duration":  "3 Months",
+        "mode":  "Classroom \u0026 Online",
+        "rating":  4.86,
+        "reviewsCount":  35,
+        "badge":  "Quick Job Track",
+        "price":  "₹14,999",
+        "originalPrice":  "₹25,000",
+        "emiPrice":  "Split Payment: ₹4,999 / Month",
+        "internshipIncluded":  true,
+        "liveProjectsCount":  "Live Web App Testing",
+        "highlighted":  false,
+        "salaryRange":  "â‚¹3.5 LPA - â‚¹7.0 LPA",
+        "heroImage":  "/images/courses/testing.jpg",
+        "overview":  "A practical training program covering manual test scenarios, Jira defect tracking, Core Java, Selenium WebDriver automation, and Postman API testing.",
+        "keyHighlights":  [
+                              "Guaranteed Practical Internship on Real Web Applications",
+                              "Selenium + Cucumber Hybrid Framework Development",
+                              "ISTQB Exam Preparation Guidance",
+                              "Dedicated Placement Support"
+                          ],
+        "tools":  [
+                      "Selenium WebDriver",
+                      "Core Java",
+                      "TestNG",
+                      "Postman",
+                      "Jira",
+                      "Cucumber BDD",
+                      "Git"
+                  ],
+        "modules":  [
+                        {
+                            "title":  "Module 1: Manual Testing \u0026 Agile",
+                            "topics":  [
+                                           "SDLC/STLC, Test Cases, Bug Life Cycle, Jira Defect Management"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 2: Core Java \u0026 Selenium WebDriver",
+                            "topics":  [
+                                           "Java OOPs, Web Elements, Locators, Waits, TestNG Framework"
+                                       ]
+                        },
+                        {
+                            "title":  "Module 3: API Testing \u0026 Framework",
+                            "topics":  [
+                                           "Postman API Testing, Cucumber BDD, Project Validation"
+                                       ]
+                        }
+                    ],
+        "careerRoles":  [
+                            "QA Automation Engineer",
+                            "Manual Tester",
+                            "API Test Engineer"
+                        ],
+        "faq":  [
+                    {
+                        "question":  "Do I need coding experience?",
+                        "answer":  "No. We teach Core Java from absolute basics before moving to Selenium."
+                    }
+                ]
+    }
 ]

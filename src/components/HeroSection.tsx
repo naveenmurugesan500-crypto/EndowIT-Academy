@@ -57,12 +57,18 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
           
           {/* ================= COLUMN 1: Headline, Copy & CTAs (5 Cols) ================= */}
           <div className="lg:col-span-5 space-y-5 text-center lg:text-left z-20">
-            {/* Launch Offer Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-emerald-50 border border-emerald-200/90 text-xs sm:text-sm font-semibold text-emerald-800 shadow-sm">
-              <span className="text-base">🎉</span>
-              <span>New Batch Special Launch Offer</span>
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600 animate-bounce" />
-            </div>
+            {/* Launch Offer Pill Badge with Link to Grand Opening Offer */}
+            <Link
+              href="/opening-offer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-amber-50 border border-emerald-300/80 text-xs sm:text-sm font-semibold text-emerald-900 shadow-sm hover:scale-[1.02] transition-all group"
+            >
+              <span className="text-base animate-bounce">🎉</span>
+              <span>
+                <strong>Grand Opening Offer:</strong> First 20 Students Flat{" "}
+                <span className="text-emerald-700 font-extrabold underline">₹5,000 Only</span>
+              </span>
+              <ArrowRight className="w-3.5 h-3.5 text-emerald-700 group-hover:translate-x-1 transition-transform" />
+            </Link>
 
             {/* Eyebrow & Main Headline */}
             <div className="space-y-1">
@@ -97,8 +103,8 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
             {/* Subtitle / Description */}
             <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Master in-demand tech skills with industry-oriented{" "}
-              <strong className="text-slate-900 font-semibold">3-Month practical training</strong> and{" "}
-              <strong className="text-emerald-600 font-semibold">100% placement support</strong> for a successful IT career.
+              <strong className="text-slate-900 font-semibold">3-Month practical training</strong>, live client ad budgets/code, and{" "}
+              <strong className="text-emerald-600 font-semibold">guaranteed practical internship</strong> with complete placement support.
             </p>
 
             {/* Action Buttons */}
@@ -156,12 +162,12 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
               <div className="rounded-t-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white p-4 text-center">
                 <div className="flex items-center justify-center gap-2 font-extrabold text-xs sm:text-sm uppercase tracking-wider">
                   <Flame className="w-4 h-4 text-amber-300 animate-bounce" />
-                  <span>New Batch Offer</span>
+                  <span>Special Launch Offer</span>
                 </div>
               </div>
 
               {/* Regular Fees Section with Red Strikethrough */}
-              <div className="py-4 px-5 text-center space-y-1">
+              <div className="py-3 px-5 text-center space-y-0.5">
                 <span className="text-xs font-semibold text-slate-500">Regular fees</span>
                 <div className="relative inline-block">
                   <span className="text-2xl sm:text-3xl font-extrabold text-slate-800 tracking-tight">
@@ -174,8 +180,8 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
 
               {/* Protruding Popped-out Bright Green Join Box (Elevated & Pulsing) */}
               <div className="mx-[-12px] my-1 p-5 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 text-white text-center shadow-xl shadow-emerald-500/35 border border-emerald-400/40 animate-offer-pulse">
-                <span className="text-xs font-semibold text-emerald-100 uppercase tracking-wider block">
-                  Join Today
+                <span className="text-xs font-bold text-emerald-100 uppercase tracking-wider block">
+                  For All Courses
                 </span>
                 <div className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-1 flex items-baseline justify-center gap-1">
                   <span>₹ 14,999</span>
@@ -184,21 +190,35 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
 
                 <button
                   onClick={onOpenDemoModal}
-                  className="w-full mt-3.5 py-2.5 px-4 rounded-xl font-extrabold text-xs sm:text-sm text-white bg-[#5b0f08] hover:bg-[#4a0b06] shadow-md transition-all uppercase tracking-wider"
+                  className="w-full mt-3 py-2.5 px-4 rounded-xl font-extrabold text-xs sm:text-sm text-white bg-[#5b0f08] hover:bg-[#4a0b06] shadow-md transition-all uppercase tracking-wider"
                 >
                   Pay Now To Join
                 </button>
               </div>
 
-              {/* Offer Validity and Split Payment Details */}
-              <div className="p-4 pt-3 text-center space-y-2 text-xs">
-                <div className="flex items-center justify-center gap-1.5 font-bold text-slate-800">
-                  <Clock className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Offer Valid For Next 15 Seats Only</span>
-                </div>
-                <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 text-[11px] leading-tight">
-                  <span>Flexible Split Payment: </span>
-                  <strong className="text-emerald-700">₹ 4,999 / Month</strong>
+              {/* Grand Opening ₹5,000 Special Banner Inside Card */}
+              <div className="p-3.5 space-y-2.5 text-center text-xs">
+                <Link
+                  href="/opening-offer"
+                  className="block p-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white shadow-md hover:scale-[1.02] transition-all text-left"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded">
+                      Opening Special
+                    </span>
+                    <span className="text-[11px] font-bold text-amber-100">Limited to 20</span>
+                  </div>
+                  <div className="text-sm font-black mt-1">
+                    First 20 Students: Flat ₹5,000 Only!
+                  </div>
+                  <p className="text-[10px] text-amber-100 mt-0.5 leading-tight">
+                    Full course + Internship + Placement. Zero extra fees afterward →
+                  </p>
+                </Link>
+
+                <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 text-[11px] leading-tight flex items-center justify-between">
+                  <span>Split Payment:</span>
+                  <strong className="text-emerald-700 font-bold">₹ 4,999 / Month</strong>
                 </div>
               </div>
             </div>

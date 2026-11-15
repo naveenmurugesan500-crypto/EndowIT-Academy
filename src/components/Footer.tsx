@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   Tag,
   Award,
+  Sparkles,
 } from "lucide-react";
 
 export default function Footer() {
@@ -98,16 +99,38 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Quick Links */}
+          {/* Col 3: Quick Links & Policies */}
           <div className="space-y-3">
             <h3 className="text-white text-xs font-bold uppercase tracking-wider">
-              Quick Links
+              Quick Links & Policies
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link href="/courses#pricing" className="hover:text-brand-400 transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <Link
+                  href="/opening-offer"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5 text-amber-400 font-extrabold"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Grand Opening Offer (₹5,000)</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/courses#pricing"
+                  className="hover:text-emerald-300 transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold"
+                >
                   <Tag className="w-3.5 h-3.5" />
-                  <span>Fees & Pricing</span>
+                  <span>Fees & Pricing (Flat ₹14,999)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-brand-400 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-and-conditions" className="hover:text-brand-400 transition-colors">
+                  Terms & Conditions
                 </Link>
               </li>
               <li>
@@ -117,12 +140,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/courses" className="hover:text-brand-400 transition-colors">
-                  All Courses
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-brand-400 transition-colors">
-                  Articles & Insights
+                  All 3-Month Courses
                 </Link>
               </li>
               <li>
@@ -175,14 +193,17 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© {currentYear} EndowIT Academy. All Rights Reserved.</p>
           <div className="flex items-center gap-6">
+            <Link href="/opening-offer" className="hover:text-amber-400 font-bold text-amber-500">
+              Grand Opening Offer (₹5,000)
+            </Link>
             <Link href="/privacy-policy" className="hover:text-slate-400">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-slate-400">
-              Terms of Service
+            <Link href="/terms-and-conditions" className="hover:text-slate-400">
+              Terms & Conditions
             </Link>
             <Link href="/sitemap.xml" className="hover:text-slate-400">
-              Sitemap (SEO)
+              Sitemap
             </Link>
           </div>
         </div>
