@@ -30,7 +30,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center pt-28 pb-14 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-blue-50/20 text-slate-900 border-b border-slate-200/80">
+    <section className="relative min-h-[85vh] flex flex-col justify-center pt-24 sm:pt-28 pb-8 sm:pb-10 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-blue-50/20 text-slate-900 border-b border-slate-200/80">
       {/* Background Soft Ambient Tech Lighting & Grid */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute top-10 left-1/3 w-[550px] h-[550px] bg-gradient-to-br from-blue-100/40 via-cyan-100/30 to-emerald-100/20 rounded-full blur-3xl" />
@@ -306,7 +306,7 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
         </div>
 
         {/* ================= DUAL-DIRECTION CONTINUOUS TECH STREAM ================= */}
-        <div className="mt-12 pt-6 border-t border-slate-200/70 overflow-hidden space-y-2.5">
+        <div className="mt-8 pt-4 border-t border-slate-200/70 overflow-hidden space-y-2.5">
           <div className="flex items-center justify-between px-2">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />

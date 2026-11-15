@@ -134,6 +134,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/certifications" className="hover:text-brand-400 transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold">
+                  <Award className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Dual Certifications</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-brand-400 transition-colors">
                   About Our Academy
                 </Link>
@@ -195,6 +201,9 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link href="/opening-offer" className="hover:text-amber-400 font-bold text-amber-500">
               Grand Opening Offer (₹5,000)
+            </Link>
+            <Link href="/certifications" className="hover:text-slate-400">
+              Certifications
             </Link>
             <Link href="/privacy-policy" className="hover:text-slate-400">
               Privacy Policy

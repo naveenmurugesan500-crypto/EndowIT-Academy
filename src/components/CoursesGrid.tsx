@@ -42,29 +42,29 @@ export default function CoursesGrid({
       : courses.filter((c) => c.category === selectedCategory);
 
   return (
-    <section className="py-12 sm:py-16 bg-transparent text-white relative" id="courses">
+    <section className="py-8 sm:py-10 bg-transparent text-white relative" id="courses">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-400/30">
-            <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span>Pure Practical 3-Month Curriculums</span>
+            <BookOpen className="w-4 h-4 text-cyan-400" />
+            <span>Job-Oriented Training Programs</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Explore All <span className="gradient-text-vibrant">3-Month Tech Programs</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Our 3-Month <span className="gradient-text-vibrant">Career Tracks</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-300">
-            Strictly 3-month durations, small batches (10–15 students), real client ad spend & software builds, guaranteed internship certificate, and dedicated placement assistance.
+          <p className="text-xs sm:text-sm text-slate-300">
+            Small batches (10–15 students), real client projects with actual ad spend and production deployments, guaranteed practical internship, and dedicated interview preparation.
           </p>
         </div>
 
         {/* Category Filters */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 selectedCategory === cat
                   ? "bg-brand-600 text-white shadow-md shadow-brand-500/25 scale-105"
                   : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
@@ -76,24 +76,22 @@ export default function CoursesGrid({
         </div>
 
         {/* Courses Cards Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCourses.map((course) => (
             <div
               key={course.id}
               className="group rounded-3xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
-              {/* Card Header & Badge */}
-              <div className="p-6 sm:p-7 pb-4">
+              {/* Card Header */}
+              <div className="p-6 pb-3">
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <span className="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
                     {course.category}
                   </span>
-                  {course.badge && (
-                    <span className="text-[11px] font-extrabold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 flex items-center gap-1 border border-amber-300/40">
-                      <Sparkles className="w-3 h-3" />
-                      {course.badge}
-                    </span>
-                  )}
+                  <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-emerald-500" />
+                    <span>3 Months</span>
+                  </span>
                 </div>
 
                 <Link href={`/courses/${course.slug}`}>

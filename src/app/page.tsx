@@ -71,16 +71,16 @@ export default function HomePage() {
       {/* 1. Hero Section (3D Education Universe + Authentic Stats) */}
       <HeroSection onOpenDemoModal={() => handleOpenDemoModal()} />
 
-      <div className="bg-slate-950 py-8 space-y-12 sm:space-y-16">
+      <div className="bg-slate-950 py-4 space-y-6 sm:space-y-8">
         {/* BLOCK 01: Platform & Industry Tools Strip */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-slate-900/90 border border-slate-800 p-5 sm:p-6 shadow-xl backdrop-blur-md">
-            <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-slate-400">
+          <div className="rounded-3xl bg-slate-900/90 border border-slate-800 p-4 sm:p-5 shadow-xl backdrop-blur-md">
+            <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-semibold text-slate-400">
               <span className="text-white font-bold flex items-center gap-2 uppercase tracking-wider text-[11px]">
                 <Sparkles className="w-4 h-4 text-accent-cyan" />
-                <span className="gradient-text-emerald">Live Tools You Work With:</span>
+                <span className="gradient-text-emerald">Tools You Work With:</span>
               </span>
-              <div className="flex flex-wrap items-center gap-5 sm:gap-6 text-slate-300">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-slate-300">
                 <span className="hover:text-cyan-400 transition-colors">Meta Ads Manager</span>
                 <span className="text-slate-700">•</span>
                 <span className="hover:text-cyan-400 transition-colors">Google Ads & GA4</span>
@@ -254,13 +254,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-[2.5rem] border border-amber-500/25 bg-gradient-to-b from-slate-900/95 via-navy-950/95 to-slate-950/95 shadow-2xl shadow-amber-950/20 overflow-hidden backdrop-blur-xl">
             {/* Top Block Header Bar */}
-            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-amber-500/10 text-[11px] font-mono tracking-widest font-bold uppercase">
+            <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-amber-500/10 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-amber-400">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                [ MODULE 05 // VERIFIED GOOGLE MY BUSINESS REVIEWS ]
+                Verified Student Feedback · Real Google Reviews
               </span>
-              <span className="text-slate-400 hidden sm:inline">
-                LIVE RATINGS & FEEDBACK FROM ALUMNI
+              <span className="text-slate-400 hidden sm:inline text-xs font-medium">
+                4.9 / 5 Rating from 100+ Trainees
               </span>
             </div>
 
@@ -270,33 +270,33 @@ export default function HomePage() {
 
         {/* BLOCK 07: Frequently Asked Questions (FAQ) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-[2.5rem] border border-blue-500/25 bg-gradient-to-b from-slate-900/95 via-navy-950/95 to-slate-950/95 p-8 sm:p-12 shadow-2xl shadow-blue-950/20 overflow-hidden backdrop-blur-xl">
+          <div className="relative rounded-[2.5rem] border border-blue-500/25 bg-gradient-to-b from-slate-900/95 via-navy-950/95 to-slate-950/95 p-6 sm:p-10 shadow-2xl shadow-blue-950/20 overflow-hidden backdrop-blur-xl">
             {/* Top Block Header Bar */}
-            <div className="flex items-center justify-between pb-8 border-b border-blue-500/10 text-[11px] font-mono tracking-widest font-bold uppercase">
+            <div className="flex items-center justify-between pb-6 border-b border-blue-500/10 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-blue-400">
                 <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                [ MODULE 06 // ADMISSIONS FAQ ]
+                Frequently Asked Questions
               </span>
-              <span className="text-slate-400 hidden sm:inline">
-                BATCH SCHEDULES & CURRICULUM QUESTIONS
+              <span className="text-slate-400 hidden sm:inline text-xs font-medium">
+                Batch Schedules & Practical Internship Details
               </span>
             </div>
 
-            <div className="max-w-4xl mx-auto mt-8">
-              <div className="text-center space-y-3 mb-12">
+            <div className="max-w-4xl mx-auto mt-6">
+              <div className="text-center space-y-2 mb-8">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-bold border border-brand-400/30">
                   <HelpCircle className="w-4 h-4 text-cyan-400" />
                   <span>Got Questions?</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-                  Frequently Asked Questions
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+                  Common Questions & Honest Answers
                 </h2>
-                <p className="text-sm text-slate-400">
-                  Clear answers regarding our 3-month curriculum, split payment options, and practical internship.
+                <p className="text-xs sm:text-sm text-slate-400">
+                  Clear details about our 3-month practical curriculum, split payment options, and the verified internship certificate.
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {faqs.map((faq, idx) => (
                   <div
                     key={idx}
@@ -304,7 +304,7 @@ export default function HomePage() {
                   >
                     <button
                       onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                      className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-white hover:text-cyan-400 transition-colors"
+                      className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-bold text-white hover:text-cyan-400 transition-colors"
                     >
                       <span className="text-sm sm:text-base">{faq.q}</span>
                       <ChevronDown
@@ -314,7 +314,7 @@ export default function HomePage() {
                       />
                     </button>
                     {openFaq === idx && (
-                      <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80">
+                      <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80">
                         {faq.a}
                       </div>
                     )}
@@ -326,27 +326,22 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 08: Bottom Launch CTA Banner Block */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-          <div className="relative rounded-[2.5rem] border border-cyan-500/30 bg-gradient-to-r from-brand-950 via-brand-900 to-navy-950 text-white p-8 sm:p-14 shadow-2xl shadow-cyan-950/40 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+          <div className="relative rounded-[2.5rem] border border-cyan-500/30 bg-gradient-to-r from-brand-950 via-brand-900 to-navy-950 text-white p-6 sm:p-10 shadow-2xl shadow-cyan-950/40 overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-accent-cyan/15 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 text-center space-y-5">
-              <div className="flex items-center justify-center gap-2 pb-2 text-[11px] font-mono tracking-widest text-cyan-300 font-bold uppercase">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-                <span>[ MODULE 07 // CHENNAI TECH LAB LAUNCH BATCH ]</span>
-              </div>
-
+            <div className="relative z-10 text-center space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-brand-200 text-xs font-semibold backdrop-blur-md">
                 <Sparkles className="w-4 h-4 text-accent-cyan" />
-                <span>Strictly 3-Month Fast Track · Limited to 15 Seats</span>
+                <span>Next Batches Starting Monday · Strictly 10–15 Seats</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
                 Ready to Build Real Tech Skills in <span className="gradient-text-emerald">3 Months?</span>
               </h2>
 
-              <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base">
+              <p className="text-slate-300 max-w-2xl mx-auto text-xs sm:text-sm">
                 Work on live client projects, earn a guaranteed practical internship certificate, and get dedicated placement support.
               </p>
 

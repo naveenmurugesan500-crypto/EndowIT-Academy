@@ -51,18 +51,18 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-transparent text-white relative">
+    <section className="py-8 sm:py-10 bg-transparent text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">
-            <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span>The EndowIT Practical Method</span>
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <span>Why Students Learn With Us</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Why Students Choose <span className="gradient-text-emerald">EndowIT Academy</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            The Practical Way to Learn at <span className="gradient-text-emerald">EndowIT Academy</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-300">
-            Having successfully trained over 100+ students online, we are launching our Chennai physical tech lab focused on pure practical implementation and guaranteed 3-month outcomes.
+          <p className="text-xs sm:text-sm text-slate-300">
+            We trained over 100+ students online and are now opening our Chennai physical lab with a single focus: hands-on execution and real career results.
           </p>
         </div>
 

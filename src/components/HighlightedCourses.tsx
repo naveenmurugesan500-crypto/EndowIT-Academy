@@ -35,35 +35,35 @@ export default function HighlightedCourses({
     courses.find((c) => c.id === activeCourseId) || courses[0];
 
   return (
-    <section className="py-12 sm:py-16 bg-transparent text-white relative overflow-hidden">
+    <section className="py-8 sm:py-10 bg-transparent text-white relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-400/30">
-            <Zap className="w-4 h-4 text-accent-cyan" />
-            <span>Interactive Course Spotlight</span>
+            <Laptop className="w-4 h-4 text-accent-cyan" />
+            <span>Practical Training In Action</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Flagship <span className="gradient-text-vibrant">Practical Tech Programs</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Learn Tech By <span className="gradient-text-vibrant">Doing Real Client Work</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-300">
-            Strictly 3-month curriculums, live client projects, guaranteed practical internship certificates, and personal mentorship.
+          <p className="text-xs sm:text-sm text-slate-300">
+            Strictly 3-month curriculums, live client ad budgets, production deployments, and a guaranteed practical internship certificate.
           </p>
         </div>
 
-        {/* Course Selector Tabs (Animated on Hover / Click) */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+        {/* Course Selector Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
           {flagshipCourses.map((c) => (
             <button
               key={c.id}
               onClick={() => setActiveCourseId(c.id)}
-              className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2.5 ${
+              className={`px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
                 activeCourseId === c.id
-                  ? "bg-gradient-to-r from-brand-600 to-accent-cyan text-white shadow-lg shadow-brand-500/30 scale-105 border-transparent"
+                  ? "bg-gradient-to-r from-brand-600 to-accent-cyan text-white shadow-lg shadow-brand-500/30 scale-102 border-transparent"
                   : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
               }`}
             >
@@ -74,7 +74,7 @@ export default function HighlightedCourses({
 
         {/* Active Highlighted Course Animated Card */}
         {activeCourse && (
-          <div className="p-7 sm:p-10 rounded-3xl bg-navy-950/90 border border-white/15 shadow-2xl backdrop-blur-xl transition-all duration-500">
+          <div className="p-6 sm:p-8 rounded-3xl bg-navy-950/90 border border-white/15 shadow-2xl backdrop-blur-xl transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Details */}
               <div className="lg:col-span-7 space-y-6">
