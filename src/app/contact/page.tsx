@@ -22,13 +22,15 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     try {
-      await fetch("/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -40,9 +42,14 @@ export default function ContactPage() {
           mode: "Classroom",
         }),
       });
+
+      if (!res.ok) {
+        throw new Error("Unable to send inquiry. Please try again or call directly.");
+      }
+
       setSubmitted(true);
-    } catch (err) {
-      console.error(err);
+    } catch (err: any) {
+      setError(err.message || "Failed to submit. Please call admissions directly.");
     } finally {
       setLoading(false);
     }
@@ -180,15 +187,31 @@ export default function ContactPage() {
                   </p>
                 </div>
 
+                {error && (
+                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold">
+                    {error}
+                  </div>
+                )}
+
                 {submitted ? (
-                  <div className="p-8 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-center space-y-3">
+                  <div className="p-8 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-4">
                     <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-                    <h4 className="text-xl font-bold text-emerald-900 dark:text-emerald-100">
+                    <h4 className="text-xl font-bold text-slate-900">
                       Message Sent Successfully!
                     </h4>
-                    <p className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-300">
-                      Thank you for contacting EndowIT Academy. Our team has received your inquiry and will call you at <strong>{phone}</strong> shortly.
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      Thank you for contacting EndowIT Academy. Our admissions team has received your message and will call you at <strong>{phone}</strong> shortly.
                     </p>
+                    <div className="pt-2">
+                      <a
+                        href={`https://wa.me/916379427852?text=Hi%20EndowIT%20Academy,%20I%20just%20sent%20a%20message%20on%20your%20website%20regarding%20${encodeURIComponent(course)}.%20My%20name%20is%20${encodeURIComponent(name)}.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20"
+                      >
+                        <span>Chat on WhatsApp Directly</span>
+                      </a>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">

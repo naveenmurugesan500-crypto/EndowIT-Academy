@@ -16,12 +16,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-950 text-slate-300 pt-16 pb-0 border-t border-slate-800 overflow-hidden">
+    <footer className="bg-slate-50 text-slate-600 pt-14 pb-0 border-t border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200/90">
           {/* Col 1: About & Logo */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="w-48 h-12 relative flex items-center bg-white/90 p-2 rounded-xl">
+            <div className="w-48 h-12 relative flex items-center bg-white p-2 rounded-xl border border-slate-200/80 shadow-sm">
               <Image
                 src="/logo.png"
                 alt="EndowIT Academy"
@@ -30,36 +30,36 @@ export default function Footer() {
                 className="object-contain"
               />
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed pr-6">
-              <strong>EndowIT Academy</strong> focuses on pure practical tech training.
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pr-6">
+              <strong className="text-slate-900">EndowIT Academy</strong> focuses on pure practical tech training.
               Having trained 100+ students online, we are now launching our Chennai physical tech lab with micro batches of 10–15 students, live client projects, and guaranteed practical internships.
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/50">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> Online & Offline Classes
+              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200/80">
+                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600" /> Online & Offline Classes
               </span>
-              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-indigo-950/80 text-indigo-300 border border-indigo-800/50">
-                <Clock className="w-3.5 h-3.5 text-indigo-400" /> Weekend & Weekdays Batches
+              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200/80">
+                <Clock className="w-3.5 h-3.5 text-indigo-600" /> Weekend & Weekdays Batches
               </span>
-              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">
-                <Award className="w-3.5 h-3.5" /> Guaranteed Practical Internship
+              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80">
+                <Award className="w-3.5 h-3.5 text-emerald-600" /> Guaranteed Practical Internship
               </span>
-              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-blue-950/80 text-blue-400 border border-blue-800/50">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Max 10-15 Students / Batch
+              <span className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200/80">
+                <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" /> Max 10-15 Students / Batch
               </span>
             </div>
           </div>
 
           {/* Col 2: Top Courses */}
           <div className="space-y-3">
-            <h3 className="text-white text-xs font-bold uppercase tracking-wider">
+            <h3 className="text-slate-900 text-xs font-bold uppercase tracking-wider">
               Flagship Programs
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link
                   href="/courses/digital-marketing"
-                  className="hover:text-brand-400 transition-colors flex items-center justify-between pr-4"
+                  className="hover:text-brand-600 transition-colors flex items-center justify-between pr-4"
                 >
                   <span>Digital Marketing & AI</span>
                 </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses/full-stack-development"
-                  className="hover:text-brand-400 transition-colors flex items-center justify-between pr-4"
+                  className="hover:text-brand-600 transition-colors flex items-center justify-between pr-4"
                 >
                   <span>Full Stack (MERN)</span>
                 </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses/data-analytics"
-                  className="hover:text-brand-400 transition-colors flex items-center justify-between pr-4"
+                  className="hover:text-brand-600 transition-colors flex items-center justify-between pr-4"
                 >
                   <span>Data Analytics & BI</span>
                 </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses/data-science-and-ai"
-                  className="hover:text-brand-400 transition-colors flex items-center justify-between pr-4"
+                  className="hover:text-brand-600 transition-colors flex items-center justify-between pr-4"
                 >
                   <span>Data Science & AI</span>
                 </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/courses/cloud-and-devops"
-                  className="hover:text-brand-400 transition-colors flex items-center justify-between pr-4"
+                  className="hover:text-brand-600 transition-colors flex items-center justify-between pr-4"
                 >
                   <span>AWS & DevOps</span>
                 </Link>
@@ -101,47 +101,47 @@ export default function Footer() {
 
           {/* Col 3: Quick Links & Policies */}
           <div className="space-y-3">
-            <h3 className="text-white text-xs font-bold uppercase tracking-wider">
+            <h3 className="text-slate-900 text-xs font-bold uppercase tracking-wider">
               Quick Links & Policies
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link href="/opening-offer" className="hover:text-white transition-colors">
+                <Link href="/opening-offer" className="hover:text-brand-600 transition-colors">
                   Opening Offer
                 </Link>
               </li>
               <li>
-                <Link href="/courses#pricing" className="hover:text-white transition-colors">
+                <Link href="/courses#pricing" className="hover:text-brand-600 transition-colors">
                   Fees & Structure
                 </Link>
               </li>
               <li>
-                <Link href="/certifications" className="hover:text-white transition-colors">
+                <Link href="/certifications" className="hover:text-brand-600 transition-colors">
                   Certifications
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                <Link href="/privacy-policy" className="hover:text-brand-600 transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+                <Link href="/terms-and-conditions" className="hover:text-brand-600 transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-brand-600 transition-colors">
                   About Our Academy
                 </Link>
               </li>
               <li>
-                <Link href="/courses" className="hover:text-white transition-colors">
+                <Link href="/courses" className="hover:text-brand-600 transition-colors">
                   All 3-Month Courses
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-brand-600 transition-colors">
                   Contact & Campus
                 </Link>
               </li>
@@ -150,36 +150,36 @@ export default function Footer() {
 
           {/* Col 4: Reach Us */}
           <div className="space-y-3">
-            <h3 className="text-white text-xs font-bold uppercase tracking-wider">
+            <h3 className="text-slate-900 text-xs font-bold uppercase tracking-wider">
               Campus & Contact
             </h3>
-            <ul className="space-y-3 text-xs sm:text-sm text-slate-400">
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-600">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
                 <span>
                   XXXXXX, XXXXXX, Chennai, Tamil Nadu - XXXXXX
                 </span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-brand-400 shrink-0" />
+                <Phone className="w-4 h-4 text-brand-600 shrink-0" />
                 <a
                   href="tel:+916379427852"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-brand-600 transition-colors font-medium"
                 >
                   +91 63794 27852
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-brand-400 shrink-0" />
+                <Mail className="w-4 h-4 text-brand-600 shrink-0" />
                 <a
                   href="mailto:admissions@endowitacademy.com"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-brand-600 transition-colors"
                 >
                   admissions@endowitacademy.com
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-brand-400 shrink-0" />
+                <Clock className="w-4 h-4 text-brand-600 shrink-0" />
                 <span>Mon - Sun: 8:00 AM - 8:30 PM</span>
               </li>
             </ul>
@@ -190,19 +190,19 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© {currentYear} EndowIT Academy. All Rights Reserved.</p>
           <div className="flex flex-wrap items-center gap-6">
-            <Link href="/opening-offer" className="hover:text-slate-300 transition-colors">
+            <Link href="/opening-offer" className="hover:text-brand-600 transition-colors">
               Opening Offer
             </Link>
-            <Link href="/certifications" className="hover:text-slate-300 transition-colors">
+            <Link href="/certifications" className="hover:text-brand-600 transition-colors">
               Certifications
             </Link>
-            <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">
+            <Link href="/privacy-policy" className="hover:text-brand-600 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions" className="hover:text-slate-300 transition-colors">
+            <Link href="/terms-and-conditions" className="hover:text-brand-600 transition-colors">
               Terms & Conditions
             </Link>
-            <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
+            <Link href="/sitemap.xml" className="hover:text-brand-600 transition-colors">
               Sitemap
             </Link>
           </div>
@@ -210,16 +210,16 @@ export default function Footer() {
       </div>
 
       {/* Second Half: Grand Lower Section with Subtle 'EndowIT' Architectural Watermark (<25% opacity) */}
-      <div className="mt-8 border-t border-slate-800/60 bg-gradient-to-b from-navy-950 via-slate-950 to-black relative overflow-hidden select-none pointer-events-none py-6 sm:py-10 md:py-12">
+      <div className="mt-8 border-t border-slate-200/80 bg-gradient-to-b from-slate-100/60 via-slate-50 to-white relative overflow-hidden select-none pointer-events-none py-6 sm:py-10 md:py-12">
         {/* Soft ambient brand glow */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[600px] h-[140px] bg-brand-500/[0.03] blur-3xl rounded-full" />
+          <div className="w-[600px] h-[140px] bg-brand-500/[0.04] blur-3xl rounded-full" />
         </div>
 
         {/* Massive 'EndowIT' Typography */}
         <div className="w-full flex items-center justify-center overflow-hidden px-4">
           <span
-            className="text-[14vw] sm:text-[13vw] md:text-[12vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/[0.18] via-white/[0.08] to-white/[0.02] text-center select-none"
+            className="text-[14vw] sm:text-[13vw] md:text-[12vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-slate-900/[0.14] via-slate-900/[0.07] to-slate-900/[0.02] text-center select-none"
             aria-hidden="true"
           >
             EndowIT

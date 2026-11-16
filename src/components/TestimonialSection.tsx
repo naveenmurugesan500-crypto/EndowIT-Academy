@@ -27,11 +27,11 @@ export default function TestimonialSection() {
   }, []);
 
   return (
-    <section className="py-8 sm:py-10 bg-transparent text-white relative" id="reviews">
+    <section className="py-8 sm:py-10 bg-transparent text-slate-900 relative" id="reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Google Badge */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold text-slate-200">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-800 shadow-sm">
             {/* Google G SVG */}
             <svg className="w-4 h-4" viewBox="0 0 24 24">
               <path
@@ -54,17 +54,17 @@ export default function TestimonialSection() {
             <span>Google Business Profile Verified Reviews</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Real Reviews from <span className="gradient-text-amber">Real Students</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300">
+          <p className="text-base sm:text-lg text-slate-600">
             Live reviews synced directly from our verified Google My Business profile.
           </p>
 
           {/* Rating Summary Card */}
           <div className="pt-2 flex flex-wrap items-center justify-center gap-6">
-            <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-slate-900 border border-slate-800 shadow-sm">
-              <span className="text-2xl font-extrabold text-white">
+            <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <span className="text-2xl font-extrabold text-slate-900">
                 {rating}
               </span>
               <div className="flex items-center gap-0.5 text-amber-400">
@@ -72,7 +72,7 @@ export default function TestimonialSection() {
                   <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="text-xs text-slate-400 font-semibold border-l border-slate-700 pl-3">
+              <span className="text-xs text-slate-600 font-semibold border-l border-slate-200 pl-3">
                 Based on <strong>{totalReviews}+ Google reviews</strong>
               </span>
             </div>
@@ -94,7 +94,7 @@ export default function TestimonialSection() {
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="relative p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
+              className="relative p-7 rounded-3xl bg-white border border-slate-200/90 hover:border-amber-400/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Header: User Info & Google Badge */}
@@ -103,24 +103,24 @@ export default function TestimonialSection() {
                     <img
                       src={rev.profile_photo_url}
                       alt={rev.author_name}
-                      className="w-11 h-11 rounded-full object-cover ring-2 ring-brand-500/30"
+                      className="w-11 h-11 rounded-full object-cover ring-2 ring-brand-500/20"
                       onError={(e: any) => {
                         e.target.src =
                           "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80";
                       }}
                     />
                     <div>
-                      <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
+                      <h4 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
                         <span>{rev.author_name}</span>
                       </h4>
-                      <span className="text-[11px] text-slate-400 block">
+                      <span className="text-[11px] text-slate-500 block">
                         {rev.relative_time_description || "Recently posted"}
                       </span>
                     </div>
                   </div>
 
                   {/* Google G icon */}
-                  <div className="p-1.5 rounded-lg bg-navy-950 shadow-sm border border-slate-800">
+                  <div className="p-1.5 rounded-lg bg-slate-50 shadow-sm border border-slate-200">
                     <svg className="w-4 h-4" viewBox="0 0 24 24">
                       <path
                         fill="#4285F4"
@@ -147,20 +147,20 @@ export default function TestimonialSection() {
                   {[...Array(rev.rating || 5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-amber-400" />
                   ))}
-                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 ml-1.5">
+                  <span className="text-[11px] font-bold text-slate-700 ml-1.5">
                     Verified Google Review
                   </span>
                 </div>
 
                 {/* Review Text */}
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
                   &ldquo;{rev.text}&rdquo;
                 </p>
               </div>
 
               {/* Card Footer: Verified on Google link */}
-              <div className="mt-6 pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs">
-                <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold text-[11px]">
+              <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                <span className="flex items-center gap-1.5 text-emerald-600 font-semibold text-[11px]">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>Verified Review</span>
                 </span>
@@ -169,7 +169,7 @@ export default function TestimonialSection() {
                   href={reviewUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-brand-600 transition-colors flex items-center gap-1 text-[11px]"
+                  className="text-slate-500 hover:text-brand-600 transition-colors flex items-center gap-1 text-[11px]"
                 >
                   <span>Google Maps</span>
                   <ExternalLink className="w-3 h-3" />

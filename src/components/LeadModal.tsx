@@ -78,19 +78,27 @@ export default function LeadModal({
 
         {submitted ? (
           <div className="p-8 text-center space-y-4">
-            <div className="w-16 h-16 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
               <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+            <h3 className="text-2xl font-bold text-slate-900">
               Thank You, {name}!
             </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-300">
-              Your inquiry for <strong>{course}</strong> has been received. Our senior career mentor will call you at <strong>{phone}</strong> within 30 minutes with the syllabus and demo batch details.
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Your inquiry for <strong>{course}</strong> ({mode} Mode) has been received. Our senior career mentor will call you at <strong>{phone}</strong> within 30 minutes with the practical roadmap and trial demo class details.
             </p>
-            <div className="pt-4">
+            <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <a
+                href={`https://wa.me/916379427852?text=Hi%20EndowIT%20Academy,%20I%20just%20booked%20a%20free%20demo%20for%20${encodeURIComponent(course)}.%20My%20name%20is%20${encodeURIComponent(name)}.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 transition-all hover:scale-[1.02]"
+              >
+                <span>Chat on WhatsApp Now</span>
+              </a>
               <button
                 onClick={handleReset}
-                className="w-full py-3 rounded-xl bg-brand-600 text-white font-bold hover:bg-brand-700 transition-colors"
+                className="py-3 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm transition-colors"
               >
                 Close & Return
               </button>

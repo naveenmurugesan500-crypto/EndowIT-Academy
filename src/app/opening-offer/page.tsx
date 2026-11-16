@@ -16,6 +16,7 @@ import {
   TrendingUp,
   HelpCircle,
   AlertCircle,
+  Loader2,
 } from "lucide-react";
 import defaultCourses from "@/data/courses.json";
 
@@ -23,12 +24,42 @@ export default function OpeningOfferPage() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [course, setCourse] = useState("digital-marketing");
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone) return;
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const selectedCourseObj = defaultCourses.find((c) => c.id === course);
+      const courseTitle = selectedCourseObj ? selectedCourseObj.title : course;
+
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          course: `${courseTitle} (Opening Offer ₹5,000)`,
+          mode: "Classroom",
+          message: "Claimed Grand Opening Offer: Flat ₹5,000 all-inclusive.",
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Unable to reserve seat. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || "Failed to submit. Please call admissions directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -219,26 +250,42 @@ export default function OpeningOfferPage() {
                     </p>
                   </div>
 
+                  {error && (
+                    <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold">
+                      {error}
+                    </div>
+                  )}
+
                   {submitted ? (
-                    <div className="p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-center space-y-2.5">
-                      <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white">
-                        Seat Reservation Received!
+                    <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3">
+                      <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
+                      <h4 className="text-lg font-bold text-slate-900">
+                        Opening Offer Reserved!
                       </h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-300">
-                        Thank you, <strong>{name}</strong>! Your ₹ 5,000 Grand Opening Seat reservation has been logged. Our admissions director will call you at <strong>{phone}</strong> shortly.
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        Thank you, <strong>{name}</strong>! Your Flat ₹5,000 Grand Opening reservation has been successfully logged. Our admissions director will call you at <strong>{phone}</strong> shortly.
                       </p>
-                      <Link
-                        href="/courses"
-                        className="inline-block mt-2 text-xs font-bold text-brand-600 underline"
-                      >
-                        Explore Course Syllabuses →
-                      </Link>
+                      <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
+                        <a
+                          href={`https://wa.me/916379427852?text=Hi%20EndowIT%20Academy,%20I%20just%20claimed%20the%20Flat%20₹5,000%20Opening%20Offer%20for%20${encodeURIComponent(course)}.%20My%20name%20is%20${encodeURIComponent(name)}.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20"
+                        >
+                          <span>Confirm on WhatsApp Now</span>
+                        </a>
+                        <Link
+                          href="/courses"
+                          className="py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs flex items-center justify-center"
+                        >
+                          Explore Syllabuses
+                        </Link>
+                      </div>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-3.5 pt-2">
                       <div>
-                        <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
                           Full Name *
                         </label>
                         <input
@@ -247,12 +294,12 @@ export default function OpeningOfferPage() {
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="e.g. Naveen Murugesan"
-                          className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-navy-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                          className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
                           Mobile / WhatsApp Number *
                         </label>
                         <input
@@ -261,18 +308,18 @@ export default function OpeningOfferPage() {
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="e.g. 63794 27852"
-                          className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-navy-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                          className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
                           Choose Your 3-Month Program *
                         </label>
                         <select
                           value={course}
                           onChange={(e) => setCourse(e.target.value)}
-                          className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-navy-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                          className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         >
                           {defaultCourses.map((c) => (
                             <option key={c.id} value={c.id}>
@@ -285,10 +332,20 @@ export default function OpeningOfferPage() {
                       <div className="pt-2">
                         <button
                           type="submit"
+                          disabled={loading}
                           className="w-full py-3.5 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 shadow-lg shadow-emerald-500/30 transition-all uppercase tracking-wider flex items-center justify-center gap-2"
                         >
-                          <Sparkles className="w-4 h-4" />
-                          <span>Claim ₹ 5,000 Opening Seat</span>
+                          {loading ? (
+                            <>
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                              <span>Reserving Your Seat...</span>
+                            </>
+                          ) : (
+                            <>
+                              <Sparkles className="w-4 h-4" />
+                              <span>Claim ₹ 5,000 Opening Seat</span>
+                            </>
+                          )}
                         </button>
                       </div>
 

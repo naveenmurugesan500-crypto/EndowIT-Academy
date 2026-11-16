@@ -17,72 +17,72 @@ export default function WhyChooseUs() {
       icon: Laptop,
       title: "Real Budgets & Live Code, Never PPTs",
       desc: "In Digital Marketing, you set up and run campaigns with actual client ad spend on Meta & Google. In Web Dev, you write real code, push to GitHub, and deploy live apps.",
-      color: "text-cyan-500",
-      bgColor: "bg-cyan-50 dark:bg-cyan-950/60",
+      color: "text-cyan-600",
+      bgColor: "bg-cyan-50",
     },
     {
       icon: Award,
       title: "Verified Internship Certificate",
       desc: "You don't just finish a course; you complete real client deliverables that you can showcase on LinkedIn and add to your resume with proof.",
-      color: "text-amber-500",
-      bgColor: "bg-amber-50 dark:bg-amber-950/60",
+      color: "text-amber-600",
+      bgColor: "bg-amber-50",
     },
     {
       icon: Users,
       title: "Only 10–15 Students Per Batch",
       desc: "No crowded 100-person halls. Small micro-batches mean your trainer checks your code every day, clears every doubt, and makes sure you never get left behind.",
-      color: "text-blue-500",
-      bgColor: "bg-blue-50 dark:bg-blue-950/60",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
     },
     {
       icon: Briefcase,
       title: "1-on-1 Mock Interviews & Resume Review",
       desc: "We practice real technical interview questions with you, review your live portfolio projects, and optimize your resume for applicant tracking systems.",
-      color: "text-emerald-500",
-      bgColor: "bg-emerald-50 dark:bg-emerald-950/60",
+      color: "text-emerald-600",
+      bgColor: "bg-emerald-50",
     },
     {
       icon: Layers,
       title: "In-Person Chennai Lab & Live Online",
       desc: "Learn hands-on at our Chennai training lab with dedicated workstations, or join live online sessions from anywhere with full class recordings.",
-      color: "text-purple-500",
-      bgColor: "bg-purple-50 dark:bg-purple-950/60",
+      color: "text-purple-600",
+      bgColor: "bg-purple-50",
     },
   ];
 
   return (
-    <section className="py-8 sm:py-10 bg-transparent text-white relative">
+    <section className="py-8 sm:py-10 bg-transparent text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
             <span>Why Students Learn With Us</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             The Practical Way to Learn at <span className="gradient-text-emerald">EndowIT Academy</span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300">
+          <p className="text-xs sm:text-sm text-slate-600">
             We trained over 100+ students online and are now opening our Chennai physical lab with a single focus: hands-on execution and real career results.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {points.map((pt, idx) => {
             const Icon = pt.icon;
             return (
               <div
                 key={idx}
-                className="p-7 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 shadow-sm hover:shadow-xl transition-all"
+                className="p-7 rounded-3xl bg-white border border-slate-200/90 hover:border-emerald-500/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
               >
                 <div
                   className={`w-12 h-12 rounded-2xl ${pt.bgColor} flex items-center justify-center ${pt.color} mb-5`}
                 >
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   {pt.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {pt.desc}
                 </p>
               </div>
