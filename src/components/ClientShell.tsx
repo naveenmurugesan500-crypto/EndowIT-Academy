@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import LeadModal from "./LeadModal";
@@ -22,50 +22,11 @@ export default function ClientShell({ children }: ClientShellProps) {
   const [selectedCourseForModal, setSelectedCourseForModal] = useState<
     string | undefined
   >(undefined);
-  const [bottomOffset, setBottomOffset] = useState(24);
 
   const handleOpenDemoModal = (courseName?: string) => {
     setSelectedCourseForModal(courseName);
     setIsDemoModalOpen(true);
   };
-
-  // Smart Footer Avoidance: keeps the floating social dock above the footer when scrolling down
-  useEffect(() => {
-    let ticking = false;
-
-    const updateDockPosition = () => {
-      const footer = document.querySelector("footer");
-      if (!footer) return;
-
-      const footerRect = footer.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // When the footer enters the viewport, push the dock up so it stays cleanly above the footer
-      if (footerRect.top < windowHeight) {
-        const visibleFooterHeight = windowHeight - footerRect.top;
-        setBottomOffset(Math.max(24, visibleFooterHeight + 20));
-      } else {
-        setBottomOffset(24);
-      }
-      ticking = false;
-    };
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateDockPosition);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll, { passive: true });
-    updateDockPosition();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen relative">
@@ -75,10 +36,9 @@ export default function ClientShell({ children }: ClientShellProps) {
 
       <Footer />
 
-      {/* Unified Floating Social Media & WhatsApp Dock with Smart Footer Avoidance */}
+      {/* Permanently Fixed Floating Social Media & WhatsApp Dock */}
       <div
-        style={{ bottom: `${bottomOffset}px` }}
-        className="fixed right-4 sm:right-6 z-40 flex items-center gap-1.5 p-2 rounded-2xl bg-white/95 dark:bg-navy-950/95 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-2xl shadow-slate-900/20 transition-[bottom] duration-150 ease-out hover:shadow-brand-500/20"
+        className="fixed bottom-6 right-4 sm:right-6 z-40 flex items-center gap-1.5 p-2 rounded-2xl bg-white/95 dark:bg-navy-950/95 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-2xl shadow-slate-900/20 hover:shadow-brand-500/20"
       >
         {/* WhatsApp Main Quick Action Button */}
         <a
