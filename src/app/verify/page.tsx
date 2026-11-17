@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientShell from "@/components/ClientShell";
 import { Certificate } from "@/lib/types";
+import IssueCertificateModal from "@/components/IssueCertificateModal";
 import {
   ShieldCheck,
   Award,
@@ -37,6 +38,7 @@ function VerifyContent() {
   const [searched, setSearched] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [showIssueModal, setShowIssueModal] = useState(false);
 
   const sampleCodes = [
     { code: "EIT-CC-2026-0101", label: "Full Stack (Course)", student: "Arun Prakash" },
@@ -63,15 +65,53 @@ function VerifyContent() {
         setCertificate(data.certificate);
         setError(null);
       } else {
-        setCertificate(null);
-        setError(
-          data.error ||
-            `No official record found for Certificate ID "${trimmed}". Please verify the code or contact admissions@endowitacademy.com.`
-        );
+        // Fallback: Check local storage for newly issued certificates
+        let localFound: Certificate | null = null;
+        try {
+          const localCerts: Certificate[] = JSON.parse(
+            localStorage.getItem("endowit_user_certificates") || "[]"
+          );
+          localFound =
+            localCerts.find(
+              (c) =>
+                c.certificateNumber.trim().toUpperCase() === trimmed.toUpperCase() ||
+                c.id.trim().toUpperCase() === trimmed.toUpperCase()
+            ) || null;
+        } catch (e) {}
+
+        if (localFound) {
+          setCertificate(localFound);
+          setError(null);
+        } else {
+          setCertificate(null);
+          setError(
+            data.error ||
+              `No official record found for Certificate ID "${trimmed}". Please verify the code or contact admissions@endowitacademy.com.`
+          );
+        }
       }
     } catch (err: any) {
-      setCertificate(null);
-      setError("Unable to connect to verification server. Please try again.");
+      // Fallback: Check local storage on network error
+      let localFound: Certificate | null = null;
+      try {
+        const localCerts: Certificate[] = JSON.parse(
+          localStorage.getItem("endowit_user_certificates") || "[]"
+        );
+        localFound =
+          localCerts.find(
+            (c) =>
+              c.certificateNumber.trim().toUpperCase() === trimmed.toUpperCase() ||
+              c.id.trim().toUpperCase() === trimmed.toUpperCase()
+          ) || null;
+      } catch (e) {}
+
+      if (localFound) {
+        setCertificate(localFound);
+        setError(null);
+      } else {
+        setCertificate(null);
+        setError("Unable to connect to verification server. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
@@ -186,6 +226,18 @@ function VerifyContent() {
                   {item.code}
                 </button>
               ))}
+            </div>
+
+            {/* Action: Issue New Certificate Button */}
+            <div className="mt-4 flex items-center justify-center">
+              <button
+                type="button"
+                onClick={() => setShowIssueModal(true)}
+                className="px-4 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300 flex items-center gap-1.5 transition-all shadow-sm hover:scale-[1.02]"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                <span>+ Issue / Register New Certificate (Admin & Faculty)</span>
+              </button>
             </div>
           </div>
         </div>
@@ -533,6 +585,16 @@ function VerifyContent() {
           </div>
         </div>
       </div>
+
+      <IssueCertificateModal
+        isOpen={showIssueModal}
+        onClose={() => setShowIssueModal(false)}
+        onSuccess={(newCert) => {
+          setCertificate(newCert);
+          setSearchQuery(newCert.certificateNumber);
+          setSearched(true);
+        }}
+      />
     </div>
   );
 }

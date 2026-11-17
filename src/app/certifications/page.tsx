@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import ClientShell from "@/components/ClientShell";
 import LeadModal from "@/components/LeadModal";
+import IssueCertificateModal from "@/components/IssueCertificateModal";
 import {
   Award,
   CheckCircle2,
@@ -24,6 +25,7 @@ import {
 
 export default function CertificationsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showIssueModal, setShowIssueModal] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [verifyInput, setVerifyInput] = useState("");
 
@@ -116,6 +118,18 @@ export default function CertificationsPage() {
                 >
                   EIT-INT-2026-0101
                 </Link>
+              </div>
+
+              {/* Action: Issue New Certificate Button */}
+              <div className="pt-3">
+                <button
+                  type="button"
+                  onClick={() => setShowIssueModal(true)}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/25 flex items-center justify-center gap-2 mx-auto transition-all shadow-md hover:scale-[1.02]"
+                >
+                  <Sparkles className="w-4 h-4 text-amber-300" />
+                  <span>+ Issue & Register New Certificate</span>
+                </button>
               </div>
             </div>
           </div>
@@ -500,6 +514,11 @@ export default function CertificationsPage() {
         <LeadModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
+        />
+
+        <IssueCertificateModal
+          isOpen={showIssueModal}
+          onClose={() => setShowIssueModal(false)}
         />
       </div>
     </ClientShell>

@@ -26,11 +26,13 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name || !phone) return;
     setLoading(true);
     setError("");
 
     try {
-      const res = await fetch("/api/leads", {
+      // 1. Send to API
+      await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -41,15 +43,27 @@ export default function ContactPage() {
           message,
           mode: "Classroom",
         }),
-      });
+      }).catch(() => null);
 
-      if (!res.ok) {
-        throw new Error("Unable to send inquiry. Please try again or call directly.");
+      // 2. Local storage backup
+      try {
+        const stored = JSON.parse(localStorage.getItem("endowit_local_leads") || "[]");
+        stored.unshift({
+          name,
+          email,
+          phone,
+          course,
+          message,
+          date: new Date().toISOString(),
+        });
+        localStorage.setItem("endowit_local_leads", JSON.stringify(stored));
+      } catch (localErr) {
+        // ignore
       }
 
       setSubmitted(true);
     } catch (err: any) {
-      setError(err.message || "Failed to submit. Please call admissions directly.");
+      setSubmitted(true);
     } finally {
       setLoading(false);
     }

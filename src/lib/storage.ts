@@ -1,125 +1,145 @@
 import fs from "fs";
 import path from "path";
+import os from "os";
 import { Course, BlogPost, SiteConfig, Lead, Certificate } from "./types";
 import defaultCourses from "../data/courses.json";
 import defaultBlogs from "../data/blogs.json";
 import defaultSiteConfig from "../data/siteConfig.json";
 import defaultCertificates from "../data/certificates.json";
 
-const dataDir = path.join(process.cwd(), "src", "data");
-const coursesPath = path.join(dataDir, "courses.json");
-const blogsPath = path.join(dataDir, "blogs.json");
-const siteConfigPath = path.join(dataDir, "siteConfig.json");
-const leadsPath = path.join(dataDir, "leads.json");
-const certificatesPath = path.join(dataDir, "certificates.json");
+// In-Memory Runtime Store (Survives throughout process runtime & never crashes on read-only FS)
+let memoryCourses: Course[] = [...(defaultCourses as Course[])];
+let memoryBlogs: BlogPost[] = [...(defaultBlogs as BlogPost[])];
+let memorySiteConfig: SiteConfig = { ...(defaultSiteConfig as SiteConfig) };
+let memoryLeads: Lead[] = [];
+let memoryCertificates: Certificate[] = [...(defaultCertificates as Certificate[])];
 
-function ensureDirectoryExists() {
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
+const primaryDataDir = path.join(process.cwd(), "src", "data");
+const tmpDataDir = path.join(os.tmpdir(), "endowit_data");
+
+function safeWriteJson(fileName: string, data: any) {
+  const jsonStr = JSON.stringify(data, null, 2);
+  let written = false;
+
+  // 1. Try writing to primary project data dir (e.g. local development)
+  try {
+    if (!fs.existsSync(primaryDataDir)) {
+      fs.mkdirSync(primaryDataDir, { recursive: true });
+    }
+    fs.writeFileSync(path.join(primaryDataDir, fileName), jsonStr, "utf-8");
+    written = true;
+  } catch (err) {
+    // Primary dir is read-only (e.g. Vercel serverless /var/task)
+  }
+
+  // 2. Try writing to /tmp directory (writable in Vercel serverless Lambda)
+  if (!written) {
+    try {
+      if (!fs.existsSync(tmpDataDir)) {
+        fs.mkdirSync(tmpDataDir, { recursive: true });
+      }
+      fs.writeFileSync(path.join(tmpDataDir, fileName), jsonStr, "utf-8");
+      written = true;
+    } catch (err) {
+      // In-memory array already updated, so no crash occurs
+    }
   }
 }
 
-export function getCourses(): Course[] {
-  ensureDirectoryExists();
+function safeReadJson<T>(fileName: string, defaultVal: T): T {
+  // 1. Check primary data dir
   try {
-    if (fs.existsSync(coursesPath)) {
-      const data = fs.readFileSync(coursesPath, "utf-8");
-      return JSON.parse(data);
+    const primaryPath = path.join(primaryDataDir, fileName);
+    if (fs.existsSync(primaryPath)) {
+      const content = fs.readFileSync(primaryPath, "utf-8");
+      return JSON.parse(content) as T;
     }
-  } catch (error) {
-    console.error("Error reading courses:", error);
+  } catch (err) {
+    // ignore
   }
-  return defaultCourses as Course[];
+
+  // 2. Check /tmp data dir
+  try {
+    const tmpPath = path.join(tmpDataDir, fileName);
+    if (fs.existsSync(tmpPath)) {
+      const content = fs.readFileSync(tmpPath, "utf-8");
+      return JSON.parse(content) as T;
+    }
+  } catch (err) {
+    // ignore
+  }
+
+  return defaultVal;
+}
+
+// ---------------- COURSES ----------------
+export function getCourses(): Course[] {
+  if (memoryCourses.length > 0) return memoryCourses;
+  memoryCourses = safeReadJson<Course[]>("courses.json", defaultCourses as Course[]);
+  return memoryCourses;
 }
 
 export function saveCourses(courses: Course[]) {
-  ensureDirectoryExists();
-  fs.writeFileSync(coursesPath, JSON.stringify(courses, null, 2), "utf-8");
+  memoryCourses = courses;
+  safeWriteJson("courses.json", courses);
 }
 
+// ---------------- BLOGS ----------------
 export function getBlogs(): BlogPost[] {
-  ensureDirectoryExists();
-  try {
-    if (fs.existsSync(blogsPath)) {
-      const data = fs.readFileSync(blogsPath, "utf-8");
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error("Error reading blogs:", error);
-  }
-  return defaultBlogs as BlogPost[];
+  if (memoryBlogs.length > 0) return memoryBlogs;
+  memoryBlogs = safeReadJson<BlogPost[]>("blogs.json", defaultBlogs as BlogPost[]);
+  return memoryBlogs;
 }
 
 export function saveBlogs(blogs: BlogPost[]) {
-  ensureDirectoryExists();
-  fs.writeFileSync(blogsPath, JSON.stringify(blogs, null, 2), "utf-8");
+  memoryBlogs = blogs;
+  safeWriteJson("blogs.json", blogs);
 }
 
+// ---------------- SITE CONFIG ----------------
 export function getSiteConfig(): SiteConfig {
-  ensureDirectoryExists();
-  try {
-    if (fs.existsSync(siteConfigPath)) {
-      const data = fs.readFileSync(siteConfigPath, "utf-8");
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error("Error reading site config:", error);
-  }
-  return defaultSiteConfig as SiteConfig;
+  if (memorySiteConfig && memorySiteConfig.brandName) return memorySiteConfig;
+  memorySiteConfig = safeReadJson<SiteConfig>("siteConfig.json", defaultSiteConfig as SiteConfig);
+  return memorySiteConfig;
 }
 
 export function saveSiteConfig(config: SiteConfig) {
-  ensureDirectoryExists();
-  fs.writeFileSync(siteConfigPath, JSON.stringify(config, null, 2), "utf-8");
+  memorySiteConfig = config;
+  safeWriteJson("siteConfig.json", config);
 }
 
+// ---------------- LEADS ----------------
 export function getLeads(): Lead[] {
-  ensureDirectoryExists();
-  try {
-    if (fs.existsSync(leadsPath)) {
-      const data = fs.readFileSync(leadsPath, "utf-8");
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error("Error reading leads:", error);
-  }
-  return [];
+  if (memoryLeads.length > 0) return memoryLeads;
+  memoryLeads = safeReadJson<Lead[]>("leads.json", []);
+  return memoryLeads;
 }
 
 export function saveLead(lead: Omit<Lead, "id" | "createdAt" | "status">): Lead {
-  ensureDirectoryExists();
-  const leads = getLeads();
   const newLead: Lead = {
     ...lead,
     id: "lead_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
     createdAt: new Date().toISOString(),
     status: "New",
   };
-  leads.unshift(newLead);
-  fs.writeFileSync(leadsPath, JSON.stringify(leads, null, 2), "utf-8");
+  memoryLeads.unshift(newLead);
+  safeWriteJson("leads.json", memoryLeads);
   return newLead;
 }
 
 export function updateLeadStatus(id: string, status: Lead["status"]) {
-  const leads = getLeads();
-  const index = leads.findIndex((l) => l.id === id);
+  const index = memoryLeads.findIndex((l) => l.id === id);
   if (index !== -1) {
-    leads[index].status = status;
-    fs.writeFileSync(leadsPath, JSON.stringify(leads, null, 2), "utf-8");
+    memoryLeads[index].status = status;
+    safeWriteJson("leads.json", memoryLeads);
   }
 }
 
+// ---------------- CERTIFICATES ----------------
 export function getCertificates(): Certificate[] {
-  ensureDirectoryExists();
-  try {
-    if (fs.existsSync(certificatesPath)) {
-      const data = fs.readFileSync(certificatesPath, "utf-8");
-      return JSON.parse(data);
-    }
-  } catch (error) {
-    console.error("Error reading certificates:", error);
-  }
-  return defaultCertificates as Certificate[];
+  if (memoryCertificates.length > 0) return memoryCertificates;
+  memoryCertificates = safeReadJson<Certificate[]>("certificates.json", defaultCertificates as Certificate[]);
+  return memoryCertificates;
 }
 
 export function getCertificateById(searchQuery: string): Certificate | null {
@@ -134,7 +154,6 @@ export function getCertificateById(searchQuery: string): Certificate | null {
 }
 
 export function saveCertificate(certificate: Certificate): Certificate {
-  ensureDirectoryExists();
   const certs = getCertificates();
   const existingIdx = certs.findIndex(
     (c) => c.certificateNumber.toUpperCase() === certificate.certificateNumber.toUpperCase()
@@ -146,7 +165,7 @@ export function saveCertificate(certificate: Certificate): Certificate {
     certs.unshift(certificate);
   }
 
-  fs.writeFileSync(certificatesPath, JSON.stringify(certs, null, 2), "utf-8");
+  memoryCertificates = certs;
+  safeWriteJson("certificates.json", certs);
   return certificate;
 }
-

@@ -18,7 +18,6 @@ import {
   Cloud,
   CheckCircle2,
   ArrowRight,
-  ShieldCheck,
 } from "lucide-react";
 
 interface HeaderProps {
@@ -218,18 +217,6 @@ export default function Header({ onOpenDemoModal }: HeaderProps) {
             </Link>
 
             <Link
-              href="/verify"
-              className={`text-sm font-semibold transition-colors hover:text-brand-600 flex items-center gap-1.5 ${
-                pathname === "/verify"
-                  ? "text-brand-600 font-bold"
-                  : "text-slate-700 dark:text-slate-200"
-              }`}
-            >
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Verify Certificate</span>
-            </Link>
-
-            <Link
               href="/contact"
               className={`text-sm font-semibold transition-colors hover:text-brand-600 ${
                 pathname === "/contact"
@@ -327,13 +314,6 @@ export default function Header({ onOpenDemoModal }: HeaderProps) {
               className="p-2 font-semibold text-slate-800 dark:text-slate-100 rounded-lg hover:bg-slate-100"
             >
               Blog
-            </Link>
-            <Link
-              href="/verify"
-              className="p-2 font-semibold text-emerald-700 dark:text-emerald-400 rounded-lg hover:bg-slate-100 flex items-center gap-2"
-            >
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Verify Certificate</span>
             </Link>
             <Link
               href="/contact"

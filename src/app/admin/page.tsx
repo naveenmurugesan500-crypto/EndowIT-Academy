@@ -27,6 +27,7 @@ import {
   X,
 } from "lucide-react";
 import { Course, BlogPost, Lead, SiteConfig, GoogleReview, Certificate } from "@/lib/types";
+import IssueCertificateModal from "@/components/IssueCertificateModal";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<
@@ -49,21 +50,6 @@ export default function AdminDashboard() {
 
   // Certificate Issue Modal
   const [showIssueModal, setShowIssueModal] = useState(false);
-  const [issuingCert, setIssuingCert] = useState<Partial<Certificate>>({
-    studentName: "",
-    courseName: "Full Stack Web Development (MERN Stack)",
-    type: "Course Completion",
-    certificateNumber: "",
-    duration: "3 Months (Intensive Hands-on)",
-    grade: "Distinction · Grade A+",
-    skills: ["React 19", "Next.js 14", "Node.js", "MongoDB"],
-    liveProjectTitle: "Live Client Capstone Project",
-    liveProjectDescription: "Completed live client project deliverables with daily code reviews.",
-    batchId: "EIT-CHN-2026",
-    mode: "Chennai Lab (Classroom)",
-    signatoryName: "Dr. S. Raghunathan, Ph.D.",
-    signatoryTitle: "Director of Technical Education",
-  });
 
   // Course Edit Modal / Form
   const [editingCourse, setEditingCourse] = useState<Course | null>(null);
@@ -1726,172 +1712,16 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            {/* Modal: Issue Certificate */}
-            {showIssueModal && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/70 backdrop-blur-sm">
-                <div className="relative w-full max-w-2xl bg-white dark:bg-navy-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                        Issue New Student Certificate
-                      </h3>
-                      <p className="text-xs text-slate-500">
-                        Generates a verifiable credential with permanent online registry verification.
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => setShowIssueModal(false)}
-                      className="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
-                  </div>
-
-                  <form
-                    onSubmit={async (e) => {
-                      e.preventDefault();
-                      try {
-                        const res = await fetch("/api/admin/certificates", {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify(issuingCert),
-                        });
-                        const data = await res.json();
-                        if (data.success) {
-                          setCertificates([data.certificate, ...certificates]);
-                          setShowIssueModal(false);
-                          setSaveMessage("Certificate issued and registered successfully!");
-                          setTimeout(() => setSaveMessage(""), 3500);
-                        }
-                      } catch (err) {
-                        console.error(err);
-                      }
-                    }}
-                    className="space-y-4 pt-4 text-xs"
-                  >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
-                          Student Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={issuingCert.studentName}
-                          onChange={(e) =>
-                            setIssuingCert({ ...issuingCert, studentName: e.target.value })
-                          }
-                          placeholder="e.g. Arun Prakash M"
-                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
-                          Certificate Type *
-                        </label>
-                        <select
-                          value={issuingCert.type}
-                          onChange={(e) =>
-                            setIssuingCert({
-                              ...issuingCert,
-                              type: e.target.value as "Course Completion" | "Practical Internship",
-                            })
-                          }
-                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
-                        >
-                          <option value="Course Completion">Course Completion Certificate</option>
-                          <option value="Practical Internship">3-Month Practical Internship Certificate</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
-                          Course / Track Name *
-                        </label>
-                        <select
-                          value={issuingCert.courseName}
-                          onChange={(e) =>
-                            setIssuingCert({ ...issuingCert, courseName: e.target.value })
-                          }
-                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
-                        >
-                          <option value="Full Stack Web Development (MERN Stack)">Full Stack Web Development (MERN Stack)</option>
-                          <option value="Digital Marketing & AI Growth Strategy">Digital Marketing & AI Growth Strategy</option>
-                          <option value="Data Analytics & Business Intelligence">Data Analytics & Business Intelligence</option>
-                          <option value="Data Science & Artificial Intelligence">Data Science & Artificial Intelligence</option>
-                          <option value="AWS Cloud & DevOps Engineering">AWS Cloud & DevOps Engineering</option>
-                          <option value="Software Testing & Automation (Selenium + API)">Software Testing & Automation</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
-                          Custom Certificate ID (Leave blank to auto-generate)
-                        </label>
-                        <input
-                          type="text"
-                          value={issuingCert.certificateNumber}
-                          onChange={(e) =>
-                            setIssuingCert({ ...issuingCert, certificateNumber: e.target.value })
-                          }
-                          placeholder="e.g. EIT-CC-2026-0106"
-                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white uppercase font-mono"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
-                        Live Project Deliverable Title
-                      </label>
-                      <input
-                        type="text"
-                        value={issuingCert.liveProjectTitle}
-                        onChange={(e) =>
-                          setIssuingCert({ ...issuingCert, liveProjectTitle: e.target.value })
-                        }
-                        placeholder="e.g. Real Client Ad Spend Campaign Management"
-                        className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
-                        Skills / Tools Mastered (comma separated)
-                      </label>
-                      <input
-                        type="text"
-                        value={Array.isArray(issuingCert.skills) ? issuingCert.skills.join(", ") : issuingCert.skills}
-                        onChange={(e) =>
-                          setIssuingCert({ ...issuingCert, skills: e.target.value.split(",").map((s) => s.trim()) })
-                        }
-                        placeholder="e.g. React 19, Next.js, Node.js, MongoDB, AWS"
-                        className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
-                      />
-                    </div>
-
-                    <div className="pt-3 flex justify-end gap-3 border-t border-slate-100 dark:border-slate-800">
-                      <button
-                        type="button"
-                        onClick={() => setShowIssueModal(false)}
-                        className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        type="submit"
-                        className="px-6 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-md shadow-emerald-500/20"
-                      >
-                        Issue & Register Certificate
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            )}
+            {/* Shared Modal: Issue Certificate */}
+            <IssueCertificateModal
+              isOpen={showIssueModal}
+              onClose={() => setShowIssueModal(false)}
+              onSuccess={(newCert) => {
+                setCertificates([newCert, ...certificates]);
+                setSaveMessage("Certificate issued and registered successfully!");
+                setTimeout(() => setSaveMessage(""), 3500);
+              }}
+            />
           </div>
         )}
       </main>
