@@ -114,3 +114,24 @@ export interface SiteConfig {
     rating: number;
   }>;
 }
+
+export interface Certificate {
+  id: string;
+  certificateNumber: string;
+  studentName: string;
+  courseName: string;
+  type: "Course Completion" | "Practical Internship";
+  issueDate: string;
+  completionDate: string;
+  duration: string;
+  grade: string;
+  status: "Verified & Active" | "Revoked";
+  skills: string[];
+  liveProjectTitle: string;
+  liveProjectDescription: string;
+  batchId: string;
+  mode: "Chennai Lab (Classroom)" | "Live Interactive Online";
+  signatoryTitle: string;
+  signatoryName: string;
+}
+

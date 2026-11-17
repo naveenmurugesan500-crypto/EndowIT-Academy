@@ -25,6 +25,14 @@ import {
 export default function CertificationsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [verifyInput, setVerifyInput] = useState("");
+
+  const handleVerifySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (verifyInput.trim()) {
+      window.location.href = `/verify?id=${encodeURIComponent(verifyInput.trim())}`;
+    }
+  };
 
   const certFaqs = [
     {
@@ -71,6 +79,45 @@ export default function CertificationsPage() {
             <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
               We provide two distinct, verifiable credentials upon course completion: an official <strong>Course Completion Certificate</strong> and an authentic <strong>3-Month Practical Internship Certificate</strong> based on real client deliverables.
             </p>
+
+            {/* Quick Verification Search Box */}
+            <div className="pt-4 max-w-xl mx-auto">
+              <form
+                onSubmit={handleVerifySubmit}
+                className="flex flex-col sm:flex-row items-center gap-2 p-1.5 rounded-2xl bg-white shadow-xl border-2 border-emerald-400"
+              >
+                <input
+                  type="text"
+                  value={verifyInput}
+                  onChange={(e) => setVerifyInput(e.target.value)}
+                  placeholder="Enter Certificate ID (e.g. EIT-CC-2026-0101)"
+                  className="w-full px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-900 placeholder:text-slate-400 focus:outline-none uppercase"
+                />
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shrink-0 transition-colors shadow-sm"
+                >
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Verify Online</span>
+                </button>
+              </form>
+              <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-[11px] text-slate-300">
+                <span>Try sample code:</span>
+                <Link
+                  href="/verify?id=EIT-CC-2026-0101"
+                  className="font-mono text-emerald-300 underline hover:text-white"
+                >
+                  EIT-CC-2026-0101
+                </Link>
+                <span>·</span>
+                <Link
+                  href="/verify?id=EIT-INT-2026-0101"
+                  className="font-mono text-emerald-300 underline hover:text-white"
+                >
+                  EIT-INT-2026-0101
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -85,9 +132,13 @@ export default function CertificationsPage() {
                   <span className="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950 px-3 py-1 rounded-full border border-brand-200 dark:border-brand-800">
                     Credential 01 · Training
                   </span>
-                  <span className="text-xs font-semibold text-slate-400 flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> Verifiable ID
-                  </span>
+                  <Link
+                    href="/verify?id=EIT-CC-2026-0101"
+                    className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                    <span>Verifiable Live (EIT-CC-2026-0101)</span>
+                  </Link>
                 </div>
 
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -107,27 +158,32 @@ export default function CertificationsPage() {
                         EndowIT Academy · Certificate of Completion
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-slate-400">ID: EIT-CC-2026-XXXX</span>
+                    <span className="text-[10px] font-mono font-bold text-brand-700 bg-brand-50 px-2 py-0.5 rounded">
+                      ID: EIT-CC-2026-0101
+                    </span>
                   </div>
 
                   <div className="text-center py-2 space-y-1">
                     <span className="text-[11px] text-slate-500 block">This certifies that</span>
                     <strong className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white block">
-                      [ Student Full Name ]
+                      Arun Prakash M
                     </strong>
                     <span className="text-xs text-slate-600 dark:text-slate-400 block">
                       has successfully completed the 3-Month Fast-Track Program in
                     </span>
                     <strong className="text-xs sm:text-sm font-bold text-brand-600 dark:text-brand-400 block">
-                      Digital Marketing / Full Stack / Data Analytics / Python AI
+                      Full Stack Web Development (MERN Stack)
                     </strong>
                   </div>
 
                   <div className="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800 text-[10px] text-slate-500">
                     <span>Authorized Signatory</span>
-                    <span className="flex items-center gap-1 font-semibold text-emerald-600">
-                      <ShieldCheck className="w-3.5 h-3.5" /> Authenticity Guaranteed
-                    </span>
+                    <Link
+                      href="/verify?id=EIT-CC-2026-0101"
+                      className="flex items-center gap-1 font-bold text-emerald-600 hover:underline"
+                    >
+                      <ShieldCheck className="w-3.5 h-3.5" /> Verify Sample Online
+                    </Link>
                   </div>
                 </div>
 
@@ -136,6 +192,10 @@ export default function CertificationsPage() {
                   <div className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span>Includes complete breakdown of tools and frameworks mastered.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>Dynamic QR Code for instant smartphone camera scanning.</span>
                   </div>
                   <div className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
@@ -148,12 +208,19 @@ export default function CertificationsPage() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800 flex gap-2">
+                <Link
+                  href="/verify?id=EIT-CC-2026-0101"
+                  className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20"
+                >
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Verify Sample Certificate</span>
+                </Link>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs uppercase tracking-wider transition-all"
+                  className="py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors"
                 >
-                  View Sample Syllabus & Certificate
+                  Enroll Now
                 </button>
               </div>
             </div>
@@ -165,9 +232,13 @@ export default function CertificationsPage() {
                   <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950 px-3 py-1 rounded-full border border-emerald-200 dark:border-emerald-800">
                     Credential 02 · Work Experience
                   </span>
-                  <span className="text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                    <Briefcase className="w-3.5 h-3.5" /> 3-Month Work Proof
-                  </span>
+                  <Link
+                    href="/verify?id=EIT-INT-2026-0101"
+                    className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200"
+                  >
+                    <Briefcase className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Verifiable Live (EIT-INT-2026-0101)</span>
+                  </Link>
                 </div>
 
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -187,27 +258,32 @@ export default function CertificationsPage() {
                         EndowIT Academy · Internship Certificate
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-emerald-700 dark:text-emerald-400">ID: EIT-INT-2026-XXXX</span>
+                    <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">
+                      ID: EIT-INT-2026-0101
+                    </span>
                   </div>
 
                   <div className="text-center py-2 space-y-1">
                     <span className="text-[11px] text-slate-600 dark:text-slate-400 block">This is to certify that</span>
                     <strong className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white block">
-                      [ Student Full Name ]
+                      Arun Prakash M
                     </strong>
                     <span className="text-xs text-slate-600 dark:text-slate-400 block">
                       has successfully completed a 3-Month Practical Internship as
                     </span>
                     <strong className="text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-300 block">
-                      Technical Project Intern (Live Client Deliverables)
+                      Full Stack Web Developer Intern (Live Production SaaS)
                     </strong>
                   </div>
 
                   <div className="flex items-center justify-between pt-2 border-t border-emerald-200/80 dark:border-emerald-800/80 text-[10px] text-emerald-800 dark:text-emerald-300">
                     <span>Director of Training</span>
-                    <span className="flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400">
-                      <ShieldCheck className="w-3.5 h-3.5" /> HR Verification Enabled
-                    </span>
+                    <Link
+                      href="/verify?id=EIT-INT-2026-0101"
+                      className="flex items-center gap-1 font-bold text-emerald-600 hover:underline"
+                    >
+                      <ShieldCheck className="w-3.5 h-3.5" /> Verify Sample Online
+                    </Link>
                   </div>
                 </div>
 
@@ -223,21 +299,94 @@ export default function CertificationsPage() {
                   </div>
                   <div className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>Dynamic QR Code and permanent online verification registry.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                     <span>Includes official phone & email verification support for HR background checks.</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800 flex gap-2">
+                <Link
+                  href="/verify?id=EIT-INT-2026-0101"
+                  className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20"
+                >
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Verify Sample Internship</span>
+                </Link>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-all"
+                  className="py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors"
                 >
-                  Book Free Counseling & Demo
+                  Enroll Now
                 </button>
               </div>
             </div>
 
+          </div>
+        </div>
+
+        {/* ================= 3-STEP QR CODE & ONLINE VERIFICATION EXPLAINER ================= */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+          <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+            <div className="max-w-3xl space-y-2">
+              <span className="text-xs font-bold text-brand-600 uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
+                Tamper-Proof Verification Process
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                How Our QR Code & Online Verification Works
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Every physical and digital certificate issued by EndowIT Academy comes with a unique cryptographic verification ID and an embedded high-resolution QR code.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black">
+                  1
+                </div>
+                <h4 className="text-base font-bold text-slate-900">Unique Credential ID</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Each certificate is assigned an official code (e.g., <code>EIT-CC-2026-0101</code> or <code>EIT-INT-2026-0101</code>) stored permanently in our central academic registry.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-black">
+                  2
+                </div>
+                <h4 className="text-base font-bold text-slate-900">Instant QR Camera Scan</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Hiring managers and HR recruiters can point any smartphone camera at the certificate's QR code to open the authenticated verification record in seconds.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black">
+                  3
+                </div>
+                <h4 className="text-base font-bold text-slate-900">Complete Proof of Work</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  The verification page confirms student identity, course completion, client ad spend / deployed SaaS code deliverables, grade, and mentor signatories.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100">
+              <span className="text-xs text-slate-500">
+                Want to test live certificate verification right now?
+              </span>
+              <Link
+                href="/verify?id=EIT-CC-2026-0101"
+                className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md shadow-emerald-500/20"
+              >
+                <ShieldCheck className="w-4 h-4" />
+                <span>Open Verification Portal Live</span>
+              </Link>
+            </div>
           </div>
         </div>
 

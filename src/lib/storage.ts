@@ -1,15 +1,17 @@
 import fs from "fs";
 import path from "path";
-import { Course, BlogPost, SiteConfig, Lead } from "./types";
+import { Course, BlogPost, SiteConfig, Lead, Certificate } from "./types";
 import defaultCourses from "../data/courses.json";
 import defaultBlogs from "../data/blogs.json";
 import defaultSiteConfig from "../data/siteConfig.json";
+import defaultCertificates from "../data/certificates.json";
 
 const dataDir = path.join(process.cwd(), "src", "data");
 const coursesPath = path.join(dataDir, "courses.json");
 const blogsPath = path.join(dataDir, "blogs.json");
 const siteConfigPath = path.join(dataDir, "siteConfig.json");
 const leadsPath = path.join(dataDir, "leads.json");
+const certificatesPath = path.join(dataDir, "certificates.json");
 
 function ensureDirectoryExists() {
   if (!fs.existsSync(dataDir)) {
@@ -106,3 +108,45 @@ export function updateLeadStatus(id: string, status: Lead["status"]) {
     fs.writeFileSync(leadsPath, JSON.stringify(leads, null, 2), "utf-8");
   }
 }
+
+export function getCertificates(): Certificate[] {
+  ensureDirectoryExists();
+  try {
+    if (fs.existsSync(certificatesPath)) {
+      const data = fs.readFileSync(certificatesPath, "utf-8");
+      return JSON.parse(data);
+    }
+  } catch (error) {
+    console.error("Error reading certificates:", error);
+  }
+  return defaultCertificates as Certificate[];
+}
+
+export function getCertificateById(searchQuery: string): Certificate | null {
+  const certs = getCertificates();
+  const query = searchQuery.trim().toUpperCase();
+  const found = certs.find(
+    (c) =>
+      c.certificateNumber.trim().toUpperCase() === query ||
+      c.id.trim().toUpperCase() === query
+  );
+  return found || null;
+}
+
+export function saveCertificate(certificate: Certificate): Certificate {
+  ensureDirectoryExists();
+  const certs = getCertificates();
+  const existingIdx = certs.findIndex(
+    (c) => c.certificateNumber.toUpperCase() === certificate.certificateNumber.toUpperCase()
+  );
+
+  if (existingIdx !== -1) {
+    certs[existingIdx] = certificate;
+  } else {
+    certs.unshift(certificate);
+  }
+
+  fs.writeFileSync(certificatesPath, JSON.stringify(certs, null, 2), "utf-8");
+  return certificate;
+}
+

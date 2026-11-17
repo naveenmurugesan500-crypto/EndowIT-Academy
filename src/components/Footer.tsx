@@ -121,6 +121,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/verify" className="hover:text-brand-600 text-emerald-700 font-semibold transition-colors flex items-center gap-1">
+                  <span>Verify Certificate</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy-policy" className="hover:text-brand-600 transition-colors">
                   Privacy Policy
                 </Link>
@@ -195,6 +200,9 @@ export default function Footer() {
             </Link>
             <Link href="/certifications" className="hover:text-brand-600 transition-colors">
               Certifications
+            </Link>
+            <Link href="/verify" className="hover:text-brand-600 text-emerald-700 font-semibold transition-colors">
+              Verify Certificate
             </Link>
             <Link href="/privacy-policy" className="hover:text-brand-600 transition-colors">
               Privacy Policy

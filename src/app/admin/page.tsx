@@ -23,25 +23,47 @@ import {
   Star,
   MapPin,
   Check,
+  Award,
+  X,
 } from "lucide-react";
-import { Course, BlogPost, Lead, SiteConfig, GoogleReview } from "@/lib/types";
+import { Course, BlogPost, Lead, SiteConfig, GoogleReview, Certificate } from "@/lib/types";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<
-    "leads" | "courses" | "blogs" | "seo" | "gmb"
+    "leads" | "courses" | "blogs" | "seo" | "gmb" | "certificates"
   >("leads");
 
   // State
   const [leads, setLeads] = useState<Lead[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [certificates, setCertificates] = useState<Certificate[]>([]);
   const [siteConfig, setSiteConfig] = useState<SiteConfig | null>(null);
   const [loading, setLoading] = useState(true);
   const [saveMessage, setSaveMessage] = useState("");
   const [syncingGoogle, setSyncingGoogle] = useState(false);
 
-  // Search filter for leads
+  // Search filter for leads & certificates
   const [leadSearch, setLeadSearch] = useState("");
+  const [certSearch, setCertSearch] = useState("");
+
+  // Certificate Issue Modal
+  const [showIssueModal, setShowIssueModal] = useState(false);
+  const [issuingCert, setIssuingCert] = useState<Partial<Certificate>>({
+    studentName: "",
+    courseName: "Full Stack Web Development (MERN Stack)",
+    type: "Course Completion",
+    certificateNumber: "",
+    duration: "3 Months (Intensive Hands-on)",
+    grade: "Distinction · Grade A+",
+    skills: ["React 19", "Next.js 14", "Node.js", "MongoDB"],
+    liveProjectTitle: "Live Client Capstone Project",
+    liveProjectDescription: "Completed live client project deliverables with daily code reviews.",
+    batchId: "EIT-CHN-2026",
+    mode: "Chennai Lab (Classroom)",
+    signatoryName: "Dr. S. Raghunathan, Ph.D.",
+    signatoryTitle: "Director of Technical Education",
+  });
 
   // Course Edit Modal / Form
   const [editingCourse, setEditingCourse] = useState<Course | null>(null);
@@ -66,17 +88,19 @@ export default function AdminDashboard() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [leadsRes, coursesRes, blogsRes, seoRes] = await Promise.all([
+      const [leadsRes, coursesRes, blogsRes, seoRes, certsRes] = await Promise.all([
         fetch("/api/leads").then((r) => r.json()),
         fetch("/api/admin/courses").then((r) => r.json()),
         fetch("/api/admin/blogs").then((r) => r.json()),
         fetch("/api/admin/seo").then((r) => r.json()),
+        fetch("/api/admin/certificates").then((r) => r.json()),
       ]);
 
       if (leadsRes.success) setLeads(leadsRes.leads);
       if (coursesRes.success) setCourses(coursesRes.courses);
       if (blogsRes.success) setBlogs(blogsRes.blogs);
       if (seoRes.success) setSiteConfig(seoRes.config);
+      if (certsRes.success) setCertificates(certsRes.certificates);
     } catch (err) {
       console.error("Failed to load admin data", err);
     } finally {
@@ -409,6 +433,18 @@ export default function AdminDashboard() {
           >
             <Settings className="w-4 h-4" />
             <span>SEO & Contact Details</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab("certificates")}
+            className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-bold border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap ${
+              activeTab === "certificates"
+                ? "border-emerald-600 text-emerald-600 dark:text-emerald-400"
+                : "border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300"
+            }`}
+          >
+            <Award className="w-4 h-4 text-emerald-600" />
+            <span>Certificates & Verification ({certificates.length})</span>
           </button>
         </div>
       </header>
@@ -1411,6 +1447,7 @@ export default function AdminDashboard() {
         )}
 
         {/* TAB 5: SEO & SITE CONFIGURATION */}
+        {/* TAB 5: SEO & SETTINGS */}
         {activeTab === "seo" && siteConfig && (
           <div className="space-y-6 max-w-4xl">
             <div>
@@ -1561,6 +1598,300 @@ export default function AdminDashboard() {
                 </button>
               </div>
             </form>
+          </div>
+        )}
+
+        {/* TAB 6: CERTIFICATES & VERIFICATION REGISTRY */}
+        {activeTab === "certificates" && (
+          <div className="space-y-6">
+            {/* Header with Search and Issue Button */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="space-y-1">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Award className="w-5 h-5 text-emerald-600" />
+                  <span>Student Certificate & Internship Registry</span>
+                </h3>
+                <p className="text-xs text-slate-500">
+                  Manage verifiable Course Completion and 3-Month Practical Internship credentials with QR code validation.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="/verify"
+                  target="_blank"
+                  className="px-4 py-2 rounded-xl text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors flex items-center gap-1.5"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Public Verification Portal</span>
+                </Link>
+
+                <button
+                  onClick={() => setShowIssueModal(true)}
+                  className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-500/20 transition-all flex items-center gap-1.5"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>Issue New Certificate</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Search filter */}
+            <div className="relative">
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                value={certSearch}
+                onChange={(e) => setCertSearch(e.target.value)}
+                placeholder="Search certificate by student name, ID, or course..."
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              />
+            </div>
+
+            {/* Certificates Table */}
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-900 overflow-hidden shadow-sm">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-slate-50 dark:bg-navy-950 text-slate-600 dark:text-slate-400 font-bold uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
+                    <tr>
+                      <th className="p-4">Certificate ID</th>
+                      <th className="p-4">Student Name</th>
+                      <th className="p-4">Course Program</th>
+                      <th className="p-4">Type</th>
+                      <th className="p-4">Issue Date</th>
+                      <th className="p-4">Status</th>
+                      <th className="p-4 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                    {certificates
+                      .filter((c) => {
+                        const q = certSearch.toLowerCase();
+                        return (
+                          c.studentName.toLowerCase().includes(q) ||
+                          c.certificateNumber.toLowerCase().includes(q) ||
+                          c.courseName.toLowerCase().includes(q)
+                        );
+                      })
+                      .map((cert) => (
+                        <tr
+                          key={cert.id}
+                          className="hover:bg-slate-50/70 dark:hover:bg-navy-950/60 transition-colors"
+                        >
+                          <td className="p-4">
+                            <span className="font-mono font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-200">
+                              {cert.certificateNumber}
+                            </span>
+                          </td>
+                          <td className="p-4 font-bold text-slate-900 dark:text-white">
+                            {cert.studentName}
+                          </td>
+                          <td className="p-4 text-slate-600 dark:text-slate-300">
+                            {cert.courseName}
+                          </td>
+                          <td className="p-4">
+                            <span
+                              className={`px-2.5 py-1 rounded-full text-[10px] font-bold ${
+                                cert.type === "Practical Internship"
+                                  ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+                                  : "bg-blue-50 text-blue-800 border border-blue-200"
+                              }`}
+                            >
+                              {cert.type}
+                            </span>
+                          </td>
+                          <td className="p-4 text-slate-500 whitespace-nowrap">
+                            {cert.issueDate}
+                          </td>
+                          <td className="p-4">
+                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600">
+                              <CheckCircle2 className="w-3.5 h-3.5" />
+                              <span>{cert.status}</span>
+                            </span>
+                          </td>
+                          <td className="p-4 text-right whitespace-nowrap">
+                            <Link
+                              href={`/verify?id=${encodeURIComponent(cert.certificateNumber)}`}
+                              target="_blank"
+                              className="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-[11px] border border-emerald-200 inline-flex items-center gap-1 transition-colors"
+                            >
+                              <span>Verify Live</span>
+                              <ExternalLink className="w-3 h-3" />
+                            </Link>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Modal: Issue Certificate */}
+            {showIssueModal && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/70 backdrop-blur-sm">
+                <div className="relative w-full max-w-2xl bg-white dark:bg-navy-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+                  <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                        Issue New Student Certificate
+                      </h3>
+                      <p className="text-xs text-slate-500">
+                        Generates a verifiable credential with permanent online registry verification.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setShowIssueModal(false)}
+                      className="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  <form
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      try {
+                        const res = await fetch("/api/admin/certificates", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(issuingCert),
+                        });
+                        const data = await res.json();
+                        if (data.success) {
+                          setCertificates([data.certificate, ...certificates]);
+                          setShowIssueModal(false);
+                          setSaveMessage("Certificate issued and registered successfully!");
+                          setTimeout(() => setSaveMessage(""), 3500);
+                        }
+                      } catch (err) {
+                        console.error(err);
+                      }
+                    }}
+                    className="space-y-4 pt-4 text-xs"
+                  >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                          Student Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={issuingCert.studentName}
+                          onChange={(e) =>
+                            setIssuingCert({ ...issuingCert, studentName: e.target.value })
+                          }
+                          placeholder="e.g. Arun Prakash M"
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                          Certificate Type *
+                        </label>
+                        <select
+                          value={issuingCert.type}
+                          onChange={(e) =>
+                            setIssuingCert({
+                              ...issuingCert,
+                              type: e.target.value as "Course Completion" | "Practical Internship",
+                            })
+                          }
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
+                        >
+                          <option value="Course Completion">Course Completion Certificate</option>
+                          <option value="Practical Internship">3-Month Practical Internship Certificate</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                          Course / Track Name *
+                        </label>
+                        <select
+                          value={issuingCert.courseName}
+                          onChange={(e) =>
+                            setIssuingCert({ ...issuingCert, courseName: e.target.value })
+                          }
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
+                        >
+                          <option value="Full Stack Web Development (MERN Stack)">Full Stack Web Development (MERN Stack)</option>
+                          <option value="Digital Marketing & AI Growth Strategy">Digital Marketing & AI Growth Strategy</option>
+                          <option value="Data Analytics & Business Intelligence">Data Analytics & Business Intelligence</option>
+                          <option value="Data Science & Artificial Intelligence">Data Science & Artificial Intelligence</option>
+                          <option value="AWS Cloud & DevOps Engineering">AWS Cloud & DevOps Engineering</option>
+                          <option value="Software Testing & Automation (Selenium + API)">Software Testing & Automation</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                          Custom Certificate ID (Leave blank to auto-generate)
+                        </label>
+                        <input
+                          type="text"
+                          value={issuingCert.certificateNumber}
+                          onChange={(e) =>
+                            setIssuingCert({ ...issuingCert, certificateNumber: e.target.value })
+                          }
+                          placeholder="e.g. EIT-CC-2026-0106"
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white uppercase font-mono"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                        Live Project Deliverable Title
+                      </label>
+                      <input
+                        type="text"
+                        value={issuingCert.liveProjectTitle}
+                        onChange={(e) =>
+                          setIssuingCert({ ...issuingCert, liveProjectTitle: e.target.value })
+                        }
+                        placeholder="e.g. Real Client Ad Spend Campaign Management"
+                        className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">
+                        Skills / Tools Mastered (comma separated)
+                      </label>
+                      <input
+                        type="text"
+                        value={Array.isArray(issuingCert.skills) ? issuingCert.skills.join(", ") : issuingCert.skills}
+                        onChange={(e) =>
+                          setIssuingCert({ ...issuingCert, skills: e.target.value.split(",").map((s) => s.trim()) })
+                        }
+                        placeholder="e.g. React 19, Next.js, Node.js, MongoDB, AWS"
+                        className="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-navy-950 text-slate-900 dark:text-white"
+                      />
+                    </div>
+
+                    <div className="pt-3 flex justify-end gap-3 border-t border-slate-100 dark:border-slate-800">
+                      <button
+                        type="button"
+                        onClick={() => setShowIssueModal(false)}
+                        className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="px-6 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-md shadow-emerald-500/20"
+                      >
+                        Issue & Register Certificate
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </main>
