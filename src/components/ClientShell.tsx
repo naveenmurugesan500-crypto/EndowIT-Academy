@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import LeadModal from "./LeadModal";
+import Chatbot from "./Chatbot";
 import {
   MessageCircle,
   Instagram,
@@ -149,6 +150,9 @@ export default function ClientShell({ children }: ClientShellProps) {
         onClose={() => setIsDemoModalOpen(false)}
         defaultCourse={selectedCourseForModal}
       />
+
+      {/* 24/7 AI Student Advisor Chatbot */}
+      <Chatbot />
     </div>
   );
 }
