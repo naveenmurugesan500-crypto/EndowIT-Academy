@@ -36,8 +36,10 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
+        sans: ["'Google Sans'", "var(--font-sans)", "'Product Sans'", "system-ui", "-apple-system", "sans-serif"],
+        heading: ["var(--font-heading)", "'Montserrat'", "'Google Sans'", "sans-serif"],
+        montserrat: ["var(--font-heading)", "'Montserrat'", "sans-serif"],
+        google: ["'Google Sans'", "'Product Sans'", "sans-serif"],
       },
       animation: {
         "float-slow": "float 6s ease-in-out infinite",

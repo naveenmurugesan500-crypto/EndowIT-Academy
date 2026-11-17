@@ -2,10 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================= GOOGLE SANS WEBFONT ================= */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/googlesans/v58/4UaGrEJvVUkkapKWuxSrC5e_5x8.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fonts.gstatic.com/s/googlesans/v58/4UabrEJvVUkkapKWuxSrCadPCE7buuhs.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://fonts.gstatic.com/s/googlesans/v58/4UabrEJvVUkkapKWuxSrCadvCE7buuhs.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts.gstatic.com/s/googlesans/v58/4UabrEJvVUkkapKWuxSrCadvCE7buuhs.woff2') format('woff2');
+  font-display: swap;
+}
+
 :root {
   --foreground-rgb: 15, 23, 42;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 248, 250, 252;
+  --font-sans: 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-heading), 'Montserrat', sans-serif;
 }
 
 html,
@@ -17,7 +52,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Google Sans', var(--font-sans), 'Product Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "rlig" 1, "calt" 1;
@@ -29,8 +64,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading), var(--font-sans), sans-serif;
-  letter-spacing: -0.025em;
+  font-family: var(--font-heading), 'Montserrat', 'Google Sans', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 /* Glassmorphism utilities */
