@@ -104,7 +104,7 @@ export default function Header({ onOpenDemoModal }: HeaderProps) {
             <div className="relative w-44 h-12 flex items-center">
               <Image
                 src="/logo.png"
-                alt="EndowIT Academy"
+                alt="EndowIT Academy - Best IT & Digital Marketing Training Institute in Chennai"
                 width={180}
                 height={50}
                 className="object-contain"

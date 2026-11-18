@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getCourses, getBlogs } from "@/lib/storage";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://endowitacademy.com";
+  const baseUrl = "https://www.endowit.in";
   const courses = getCourses();
   const blogs = getBlogs();
 
@@ -14,13 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/opening-offer",
     "/certifications",
+    "/verify",
     "/privacy-policy",
     "/terms-and-conditions",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route === "" ? 1.0 : route === "/courses" || route === "/opening-offer" ? 0.9 : 0.8,
   }));
 
   const courseRoutes = courses.map((course) => ({

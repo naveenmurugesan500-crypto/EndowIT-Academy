@@ -357,7 +357,7 @@ function VerifyContent() {
                   <div className="relative w-44 h-12 flex items-center">
                     <Image
                       src="/logo.png"
-                      alt="EndowIT Academy"
+                      alt="EndowIT Academy Official Verified Certificate"
                       width={180}
                       height={50}
                       className="object-contain"

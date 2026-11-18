@@ -33,6 +33,9 @@ export interface Course {
   modules: CourseModule[];
   careerRoles: string[];
   faq: CourseFAQ[];
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string;
 }
 
 export interface BlogPost {

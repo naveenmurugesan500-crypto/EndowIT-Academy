@@ -7,6 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin/", "/api/admin/"],
     },
-    sitemap: "https://endowitacademy.com/sitemap.xml",
+    sitemap: [
+      "https://www.endowit.in/sitemap.xml",
+      "https://endowitacademy.vercel.app/sitemap.xml",
+    ],
   };
 }

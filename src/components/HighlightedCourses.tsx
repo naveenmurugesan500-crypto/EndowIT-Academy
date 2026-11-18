@@ -48,7 +48,7 @@ export default function HighlightedCourses({
             <span>Practical Training In Action</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Learn Tech By <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">Doing Real Client Work</span>
+            Top Software Courses with Placement · <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">Learn By Doing Real Client Work</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-600">
             Strictly 3-month curriculums, live client ad budgets, production deployments, and a guaranteed practical internship certificate.

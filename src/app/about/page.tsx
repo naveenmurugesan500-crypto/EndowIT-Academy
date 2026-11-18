@@ -216,7 +216,7 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
-                  alt="EndowIT Academy Practical Lab Chennai"
+                  alt="EndowIT Academy Practical Lab Chennai - Best Software Training Institute in Chennai"
                   className="w-full h-80 sm:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent flex items-end p-6 text-white">

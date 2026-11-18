@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="w-48 h-12 relative flex items-center bg-white p-2 rounded-xl border border-slate-200/80 shadow-sm">
               <Image
                 src="/logo.png"
-                alt="EndowIT Academy"
+                alt="EndowIT Academy - 100% Practical IT Training & Internship Institute"
                 width={180}
                 height={50}
                 className="object-contain"

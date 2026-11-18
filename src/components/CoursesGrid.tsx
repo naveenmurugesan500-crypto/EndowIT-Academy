@@ -51,7 +51,7 @@ export default function CoursesGrid({
             <span>Job-Oriented Training Programs</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Our 3-Month <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">Career Tracks</span>
+            Best IT Courses with Placement · <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">3-Month Practical Tracks</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-600">
             Small batches (10–15 students), real client projects with actual ad spend and production deployments, guaranteed practical internship, and dedicated interview preparation.

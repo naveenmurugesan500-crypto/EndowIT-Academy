@@ -65,22 +65,22 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
             {/* Main Headline */}
             <div className="space-y-2">
               <span className="text-xs sm:text-sm font-bold text-brand-700 tracking-wider uppercase block">
-                Practical IT & Digital Marketing Training · Chennai
+                Best Software Training Institute in Chennai · 100% Practical Lab
               </span>
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
-                Learn Tech By{" "}
+                Practical IT Courses With{" "}
                 <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                  Building Real Projects.
+                  Guaranteed Internship.
                 </span>
                 <span className="block text-emerald-600 text-3xl sm:text-4xl xl:text-5xl font-extrabold mt-1">
-                  New Batches Starting Monday.
+                  Digital Marketing, Full Stack & Data Analytics.
                 </span>
               </h1>
             </div>
 
             {/* Description */}
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Skip boring theory and 500-page slide decks. Spend <strong>3 months</strong> running live ad campaigns with real budgets, building web apps that actually get deployed, and learning the exact tools companies hire for. Includes micro-batches of 10–15 students, a <strong className="text-emerald-700 font-semibold">guaranteed practical internship</strong>, and one-on-one interview preparation.
+              Skip boring theory and slide decks. Spend <strong>3 months</strong> in our top software training institute running live ad campaigns with real budgets, building full stack web apps deployed to production, and analyzing live client data. Includes micro-batches of 10–15 students, a <strong className="text-emerald-700 font-semibold">guaranteed practical internship</strong>, and one-on-one interview preparation with placement assistance.
             </p>
 
             {/* Integrated Dual Pricing Spotlight Row */}
@@ -267,7 +267,7 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
               <div className="relative mx-auto flex items-end justify-center">
                 <Image
                   src="/images/student.webp"
-                  alt="EndowIT Academy student holding laptop"
+                  alt="EndowIT Academy student learning Full Stack Development and Data Analytics in Chennai lab"
                   width={500}
                   height={540}
                   priority
