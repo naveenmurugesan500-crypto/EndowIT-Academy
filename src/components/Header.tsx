@@ -97,7 +97,7 @@ export default function Header({ onOpenDemoModal }: HeaderProps) {
           : "bg-white/85 dark:bg-navy-950/85 backdrop-blur-sm py-4 border-b border-slate-100 dark:border-slate-800/60"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">

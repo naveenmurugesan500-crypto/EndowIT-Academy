@@ -43,7 +43,7 @@ export default function CoursesGrid({
 
   return (
     <section className="py-8 sm:py-10 bg-transparent text-slate-900 relative" id="courses">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-2 sm:px-4 lg:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-2.5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 text-cyan-800 text-xs font-bold border border-cyan-200">

@@ -165,7 +165,7 @@ export default function HomePage() {
       <div className="bg-gradient-to-b from-white via-slate-50/70 to-white text-slate-900 py-8 space-y-12 sm:space-y-16">
         
         {/* BLOCK 01: Platform & Industry Tools Strip */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="rounded-3xl bg-white/95 border border-slate-200/90 p-4 sm:p-5 shadow-sm backdrop-blur-md">
             <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-semibold text-slate-600">
               <span className="text-slate-900 font-bold flex items-center gap-2 uppercase tracking-wider text-[11px]">
@@ -192,7 +192,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 02: Animated Interactive Flagship Courses Spotlight */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="relative rounded-[2.5rem] border border-cyan-200/80 bg-gradient-to-b from-white via-cyan-50/20 to-white shadow-xl shadow-cyan-500/5 overflow-hidden">
             {/* Top Block Header Bar */}
             <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-cyan-100 text-xs font-bold uppercase tracking-wider">
@@ -213,7 +213,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 03: Why Choose EndowIT Academy (The Practical Method) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="relative rounded-[2.5rem] border border-emerald-200/80 bg-gradient-to-b from-white via-emerald-50/20 to-white shadow-xl shadow-emerald-500/5 overflow-hidden">
             {/* Top Block Header Bar */}
             <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-emerald-100 text-xs font-bold uppercase tracking-wider">
@@ -231,7 +231,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 04: Interactive 3-Month Curriculum Timeline Stepper (NEW VISUAL WIDGET) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="relative rounded-[2.5rem] border border-indigo-200/80 bg-gradient-to-b from-white via-indigo-50/20 to-white p-6 sm:p-10 lg:p-12 shadow-xl shadow-indigo-500/5 overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-indigo-100 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-indigo-800">
@@ -339,7 +339,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 05: All Courses Catalog Grid (Categorized) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="relative rounded-[2.5rem] border border-blue-200/80 bg-gradient-to-b from-white via-blue-50/20 to-white shadow-xl shadow-blue-500/5 overflow-hidden">
             {/* Top Block Header Bar */}
             <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-blue-100 text-xs font-bold uppercase tracking-wider">
@@ -360,7 +360,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 06: Practical Comparison Table (NEW INTERACTIVE VISUAL WIDGET) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="relative rounded-[2.5rem] border border-teal-200/80 bg-gradient-to-b from-white via-teal-50/20 to-white p-6 sm:p-10 shadow-xl shadow-teal-500/5 overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-teal-100 text-xs font-bold uppercase tracking-wider">
               <span className="flex items-center gap-2 text-teal-800">
@@ -432,7 +432,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 07: Google Business Profile Verified Reviews */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="relative rounded-[2.5rem] border border-amber-200/80 bg-gradient-to-b from-white via-amber-50/20 to-white shadow-xl shadow-amber-500/5 overflow-hidden">
             {/* Top Block Header Bar */}
             <div className="flex items-center justify-between px-6 sm:px-8 pt-6 pb-2 border-b border-amber-100 text-xs font-bold uppercase tracking-wider">
@@ -450,7 +450,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 08: Frequently Asked Questions (FAQ) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
           <div className="relative rounded-[2.5rem] border border-blue-200/80 bg-gradient-to-b from-white via-slate-50/60 to-white p-6 sm:p-10 shadow-xl shadow-blue-500/5 overflow-hidden">
             {/* Top Block Header Bar */}
             <div className="flex items-center justify-between pb-6 border-b border-slate-200 text-xs font-bold uppercase tracking-wider">
@@ -507,7 +507,7 @@ export default function HomePage() {
         </div>
 
         {/* BLOCK 09: Bottom Launch CTA Banner Block */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+        <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6 pb-4">
           <div className="relative rounded-[2.5rem] border border-brand-300 bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 text-white p-6 sm:p-10 shadow-2xl shadow-brand-600/20 overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-300/10 rounded-full blur-3xl pointer-events-none" />

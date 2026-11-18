@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-50 text-slate-600 pt-14 pb-0 border-t border-slate-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200/90">
           {/* Col 1: About & Logo */}
           <div className="lg:col-span-2 space-y-4">

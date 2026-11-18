@@ -38,7 +38,7 @@ export default function HeroSection({ onOpenDemoModal }: HeroSectionProps) {
         <div className="absolute top-24 right-1/4 w-[320px] h-[320px] bg-hero-dots opacity-60" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+      <div className="relative max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6 z-10 w-full">
         {/* Modern 2-Column Asymmetrical Grid: 7 Cols Left (Content & Pricing), 5 Cols Right (Integrated Visual Stage) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
