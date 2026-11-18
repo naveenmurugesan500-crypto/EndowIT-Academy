@@ -15,6 +15,7 @@ import {
   ExternalLink,
   MessageCircle,
 } from "lucide-react";
+import { generateEndoviReply } from "@/lib/chatbot-ai";
 
 // Cute 3D Toy Robot Mascot Avatar ("பொம்மை மாதிரி" AI Buddy - Endovi)
 function EndoviMascot({ className = "w-10 h-10", animated = false }: { className?: string; animated?: boolean }) {
@@ -156,13 +157,13 @@ export default function Chatbot() {
     {
       id: "m_1",
       sender: "bot",
-      text: "Vanakkam! 🙏 I am Endovi, your 24/7 AI Academy Buddy at EndowIT! How can I help you today?",
+      text: "Vanakkam! 🙏 I am Endovi, your 24/7 AI Buddy at EndowIT Academy!\n\nYou can chat with me just like a friend on WhatsApp—ask me anything from tech courses, career guidance, and ₹5,000 opening offers, or just say 'Hi'! How's your day going?",
       timestamp: "Just now",
       quickReplies: [
+        "👋 Hi Endovi! How are you?",
         "🎓 Which course is best for me?",
         "💰 ₹5,000 Grand Opening Offer",
         "💼 How does the Internship work?",
-        "📜 Verify a Certificate",
         "📞 Talk to an Admissions Mentor",
       ],
     },
@@ -181,70 +182,6 @@ export default function Chatbot() {
     }
   }, [isOpen, messages, isTyping]);
 
-  const botResponses: {
-    keywords: string[];
-    reply: string;
-    quickReplies?: string[];
-    actionLink?: { label: string; href: string; external?: boolean };
-  }[] = [
-    {
-      keywords: ["which course", "choose", "recommend", "best course", "career", "guidance"],
-      reply:
-        "Here is our quick recommendation based on your interest:\n\n• For Coding & Software Engineering: Full Stack Web Development (MERN Stack - React 19, Next.js, Node.js).\n• For Non-Coders / Business / Creative: Digital Marketing & AI Growth Strategy (Live Client Ad Spend).\n• For Analytical Minds: Data Analytics & BI (SQL, Python, Power BI, Excel).\n• For Cloud Infrastructure: AWS Cloud & DevOps Engineering.\n• For QA & Quality: Software Testing & Automation (Selenium + Playwright).\n\nAll courses are strictly 3 Months, limited to 10–15 students per batch, with a guaranteed 3-Month Practical Internship!",
-      quickReplies: ["Tell me about fees", "Book a Free Demo", "Where is the lab?"],
-      actionLink: { label: "Explore All 6 Courses", href: "/courses" },
-    },
-    {
-      keywords: ["fee", "cost", "price", "5000", "5k", "offer", "discount", "opening offer"],
-      reply:
-        "🎉 Grand Opening Special Offer:\n\n• Flat ₹5,000 All-Inclusive for the first 20 enrolled students across any track!\n• Standard Launch Fee: ₹14,999 (Regular price for later batches).\n• Zero Hidden Fees: Live client ad budget, lab workstation, and dual certifications are 100% included.\n• Split installment options are also available!",
-      quickReplies: ["Claim ₹5,000 Offer Now", "Course Duration?", "Book Free Demo"],
-      actionLink: { label: "View ₹5,000 Offer Details", href: "/opening-offer" },
-    },
-    {
-      keywords: ["internship", "practical", "live project", "client", "experience"],
-      reply:
-        "Every student receives an authentic 3-Month Practical Internship Certificate alongside their Course Completion Certificate!\n\n• You do not do dummy projects—you work on real client repositories and active ad accounts with real ad budgets.\n• Deliverables include code reviews, live SaaS deployments, and full-funnel ad campaigns.",
-      quickReplies: ["How to verify certificate?", "Course list", "Book a Demo"],
-      actionLink: { label: "Learn About Certifications", href: "/certifications" },
-    },
-    {
-      keywords: ["verify", "certificate", "qr", "qr code", "code", "authenticity", "check"],
-      reply:
-        "You can verify any EndowIT Academy credential in two ways:\n\n1. Scan the QR Code printed on the certificate using your phone camera.\n2. Search by Certificate ID (e.g. EIT-CC-2026-0101 or EIT-INT-2026-0101) on our public portal.\n\nEmployers and HR recruiters can verify authenticity 24/7!",
-      quickReplies: ["Try Verification Portal", "Which courses have certificates?"],
-      actionLink: { label: "Open Verification Portal", href: "/verify" },
-    },
-    {
-      keywords: ["demo", "counseling", "trial", "visit", "join", "enroll", "book"],
-      reply:
-        "You can attend a Free 1-on-1 Practical Demo Class before enrolling!\n\n• Experience our classroom hands-on lab environment in Chennai or join online.\n• Our senior mentors will walk you through the practical roadmap and tools.\n\nWould you like to connect right now via WhatsApp or call our admissions desk?",
-      quickReplies: ["Chat on WhatsApp", "Call Admissions", "View Syllabus"],
-      actionLink: {
-        label: "Chat with Mentor on WhatsApp",
-        href: "https://wa.me/916379427852?text=Hi%20EndowIT%20Academy,%20I%20would%20like%20to%20book%20a%20free%20demo%20session.",
-        external: true,
-      },
-    },
-    {
-      keywords: ["location", "address", "where", "chennai", "offline", "classroom", "lab"],
-      reply:
-        "📍 EndowIT Academy Practical Tech Lab:\n\n• Location: Anna Nagar / Koyambedu Tech Corridor, Chennai, Tamil Nadu.\n• Training Modes: Intensive Classroom Lab (Physical) & Live Interactive Online.\n• Batch Size: Strictly capped at 10–15 students for personal mentor attention.",
-      quickReplies: ["Book Free Demo", "Contact Info", "View Courses"],
-      actionLink: { label: "View Contact & Map", href: "/contact" },
-    },
-    {
-      keywords: ["contact", "phone", "call", "whatsapp", "email", "support", "mentor"],
-      reply:
-        "You can reach our admissions and technical counseling team anytime:\n\n📞 Direct Line: +91 63794 27852\n💬 WhatsApp: +91 63794 27852\n✉️ Email: admissions@endowitacademy.com\n\nWe typically respond within 15 minutes!",
-      actionLink: {
-        label: "Direct WhatsApp Message",
-        href: "https://wa.me/916379427852?text=Hello%20EndowIT%20Academy,%20I%20have%20an%20admission%20query.",
-        external: true,
-      },
-    },
-  ];
-
   const handleSend = (textToSend?: string) => {
     const query = (textToSend || input).trim();
     if (!query) return;
@@ -260,47 +197,22 @@ export default function Chatbot() {
     setInput("");
     setIsTyping(true);
 
+    // Natural conversational thinking delay
     setTimeout(() => {
-      const qLower = query.toLowerCase();
+      const replyData = generateEndoviReply(query);
 
-      const matched = botResponses.find((r) =>
-        r.keywords.some((k) => qLower.includes(k))
-      );
-
-      let botReply: Message;
-
-      if (matched) {
-        botReply = {
-          id: "b_" + Date.now(),
-          sender: "bot",
-          text: sanitizeCleanText(matched.reply),
-          timestamp: "Just now",
-          quickReplies: matched.quickReplies,
-          actionLink: matched.actionLink,
-        };
-      } else {
-        botReply = {
-          id: "b_" + Date.now(),
-          sender: "bot",
-          text: `Thank you for asking! EndowIT Academy specializes in 3-month 100% practical IT & Digital Marketing training with real client internships.\n\nYou can chat directly with our senior mentor on WhatsApp at +91 63794 27852 for immediate answers!`,
-          timestamp: "Just now",
-          quickReplies: [
-            "🎓 Explore 6 Courses",
-            "💰 ₹5,000 Grand Opening Offer",
-            "📜 Verify a Certificate",
-            "📞 Chat on WhatsApp",
-          ],
-          actionLink: {
-            label: "Connect on WhatsApp Now",
-            href: `https://wa.me/916379427852?text=Hi%20EndowIT%20Academy,%20I%20asked:%20${encodeURIComponent(query)}`,
-            external: true,
-          },
-        };
-      }
+      const botReply: Message = {
+        id: "b_" + Date.now(),
+        sender: "bot",
+        text: sanitizeCleanText(replyData.text),
+        timestamp: "Just now",
+        quickReplies: replyData.quickReplies,
+        actionLink: replyData.actionLink,
+      };
 
       setMessages((prev) => [...prev, botReply]);
       setIsTyping(false);
-    }, 600);
+    }, 550);
   };
 
   return (
@@ -508,7 +420,7 @@ export default function Chatbot() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask Endovi about courses, fees, offers..."
+              placeholder="Chat with Endovi (e.g. 'Hi', 'Which course?', 'Offer?')..."
               className="flex-1 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-navy-950 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
             <button
