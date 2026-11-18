@@ -138,18 +138,18 @@ export default function BlogPostPage({ params }: BlogPageProps) {
           </div>
 
           {/* CTA Box */}
-          <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-brand-950 to-navy-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-slate-100/90 via-blue-50/80 to-indigo-50/60 border border-slate-200/90 text-slate-900 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
             <div className="space-y-1 text-center sm:text-left">
-              <h4 className="text-xl font-bold">
+              <h4 className="text-xl font-bold text-slate-900">
                 Want to Master These Skills Hands-on?
               </h4>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-slate-600">
                 Book a free demo session with our senior industry mentors today.
               </p>
             </div>
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-xl bg-accent-cyan text-navy-950 font-bold text-xs hover:bg-cyan-300 transition-colors shrink-0"
+              className="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md transition-colors shrink-0"
             >
               Book Free Demo Session
             </Link>

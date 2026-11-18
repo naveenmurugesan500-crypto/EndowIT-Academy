@@ -129,21 +129,21 @@ export default function AboutPage() {
       <div className="pt-24 pb-16 bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-white">
         
         {/* ================= HERO SECTION ================= */}
-        <div className="bg-gradient-to-b from-[#0b2545] via-navy-900 to-slate-950 text-white py-14 sm:py-16 text-center border-b border-slate-800 relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-gradient-to-b from-slate-100/90 via-blue-50/70 to-indigo-50/40 text-slate-900 py-14 sm:py-16 text-center border-b border-slate-200/90 relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-brand-200 text-xs font-semibold backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-accent-cyan" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200 text-xs font-bold">
+              <Sparkles className="w-4 h-4 text-brand-600" />
               <span>100+ Trained Online · Chennai Practical Tech Lab Launch</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-              About <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">EndowIT Academy</span> · Software Training Institute in Chennai
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+              About <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">EndowIT Academy</span> · Software Training Institute in Chennai
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
               We started with a simple belief: genuine tech skills cannot be taught from boring slide decks. As a premier <strong>software training institute near you</strong> in Chennai, EndowIT Academy empowers students through 100% practical lab training, real client ad budgets, production SaaS code, and guaranteed practical internships.
             </p>
           </div>
@@ -275,15 +275,15 @@ export default function AboutPage() {
 
         {/* ================= WHO LEARNS AT ENDOWIT ================= */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
-          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-8">
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-100/90 via-blue-50/60 to-indigo-50/50 border border-slate-200/90 space-y-8 text-slate-900 shadow-sm">
             <div className="max-w-3xl space-y-2">
-              <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+              <span className="text-xs font-bold text-brand-700 uppercase tracking-wider">
                 Tailored Learning Paths
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
                 Who Learns at EndowIT Academy?
               </h2>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Our small-batch structure allows mentors to adapt their teaching pace to your background and career goals:
               </p>
             </div>
@@ -294,15 +294,15 @@ export default function AboutPage() {
                 return (
                   <div
                     key={idx}
-                    className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2.5"
+                    className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-2.5"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-xl bg-cyan-950 text-cyan-400 border border-cyan-800/60">
+                      <div className="p-2 rounded-xl bg-brand-50 text-brand-600 border border-brand-200">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <h3 className="text-base font-bold text-white">{item.title}</h3>
+                      <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed pl-1">
+                    <p className="text-xs text-slate-600 leading-relaxed pl-1">
                       {item.desc}
                     </p>
                   </div>
@@ -396,25 +396,25 @@ export default function AboutPage() {
 
         {/* ================= BOTTOM CTA ================= */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-900 via-navy-900 to-slate-900 text-white text-center space-y-4 shadow-xl border border-slate-800">
-            <h3 className="text-xl sm:text-2xl font-bold">
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-100/90 via-blue-50/80 to-indigo-50/60 border border-slate-200/90 text-slate-900 text-center space-y-4 shadow-md">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
               Want to Visit Our Training Lab or Attend a Demo?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
               Call our admissions counselor or reserve your seat for the upcoming Monday batch. Strictly 10–15 seats per batch.
             </p>
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all"
+                className="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all"
               >
                 Book Free Counseling & Demo
               </button>
               <a
                 href="tel:+916379427852"
-                className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/20 transition-all flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs border border-slate-300 transition-all flex items-center gap-2 shadow-sm"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-emerald-400" />
+                <PhoneCall className="w-3.5 h-3.5 text-brand-600" />
                 <span>+91 63794 27852</span>
               </a>
             </div>

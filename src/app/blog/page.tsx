@@ -24,16 +24,19 @@ export default function BlogListingPage() {
     <ClientShell>
       <div className="pt-24 pb-20 bg-slate-50 dark:bg-navy-950 min-h-screen">
         {/* Banner */}
-        <div className="bg-gradient-to-b from-brand-950 via-navy-900 to-slate-950 text-white py-16 text-center border-b border-slate-800">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-brand-200 text-xs font-semibold backdrop-blur-md">
-              <BookOpen className="w-4 h-4 text-accent-cyan" />
+        <div className="bg-gradient-to-b from-slate-100/90 via-blue-50/70 to-indigo-50/40 text-slate-900 py-16 text-center border-b border-slate-200/90 relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200 text-xs font-bold">
+              <BookOpen className="w-4 h-4 text-brand-600" />
               <span>Tech Insights, Career Guides & Industry Trends</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-              EndowIT Academy Blog & Resources
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+              EndowIT Academy <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">Blog & Resources</span>
             </h1>
-            <p className="text-base text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base text-slate-600 max-w-2xl mx-auto">
               Read up-to-date industry analysis, technology roadmaps, salary trends, and interview preparation guides.
             </p>
           </div>

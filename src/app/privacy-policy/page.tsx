@@ -10,16 +10,16 @@ export default function PrivacyPolicyPage() {
     <ClientShell>
       <div className="pt-28 pb-20 bg-slate-50 dark:bg-navy-950 min-h-screen text-slate-900 dark:text-white">
         {/* Header */}
-        <div className="bg-gradient-to-b from-[#0b2545] to-slate-950 text-white py-14 text-center border-b border-slate-800">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-brand-200 text-xs font-semibold backdrop-blur-md">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+        <div className="bg-gradient-to-b from-slate-100/90 via-blue-50/70 to-indigo-50/40 text-slate-900 py-14 text-center border-b border-slate-200/90 relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200 text-xs font-semibold">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
               <span>Your Privacy Is 100% Protected</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
               Privacy Policy
             </h1>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="text-xs sm:text-sm text-slate-600">
               Last Updated: November 2026 · EndowIT Academy
             </p>
           </div>

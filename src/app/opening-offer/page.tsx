@@ -79,37 +79,37 @@ export default function OpeningOfferPage() {
       <div className="pt-28 pb-20 bg-slate-50 dark:bg-navy-950 min-h-screen text-slate-900 dark:text-white">
         
         {/* ================= HERO HEADER ================= */}
-        <div className="bg-gradient-to-b from-[#0b2545] via-navy-900 to-slate-950 text-white py-16 border-b border-slate-800 relative overflow-hidden">
+        <div className="bg-gradient-to-b from-emerald-50/90 via-teal-50/50 to-slate-100/90 text-slate-900 py-16 border-b border-emerald-200/80 relative overflow-hidden">
           {/* Ambient Glows */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 relative z-10">
             {/* Urgency Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 to-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-extrabold backdrop-blur-md">
-              <Flame className="w-4 h-4 text-amber-400 animate-bounce" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs sm:text-sm font-extrabold shadow-sm">
+              <Flame className="w-4 h-4 text-amber-500 animate-bounce" />
               <span>GRAND OPENING EXCLUSIVE OFFER · FIRST 20 STUDENTS ONLY</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-slate-900">
               Enroll In Any 3-Month Course For Flat{" "}
-              <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent underline decoration-emerald-400 decoration-wavy">
+              <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent underline decoration-emerald-500 decoration-wavy">
                 ₹ 5,000 Total!
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Flat ₹5,000 Special IT Course Fees across Digital Marketing, Full Stack Development, Data Analytics, and Cloud Engineering. Includes 3-month hands-on training, real client ad budgets, guaranteed practical internship certificate, and dedicated placement assistance.{" "}
-              <strong className="text-white font-bold block mt-1">
+              <strong className="text-emerald-800 font-bold block mt-1">
                 Zero hidden charges. Transparent course fees with not a single rupee more to pay afterward!
               </strong>
             </p>
 
             {/* Live Seat Tracker Pill */}
-            <div className="pt-2 inline-flex items-center gap-3 px-5 py-2 rounded-2xl bg-white/10 border border-white/20 text-xs sm:text-sm font-bold text-white shadow-lg">
+            <div className="pt-2 inline-flex items-center gap-3 px-5 py-2 rounded-2xl bg-white border border-emerald-200 text-xs sm:text-sm font-bold text-slate-800 shadow-md">
               <span className="flex h-2.5 w-2.5 rounded-full bg-rose-500 animate-ping" />
               <span>
-                Seats Status: <strong className="text-amber-400">14 Claimed</strong> / 20 Available
+                Seats Status: <strong className="text-emerald-700">14 Claimed</strong> / 20 Available
               </span>
               <span className="px-2 py-0.5 rounded bg-rose-500 text-white text-[11px] font-black uppercase">
                 Only 6 Left

@@ -53,89 +53,92 @@ export default function CourseDetailClient({ course }: { course: Course }) {
   return (
     <div className="pt-24 pb-20 bg-slate-50 dark:bg-navy-950">
       {/* Course Hero Banner */}
-      <section className="bg-gradient-to-b from-brand-950 via-navy-900 to-navy-950 text-white py-16 lg:py-24 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-slate-100/90 via-blue-50/70 to-indigo-50/40 text-slate-900 py-14 lg:py-18 border-b border-slate-200/90 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-8 space-y-6">
               {/* Category & Badges */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-400/30">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
                   {course.category}
                 </span>
-                <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1.5">
+                <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center gap-1.5">
                   <Award className="w-3.5 h-3.5" />
                   <span>Includes Guaranteed Practical Internship</span>
                 </span>
                 {course.badge && (
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 flex items-center gap-1">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 flex items-center gap-1">
                     <Sparkles className="w-3.5 h-3.5" />
                     {course.badge}
                   </span>
                 )}
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-slate-900">
                 {course.title}
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
                 {course.overview}
               </p>
 
               {/* Price & Meta Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">
+                <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block">
                     Launch Course Fee:
                   </span>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
-                    <span className="text-xl font-extrabold text-white">
+                    <span className="text-xl font-extrabold text-slate-900">
                       {course.price}
                     </span>
                     <span className="text-xs text-slate-400 line-through">
                       {course.originalPrice}
                     </span>
                   </div>
-                  <span className="text-[10px] text-emerald-400 font-semibold block mt-1">
+                  <span className="text-[10px] text-emerald-600 font-semibold block mt-1">
                     Split Payment Available
                   </span>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">
+                <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block">
                     Duration & Mode:
                   </span>
-                  <div className="flex items-center gap-1 text-accent-cyan text-sm font-bold mt-1">
+                  <div className="flex items-center gap-1 text-brand-700 text-sm font-bold mt-1">
                     <Clock className="w-4 h-4" />
                     <span>{course.duration}</span>
                   </div>
-                  <span className="text-[10px] text-slate-300 block mt-1">
+                  <span className="text-[10px] text-slate-600 block mt-1 font-medium">
                     {course.mode}
                   </span>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">
+                <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block">
                     Batch Size:
                   </span>
-                  <div className="flex items-center gap-1 text-purple-400 text-sm font-bold mt-1">
+                  <div className="flex items-center gap-1 text-purple-700 text-sm font-bold mt-1">
                     <Users className="w-4 h-4" />
                     <span>10 - 15 Max</span>
                   </div>
-                  <span className="text-[10px] text-slate-300 block mt-1">
+                  <span className="text-[10px] text-slate-600 block mt-1 font-medium">
                     Personal Attention
                   </span>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">
+                <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block">
                     Placement:
                   </span>
-                  <div className="flex items-center gap-1 text-emerald-400 text-sm font-bold mt-1">
+                  <div className="flex items-center gap-1 text-emerald-700 text-sm font-bold mt-1">
                     <Briefcase className="w-4 h-4" />
                     <span>Full Support</span>
                   </div>
-                  <span className="text-[10px] text-slate-300 block mt-1">
+                  <span className="text-[10px] text-slate-600 block mt-1 font-medium">
                     Mock Interviews
                   </span>
                 </div>
@@ -144,7 +147,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
               <div className="pt-2 flex flex-wrap gap-4">
                 <button
                   onClick={() => setIsDemoModalOpen(true)}
-                  className="px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-brand-600 to-accent-cyan shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-[1.02] transition-all flex items-center gap-2"
+                  className="px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-brand-600 to-indigo-600 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-[1.02] transition-all flex items-center gap-2"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>Book Free Demo Class</span>
@@ -152,7 +155,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
 
                 <button
                   onClick={() => setIsDemoModalOpen(true)}
-                  className="px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-white/10 hover:bg-white/20 border border-white/20 transition-all flex items-center gap-2"
+                  className="px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition-all flex items-center gap-2"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Full Syllabus PDF</span>
@@ -162,22 +165,22 @@ export default function CourseDetailClient({ course }: { course: Course }) {
 
             {/* Quick Enrollment Card in Hero */}
             <div className="lg:col-span-4">
-              <div className="p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl text-white space-y-4">
+              <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xl text-slate-900 space-y-4">
                 <div className="space-y-1">
-                  <span className="text-xs font-bold text-accent-cyan uppercase tracking-wider">
+                  <span className="text-xs font-bold text-brand-600 uppercase tracking-wider">
                     Batch Enrollment
                   </span>
-                  <h3 className="text-xl font-bold">Inquire About This Course</h3>
-                  <p className="text-xs text-slate-300">
+                  <h3 className="text-xl font-bold text-slate-900">Inquire About This Course</h3>
+                  <p className="text-xs text-slate-600">
                     Get fee discount, next batch dates, and syllabus brochure instantly.
                   </p>
                 </div>
 
                 {submitted ? (
-                  <div className="p-4 rounded-2xl bg-emerald-950/70 border border-emerald-500 text-center space-y-2">
-                    <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
-                    <h4 className="text-sm font-bold">Request Submitted!</h4>
-                    <p className="text-xs text-slate-300">
+                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center space-y-2">
+                    <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto" />
+                    <h4 className="text-sm font-bold text-emerald-900">Request Submitted!</h4>
+                    <p className="text-xs text-emerald-800">
                       Our admissions counselor will call you at <strong>{quickPhone}</strong>.
                     </p>
                   </div>
@@ -190,7 +193,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
                         placeholder="Your Full Name"
                         value={quickName}
                         onChange={(e) => setQuickName(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl text-xs bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400"
+                        className="w-full px-3.5 py-2.5 rounded-xl text-xs bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
                       />
                     </div>
                     <div>
@@ -200,12 +203,12 @@ export default function CourseDetailClient({ course }: { course: Course }) {
                         placeholder="WhatsApp / Phone Number"
                         value={quickPhone}
                         onChange={(e) => setQuickPhone(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl text-xs bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400"
+                        className="w-full px-3.5 py-2.5 rounded-xl text-xs bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
                       />
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-3 rounded-xl font-bold text-xs bg-accent-cyan text-navy-950 hover:bg-cyan-300 transition-colors shadow-md flex items-center justify-center gap-1.5"
+                      className="w-full py-3 rounded-xl font-bold text-xs bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white transition-all shadow-md flex items-center justify-center gap-1.5"
                     >
                       <span>Get Instant Syllabus & Call</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -213,13 +216,13 @@ export default function CourseDetailClient({ course }: { course: Course }) {
                   </form>
                 )}
 
-                <div className="pt-2 border-t border-white/10 space-y-1.5 text-[11px] text-slate-300">
+                <div className="pt-2 border-t border-slate-100 space-y-1.5 text-[11px] text-slate-600">
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Free 2-Day Trial Demo Attendance</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Free 1-on-1 Trial Demo Attendance</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Guaranteed Practical Internship Included</span>
                   </div>
                 </div>

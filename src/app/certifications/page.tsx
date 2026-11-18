@@ -64,21 +64,21 @@ export default function CertificationsPage() {
       <div className="pt-24 pb-16 bg-slate-50 dark:bg-navy-950 min-h-screen text-slate-900 dark:text-white">
         
         {/* ================= HERO SECTION ================= */}
-        <div className="bg-gradient-to-b from-[#0b2545] via-navy-900 to-slate-950 text-white py-14 sm:py-16 text-center border-b border-slate-800 relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-gradient-to-b from-slate-100/90 via-blue-50/70 to-indigo-50/40 text-slate-900 py-14 sm:py-16 text-center border-b border-slate-200/90 relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-200/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30 backdrop-blur-md">
-              <Award className="w-4 h-4 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200 shadow-sm">
+              <Award className="w-4 h-4 text-emerald-600" />
               <span>Dual Industry-Ready Credentials</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-              Verified Certifications at <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">EndowIT Academy</span>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+              Verified Certifications at <span className="bg-gradient-to-r from-brand-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent">EndowIT Academy</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
               We provide two distinct, verifiable credentials upon course completion: an official <strong>Course Completion Certificate</strong> and an authentic <strong>3-Month Practical Internship Certificate</strong> based on real client deliverables.
             </p>
 
@@ -103,18 +103,18 @@ export default function CertificationsPage() {
                   <span>Verify Online</span>
                 </button>
               </form>
-              <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-[11px] text-slate-300">
+              <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-[11px] text-slate-500">
                 <span>Try sample code:</span>
                 <Link
                   href="/verify?id=EIT-CC-2026-0101"
-                  className="font-mono text-emerald-300 underline hover:text-white"
+                  className="font-mono text-emerald-700 font-semibold underline hover:text-emerald-900"
                 >
                   EIT-CC-2026-0101
                 </Link>
                 <span>·</span>
                 <Link
                   href="/verify?id=EIT-INT-2026-0101"
-                  className="font-mono text-emerald-300 underline hover:text-white"
+                  className="font-mono text-emerald-700 font-semibold underline hover:text-emerald-900"
                 >
                   EIT-INT-2026-0101
                 </Link>
@@ -406,40 +406,40 @@ export default function CertificationsPage() {
 
         {/* ================= WHY DUAL CERTIFICATION MATTERS ================= */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-6">
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-100/90 via-blue-50/60 to-indigo-50/50 border border-slate-200/90 space-y-6 text-slate-900 shadow-sm">
             <div className="max-w-3xl space-y-2">
-              <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+              <span className="text-xs font-bold text-brand-700 uppercase tracking-wider">
                 Career Advantage
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
                 Why Both Certificates Matter When You Apply For Jobs
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Most institutes only give you a basic attendance certificate. But in technical interviews, recruiters ask one question: <em>"What have you actually built?"</em> Having both an EndowIT Course Completion Certificate and an authentic 3-Month Internship Certificate gives you a massive advantage:
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Most institutes only give you a basic attendance certificate. But in technical interviews, recruiters ask one question: <em>&quot;What have you actually built?&quot;</em> Having both an EndowIT Course Completion Certificate and an authentic 3-Month Internship Certificate gives you a massive advantage:
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-              <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
-                <FileCheck2 className="w-6 h-6 text-cyan-400" />
-                <h4 className="text-sm font-bold text-white">Proof of Practical Skills</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+              <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-2">
+                <FileCheck2 className="w-6 h-6 text-brand-600" />
+                <h4 className="text-sm font-bold text-slate-900">Proof of Practical Skills</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Your Course Certificate proves you mastered the technical stack, tools, and best practices.
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
-                <Briefcase className="w-6 h-6 text-emerald-400" />
-                <h4 className="text-sm font-bold text-white">Proof of Real Work</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+              <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-2">
+                <Briefcase className="w-6 h-6 text-emerald-600" />
+                <h4 className="text-sm font-bold text-slate-900">Proof of Real Work</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Your Internship Certificate proves you managed real budgets and deployed production deliverables for actual clients.
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
-                <ShieldCheck className="w-6 h-6 text-amber-400" />
-                <h4 className="text-sm font-bold text-white">HR Background Verifiable</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+              <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-2">
+                <ShieldCheck className="w-6 h-6 text-amber-600" />
+                <h4 className="text-sm font-bold text-slate-900">HR Background Verifiable</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
                   Recruiters can easily verify your credentials with our official admissions team via phone and email.
                 </p>
               </div>
@@ -487,23 +487,23 @@ export default function CertificationsPage() {
 
         {/* ================= BOTTOM CTA ================= */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-900 via-navy-900 to-slate-900 text-white text-center space-y-4 shadow-xl border border-slate-800">
-            <h3 className="text-xl sm:text-2xl font-bold">
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-100/90 via-blue-50/80 to-indigo-50/60 border border-slate-200/90 text-slate-900 text-center space-y-4 shadow-md">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
               Ready to Earn Both Credentials in 3 Months?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
               Join our Chennai physical training lab or live interactive online classes. Strictly 10–15 students per batch.
             </p>
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all"
+                className="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all"
               >
                 Book Free Demo Class
               </button>
               <Link
                 href="/courses"
-                className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/20 transition-all"
+                className="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs border border-slate-300 transition-all shadow-sm"
               >
                 Explore All 6 Courses
               </Link>
