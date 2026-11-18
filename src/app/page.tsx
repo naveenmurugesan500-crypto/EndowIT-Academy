@@ -127,32 +127,28 @@ export default function HomePage() {
 
   const faqs = [
     {
-      q: "Who can enroll in EndowIT Academy courses?",
-      a: "Our programs are open to college students, fresh graduates (any stream - Arts, Commerce, Engineering), and working professionals who want genuine practical skills and live project experience.",
+      q: "Why is EndowIT Academy rated among the best software training institutes near me in Chennai?",
+      a: "Unlike institutes that teach theoretical slides, EndowIT Academy focuses on pure practical training. You run live Google and Meta ad spend campaigns, deploy full stack web applications to live cloud servers, and work on real client projects with micro-batches of 10–15 students.",
     },
     {
-      q: "What is the duration of your courses?",
-      a: "Every course at EndowIT Academy is strictly 3 Months in duration. It includes intensive practical classroom/online coaching, hands-on live client projects, and a guaranteed practical internship deliverable.",
+      q: "What makes your digital marketing course and full stack developer course with placement unique?",
+      a: "Our digital marketing course provides real client ad spend budgets, while our full stack developer course and data analytics course involve building production SaaS apps and BI dashboards. All courses include dedicated placement screening, mock technical interviews, and guaranteed 3-month internships.",
     },
     {
-      q: "What does the Guaranteed Practical Internship include?",
-      a: "Every student works directly on live client projects (e.g., active Google & Meta ad accounts with real ad budgets, or live web application deployments). Upon completing the project deliverables, you receive a verified practical internship certificate.",
+      q: "What does the Guaranteed Practical Internship Certificate include?",
+      a: "Every student works directly on live client projects. Upon completing their real-world project deliverables, students receive a verified 3-Month Practical Internship Certificate with a unique QR code that HR recruiters can verify 24/7 on our public portal.",
     },
     {
-      q: "What is your batch size?",
-      a: "We strictly limit our batches to 10–15 students. This ensures the mentor personally monitors your practical work and answers every doubt without anyone getting left behind.",
+      q: "What are your IT course fees and Grand Opening Offer details?",
+      a: "Under our limited Grand Opening Offer, the first 20 students can enroll in any 3-month course for just flat ₹5,000 all-inclusive (standard launch fee: ₹14,999). Easy 2-part split payment options of ₹4,999/month are also available.",
     },
     {
-      q: "How does your Placement Support work?",
-      a: "We provide dedicated placement assistance including 1-on-1 technical mock screenings, live portfolio reviews, and ATS resume crafting so you are prepared to clear job interviews confidently.",
+      q: "Who can enroll in these IT & software courses?",
+      a: "Our programs are designed for freshers, college students, career switchers, and non-IT graduates (B.Com, B.A, B.Sc, Engineering) looking to enter high-paying tech careers with zero previous coding barrier.",
     },
     {
-      q: "Are installment or split payment options available?",
-      a: "Yes! We offer convenient split payment options so you can pay in two easy installments during your 3-month course duration.",
-    },
-    {
-      q: "Can I attend a free demo session first?",
-      a: "Yes, you can attend a free 1-on-1 counseling and trial demo class before enrolling. We explain the entire practical roadmap upfront.",
+      q: "Can I attend a free demo class before enrolling?",
+      a: "Yes! You can attend a 100% free 1-on-1 counseling and practical demo class at our Chennai tech lab or interactively online before enrolling. WhatsApp +91 63794 27852 to reserve your seat.",
     },
   ];
 

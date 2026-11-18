@@ -99,9 +99,9 @@ export default function OpeningOfferPage() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Full 3-Month Training · Real Client Projects & Ad Spend · Guaranteed Practical Internship Certificate · 100% Placement Support.{" "}
+              Flat ₹5,000 Special IT Course Fees across Digital Marketing, Full Stack Development, Data Analytics, and Cloud Engineering. Includes 3-month hands-on training, real client ad budgets, guaranteed practical internship certificate, and dedicated placement assistance.{" "}
               <strong className="text-white font-bold block mt-1">
-                Zero hidden charges. Not a single rupee more to pay afterward!
+                Zero hidden charges. Transparent course fees with not a single rupee more to pay afterward!
               </strong>
             </p>
 

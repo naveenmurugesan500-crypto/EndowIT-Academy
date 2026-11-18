@@ -80,10 +80,10 @@ export default function ContactPage() {
               <span>We Are Here to Help Your Tech Career</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-              Get in Touch with EndowIT Academy
+              Contact EndowIT Academy · Software Training Institute Near You in Chennai
             </h1>
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
-              Have questions about course syllabi, fee structures, batch schedules, or corporate training? Reach out to our admissions team.
+              Have questions about digital marketing courses near you, full stack developer course fees, data analyst classes, or scheduling a free demo session at our Chennai tech lab? Reach out to our admissions team anytime.
             </p>
           </div>
         </div>

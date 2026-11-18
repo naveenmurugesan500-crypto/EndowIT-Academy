@@ -140,11 +140,11 @@ export default function AboutPage() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-              About <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">EndowIT Academy</span>
+              About <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">EndowIT Academy</span> · Software Training Institute in Chennai
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              We started with a simple belief: <strong>technology cannot be taught from 500-page slide decks</strong>. You only master software, data, and marketing by building real things with real budgets and production code.
+              We started with a simple belief: genuine tech skills cannot be taught from boring slide decks. As a premier <strong>software training institute near you</strong> in Chennai, EndowIT Academy empowers students through 100% practical lab training, real client ad budgets, production SaaS code, and guaranteed practical internships.
             </p>
           </div>
         </div>
