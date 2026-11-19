@@ -12,16 +12,13 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.9",
     "lucide-react": "^0.453.0",
-    "next": "14.2.35",
+    "next": "14.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.4",
     "three": "^0.169.0"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "latest",
-    "wrangler": "latest",
-    "@netlify/plugin-nextjs": "^5.16.8",
     "@types/node": "^20.17.0",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
