@@ -19,6 +19,8 @@
     "three": "^0.169.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "latest",
+    "wrangler": "latest"
     "@netlify/plugin-nextjs": "^5.16.8",
     "@types/node": "^20.17.0",
     "@types/react": "^18.3.11",
