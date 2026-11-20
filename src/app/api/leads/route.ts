@@ -34,6 +34,28 @@ export async function POST(request: Request) {
       message: message || "",
     });
 
+    // Forward to Google Sheets Webhook if configured
+    const webhookUrl = process.env.GOOGLE_SHEET_LEADS_URL || process.env.NEXT_PUBLIC_GOOGLE_SHEET_LEADS_URL;
+    if (webhookUrl) {
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            date: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+            name,
+            phone,
+            email: email || "Not Provided",
+            course: course || "General Inquiry",
+            mode: mode || "Classroom",
+            message: message || "-",
+          }),
+        }).catch((err) => console.error("Google Sheet webhook error:", err));
+      } catch (sheetErr) {
+        console.error("Google Sheet sync error:", sheetErr);
+      }
+    }
+
     return NextResponse.json({ success: true, lead: saved });
   } catch (error: any) {
     return NextResponse.json(
