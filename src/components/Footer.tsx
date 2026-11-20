@@ -3,13 +3,17 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   MapPin,
-  Phone,
+  PhoneCall,
   Mail,
   Clock,
   CheckCircle2,
   Tag,
   Award,
   Sparkles,
+  Instagram,
+  Facebook,
+  Youtube,
+  Linkedin,
 } from "lucide-react";
 
 export default function Footer() {
@@ -18,6 +22,92 @@ export default function Footer() {
   return (
     <footer className="bg-slate-50 text-slate-600 pt-14 pb-0 border-t border-slate-200 overflow-hidden">
       <div className="max-w-[96%] xl:max-w-[94%] 2xl:max-w-[1680px] mx-auto px-2 sm:px-4 lg:px-6">
+        {/* Top of Footer: Contact Helpline & Social Media Links */}
+        <div className="pb-10 mb-12 border-b border-slate-200/90">
+          <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+            
+            {/* Left: Contact Helpline */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 text-center sm:text-left">
+              <div className="w-12 h-12 rounded-2xl bg-brand-50 border border-brand-200/80 text-brand-600 flex items-center justify-center shrink-0 shadow-sm">
+                <PhoneCall className="w-6 h-6 animate-pulse" />
+              </div>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+                  Have Questions? Talk to Our Course Advisor
+                </span>
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-1">
+                  <a
+                    href="tel:+916379427852"
+                    className="text-lg sm:text-xl font-extrabold text-slate-900 hover:text-brand-600 transition-colors tracking-tight flex items-center gap-1.5"
+                  >
+                    <span>+91 63794 27852</span>
+                  </a>
+                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80">
+                    Mon - Sun: 8:00 AM - 8:30 PM
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Social Media Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto justify-center">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
+                Follow Us:
+              </span>
+              <div className="flex items-center gap-2.5">
+                {/* Instagram */}
+                <a
+                  href="https://instagram.com/endowit_academy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-2xl bg-slate-50 hover:bg-pink-50 border border-slate-200 hover:border-pink-300 text-slate-600 hover:text-pink-600 flex items-center justify-center transition-all shadow-sm hover:scale-105"
+                  title="Instagram"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://facebook.com/endowitacademy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-2xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-600 hover:text-blue-600 flex items-center justify-center transition-all shadow-sm hover:scale-105"
+                  title="Facebook"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+
+                {/* YouTube */}
+                <a
+                  href="https://youtube.com/@endowitacademy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-2xl bg-slate-50 hover:bg-red-50 border border-slate-200 hover:border-red-300 text-slate-600 hover:text-red-600 flex items-center justify-center transition-all shadow-sm hover:scale-105"
+                  title="YouTube"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-4 h-4" />
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://linkedin.com/company/endowit-academy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-2xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-400 text-slate-600 hover:text-blue-700 flex items-center justify-center transition-all shadow-sm hover:scale-105"
+                  title="LinkedIn"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200/90">
           {/* Col 1: About & Logo */}
           <div className="lg:col-span-2 space-y-4">
@@ -164,15 +254,6 @@ export default function Footer() {
                 <span>
                   XXXXXX, XXXXXX, Chennai, Tamil Nadu - XXXXXX
                 </span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-brand-600 shrink-0" />
-                <a
-                  href="tel:+916379427852"
-                  className="hover:text-brand-600 transition-colors font-medium"
-                >
-                  +91 63794 27852
-                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-brand-600 shrink-0" />
